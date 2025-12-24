@@ -831,6 +831,10 @@ section {
     background: #000;
 }
 
+.gen-video-wrapper.portrait {
+    padding-bottom: 177.78%; /* 9:16 aspect ratio for portrait videos */
+}
+
 .gen-video-container iframe {
     position: absolute;
     top: 0;

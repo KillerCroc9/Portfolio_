@@ -300,11 +300,6 @@ section {
     font-size: 0.95rem;
 }
 
-/* Videos Section */
-.videos {
-    background: var(--dark-bg);
-}
-
 /* Education Section */
 .education {
     background: var(--dark-bg);
@@ -467,11 +462,6 @@ section {
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
-}
-
-/* Videos Section */
-.videos {
-    background: var(--light-bg);
 }
 
 .videos-grid {

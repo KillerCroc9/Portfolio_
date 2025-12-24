@@ -93,31 +93,21 @@ const closeModal = document.querySelector('.close-modal');
 // 4. Update title and description to match your projects
 // =============================================================================
 
-// Video data - Update these URLs with actual project videos
-// To add your own videos:
-// 1. Upload videos to YouTube or Vimeo
-// 2. Get the embed URL (e.g., https://www.youtube.com/embed/YOUR_VIDEO_ID)
-// 3. Replace the url values below
 const videoData = {
     video1: {
-        title: 'AI-Powered Game Mechanics',
-        description: 'This video demonstrates how we implemented procedural content generation using advanced AI algorithms in real-time gameplay. We explore neural networks for dynamic level generation, AI-driven enemy behaviors, and adaptive difficulty systems that respond to player skill.',
-        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
+        title: 'Drimon Controller - Dragon Movement & Abilities',
+        description: 'This video showcases our dragons' core movement system, featuring smooth flying and a set of basic abilities. We introduce the four elemental dragon types - Ice, Earth, Fire, and Lightning - and demonstrate their unique special powers, including instant teleportation and invisibility.',
+        url: '' // Video will be uploaded to YouTube - URL to be added
     },
     video2: {
-        title: 'Generative AI Pipeline',
-        description: 'A comprehensive walkthrough of building a complete generative AI system for dynamic character and environment creation. Learn about our custom pipeline for generating 3D assets, textures, and animations using stable diffusion and GANs.',
-        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
+        title: 'Dance Plugin - Animation Controller & VFX System',
+        description: 'Kids can host fun dance parties with synchronized animations and dynamic DMX-style light effects. The animation controller and VFX systems (DMX Plugin) are built independently, allowing artists and developers to work in parallel without blocking each other.',
+        url: '' // Video will be uploaded to YouTube - URL to be added
     },
     video3: {
-        title: 'Leading Innovation',
-        description: 'How we integrated AI into our game development pipeline and achieved breakthrough results. This case study showcases our journey from traditional development to AI-enhanced workflows, including team training and project outcomes.',
-        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
-    },
-    video4: {
-        title: 'Multiplayer Game Architecture',
-        description: 'Deep dive into scalable multiplayer game systems with AI-enhanced matchmaking. We cover server architecture, latency optimization, anti-cheat systems, and how machine learning improves player matching and game balance.',
-        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
+        title: 'Crowd Showcase - Interactive Dragon Experience',
+        description: 'Multiple cute dragon types that kids can interact with in real time. They receive live updates on their devices and can watch their dragons play, eat, push objects, level up, and grow. Features include a talking dragon module for personal interactions, an active combat system in development, and console support for PS5 and Nintendo Switch.',
+        url: '' // Video will be uploaded to YouTube - URL to be added
     }
 };
 

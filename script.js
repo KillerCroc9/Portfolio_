@@ -3,8 +3,10 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
 hamburger.addEventListener('click', () => {
+    const isExpanded = navMenu.classList.contains('active');
     navMenu.classList.toggle('active');
     hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', !isExpanded);
 });
 
 // Close mobile menu when clicking on a link
@@ -12,6 +14,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
     });
 });
 
@@ -50,27 +53,31 @@ const videoTitle = document.getElementById('videoTitle');
 const videoDesc = document.getElementById('videoDesc');
 const closeModal = document.querySelector('.close-modal');
 
-// Video data (placeholder - replace with actual YouTube/Vimeo video IDs)
+// Video data - Update these URLs with actual project videos
+// To add your own videos:
+// 1. Upload videos to YouTube or Vimeo
+// 2. Get the embed URL (e.g., https://www.youtube.com/embed/YOUR_VIDEO_ID)
+// 3. Replace the url values below
 const videoData = {
     video1: {
         title: 'AI-Powered Game Mechanics',
         description: 'This video demonstrates how we implemented procedural content generation using advanced AI algorithms in real-time gameplay. We explore neural networks for dynamic level generation, AI-driven enemy behaviors, and adaptive difficulty systems that respond to player skill.',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Replace with actual video URL
+        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
     },
     video2: {
         title: 'Generative AI Pipeline',
         description: 'A comprehensive walkthrough of building a complete generative AI system for dynamic character and environment creation. Learn about our custom pipeline for generating 3D assets, textures, and animations using stable diffusion and GANs.',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Replace with actual video URL
+        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
     },
     video3: {
         title: 'Leading Innovation',
         description: 'How we integrated AI into our game development pipeline and achieved breakthrough results. This case study showcases our journey from traditional development to AI-enhanced workflows, including team training and project outcomes.',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Replace with actual video URL
+        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
     },
     video4: {
         title: 'Multiplayer Game Architecture',
         description: 'Deep dive into scalable multiplayer game systems with AI-enhanced matchmaking. We cover server architecture, latency optimization, anti-cheat systems, and how machine learning improves player matching and game balance.',
-        url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Replace with actual video URL
+        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
     }
 };
 
@@ -81,6 +88,12 @@ document.querySelectorAll('.video-card').forEach(card => {
         const video = videoData[videoId];
         
         if (video) {
+            // Check if video URL is provided
+            if (!video.url) {
+                alert('Video coming soon! This video is not yet available.');
+                return;
+            }
+            
             videoTitle.textContent = video.title;
             videoDesc.textContent = video.description;
             videoPlayer.src = video.url;
@@ -140,16 +153,94 @@ document.querySelectorAll('.video-card, .project-card, .timeline-item, .expertis
 
 // Contact Form Handling
 const contactForm = document.querySelector('.contact-form');
+
+// Form validation functions
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function validateField(field) {
+    const value = field.value.trim();
+    const fieldName = field.name;
+    const errorElement = document.getElementById(`${fieldName}Error`);
+    let isValid = true;
+    let errorMessage = '';
+
+    // Clear previous error
+    errorElement.textContent = '';
+    field.classList.remove('invalid');
+
+    if (field.hasAttribute('required') && !value) {
+        isValid = false;
+        errorMessage = `${field.placeholder} is required`;
+    } else if (field.type === 'email' && value && !validateEmail(value)) {
+        isValid = false;
+        errorMessage = 'Please enter a valid email address';
+    } else if (field.hasAttribute('minlength')) {
+        const minLength = parseInt(field.getAttribute('minlength'));
+        if (value.length > 0 && value.length < minLength) {
+            isValid = false;
+            errorMessage = `${field.placeholder} must be at least ${minLength} characters`;
+        }
+    }
+
+    if (!isValid) {
+        field.classList.add('invalid');
+        errorElement.textContent = errorMessage;
+    }
+
+    return isValid;
+}
+
+// Add real-time validation
+contactForm.querySelectorAll('input, textarea').forEach(field => {
+    field.addEventListener('blur', () => validateField(field));
+    field.addEventListener('input', () => {
+        if (field.classList.contains('invalid')) {
+            validateField(field);
+        }
+    });
+});
+
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Get form data
-    const formData = new FormData(contactForm);
+    // Validate all fields
+    const fields = contactForm.querySelectorAll('input, textarea');
+    let isFormValid = true;
     
-    // Here you would typically send the form data to a server
-    // For now, we'll just show a success message
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
+    fields.forEach(field => {
+        if (!validateField(field)) {
+            isFormValid = false;
+        }
+    });
+    
+    if (isFormValid) {
+        // Get form data
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        
+        // Here you would typically send the form data to a server
+        // For now, we'll just show a success message
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+        
+        // Clear any validation states
+        fields.forEach(field => {
+            field.classList.remove('invalid');
+            const errorElement = document.getElementById(`${field.name}Error`);
+            if (errorElement) {
+                errorElement.textContent = '';
+            }
+        });
+    } else {
+        // Focus on the first invalid field
+        const firstInvalid = contactForm.querySelector('.invalid');
+        if (firstInvalid) {
+            firstInvalid.focus();
+        }
+    }
 });
 
 // Add active state to navigation based on scroll position

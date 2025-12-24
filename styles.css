@@ -795,6 +795,41 @@ section {
     margin: 2rem 0;
 }
 
+.gen-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.gen-video-container {
+    background: rgba(22, 33, 62, 0.5);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: var(--transition);
+}
+
+.gen-video-container:hover {
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.gen-video-container h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.gen-video-container iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 8px;
+    background: #000;
+}
+
 /* Experience Section */
 .experience {
     background: var(--dark-bg);
@@ -1322,6 +1357,15 @@ section {
     
     .gen-project-title {
         font-size: 1.5rem;
+    }
+    
+    .gen-videos-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .gen-video-container iframe {
+        height: 250px;
     }
 }
 

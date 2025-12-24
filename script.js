@@ -18,7 +18,9 @@ function showNotification(message, type = 'info', duration = 3000) {
     setTimeout(() => {
         notification.style.animation = 'slideOut 0.3s ease';
         setTimeout(() => {
-            document.body.removeChild(notification);
+            if (notification.parentNode) {
+                notification.remove();
+            }
         }, 300);
     }, duration);
 }

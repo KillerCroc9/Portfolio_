@@ -101,7 +101,7 @@ const closeModal = document.querySelector('.close-modal');
 const videoData = {
     video1: {
         title: 'Drimon Controller - Dragon Movement & Abilities',
-        description: 'This video showcases our dragons\' core movement system, featuring smooth flying and a set of basic abilities. We introduce the four elemental dragon types—Ice, Earth, Fire, and Lightning—and demonstrate their unique special powers, including instant teleportation and invisibility.',
+        description: 'This video showcases our dragons\' core movement system, featuring smooth flying and a set of basic abilities. We introduce the four elemental dragon types - Ice, Earth, Fire, and Lightning - and demonstrate their unique special powers, including instant teleportation and invisibility.',
         url: '' // Video will be uploaded to YouTube - URL to be added
     },
     video2: {

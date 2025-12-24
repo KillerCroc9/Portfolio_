@@ -26,6 +26,13 @@
 - [License](#-license)
 - [Contact](#-contact)
 
+## 📚 Additional Documentation
+
+- **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick reference for common customization tasks
+- **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** - Comprehensive pre-deployment checklist
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to this project
+- **[assets/README.md](assets/README.md)** - Information about asset requirements
+
 ---
 
 A modern, professional portfolio website showcasing expertise in game development and generative AI, featuring video descriptions, current projects, and professional experience.
@@ -55,12 +62,21 @@ A modern, professional portfolio website showcasing expertise in game developmen
 
 ```
 Portfolio_/
-├── index.html          # Main HTML structure with all sections
-├── styles.css          # Complete styling with responsive design
-├── script.js           # Interactive features and animations
-├── README.md           # Project documentation
-├── LICENSE             # MIT License
-└── .gitignore          # Git ignore rules
+├── index.html                    # Main HTML structure
+├── styles.css                    # Complete styling with responsive design
+├── script.js                     # Interactive features and animations
+├── README.md                     # Main documentation
+├── LICENSE                       # MIT License
+├── CONTRIBUTING.md               # Contribution guidelines
+├── QUICK_REFERENCE.md            # Quick customization reference
+├── DEPLOYMENT_CHECKLIST.md       # Pre-deployment checklist
+├── .gitignore                    # Git ignore rules
+├── .editorconfig                 # Editor configuration
+├── .github/
+│   └── workflows/
+│       └── deploy.yml            # GitHub Pages deployment workflow
+└── assets/
+    └── README.md                 # Asset requirements and guidelines
 ```
 
 ---

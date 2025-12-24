@@ -1,3 +1,7 @@
+// =============================================================================
+// NAVIGATION
+// =============================================================================
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -67,12 +71,27 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// =============================================================================
+// VIDEO MODAL
+// =============================================================================
+
 // Video Modal Functionality
 const modal = document.getElementById('videoModal');
 const videoPlayer = document.getElementById('videoPlayer');
 const videoTitle = document.getElementById('videoTitle');
 const videoDesc = document.getElementById('videoDesc');
 const closeModal = document.querySelector('.close-modal');
+
+// =============================================================================
+// VIDEO DATA CONFIGURATION
+// =============================================================================
+// CUSTOMIZATION: Update these video entries with your actual project videos
+// To add your own videos:
+// 1. Upload videos to YouTube or Vimeo
+// 2. Get the embed URL (e.g., https://www.youtube.com/embed/YOUR_VIDEO_ID)
+// 3. Replace the url values below
+// 4. Update title and description to match your projects
+// =============================================================================
 
 // Video data - Update these URLs with actual project videos
 // To add your own videos:
@@ -101,6 +120,10 @@ const videoData = {
         url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
     }
 };
+
+// =============================================================================
+// VIDEO MODAL INTERACTIONS
+// =============================================================================
 
 // Open video modal
 document.querySelectorAll('.video-card').forEach(card => {
@@ -149,6 +172,10 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// =============================================================================
+// SCROLL ANIMATIONS
+// =============================================================================
+
 // Animate elements on scroll
 const observerOptions = {
     threshold: 0.1,
@@ -171,6 +198,10 @@ document.querySelectorAll('.video-card, .project-card, .timeline-item, .expertis
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// =============================================================================
+// CONTACT FORM
+// =============================================================================
 
 // Contact Form Handling
 const contactForm = document.querySelector('.contact-form');
@@ -245,6 +276,22 @@ contactForm.addEventListener('submit', (e) => {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
+        // =============================================================================
+        // FORM SUBMISSION CUSTOMIZATION
+        // =============================================================================
+        // CUSTOMIZATION: Replace this section with actual form submission logic
+        // Options:
+        // 1. Use a form service like Formspree, FormSubmit, or Netlify Forms
+        // 2. Send to your own backend API endpoint
+        // 3. Use EmailJS for client-side email sending
+        // Example with fetch API:
+        // fetch('YOUR_API_ENDPOINT', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(data)
+        // }).then(response => { ... });
+        // =============================================================================
+        
         // Here you would typically send the form data to a server
         // For now, we'll just show a success message
         showNotification('Thank you for your message! I will get back to you soon.', 'success', 4000);
@@ -266,6 +313,10 @@ contactForm.addEventListener('submit', (e) => {
         }
     }
 });
+
+// =============================================================================
+// ACTIVE NAVIGATION STATE
+// =============================================================================
 
 // Add active state to navigation based on scroll position
 window.addEventListener('scroll', () => {
@@ -289,6 +340,10 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// =============================================================================
+// PARALLAX EFFECTS
+// =============================================================================
+
 // Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
@@ -299,6 +354,10 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// =============================================================================
+// PAGE LOAD ANIMATION
+// =============================================================================
+
 // Add loading animation
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
@@ -307,6 +366,10 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// =============================================================================
+// OPTIONAL ENHANCEMENTS
+// =============================================================================
 
 // Dynamic typing effect for hero subtitle (optional enhancement)
 function typeWriter(element, text, speed = 100) {
@@ -328,6 +391,10 @@ function typeWriter(element, text, speed = 100) {
 // const heroSubtitle = document.querySelector('.hero-subtitle');
 // const originalText = heroSubtitle.textContent;
 // typeWriter(heroSubtitle, originalText, 80);
+
+// =============================================================================
+// DEVELOPER CONSOLE MESSAGE
+// =============================================================================
 
 // Console message for developers
 console.log('%c👾 Abdul Muqeet - Lead Unreal Developer', 'color: #667eea; font-size: 20px; font-weight: bold;');

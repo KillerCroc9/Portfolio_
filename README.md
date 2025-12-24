@@ -132,23 +132,23 @@ Quick navigation links and social media connections
 
 ### Adding Your Own Videos
 
-Edit `script.js` and update the `videoData` object (around line 82):
+The portfolio uses local video files from the `Video And Description` folder. To add your own videos:
+
+1. **Add your video files** to the `Video And Description` folder (supports .mp4 format)
+2. **Edit `script.js`** and update the `videoData` object (around line 96):
 
 ```javascript
 const videoData = {
     video1: {
         title: 'Your Video Title',
         description: 'Your comprehensive video description',
-        url: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        url: 'Video And Description/Your-Video-File.mp4'
     },
     // Add more videos as needed...
 };
 ```
 
-To get a YouTube embed URL:
-1. Go to your video on YouTube
-2. Click "Share" → "Embed"
-3. Copy the URL from `src="..."` (e.g., `https://www.youtube.com/embed/dQw4w9WgXcQ`)
+**Note:** Videos play directly in the browser using HTML5 video player. Ensure your video files are web-optimized (H.264 codec recommended) for best compatibility across browsers.
 
 ### Updating Projects
 
@@ -323,9 +323,10 @@ You can deploy this portfolio to any static hosting service:
    - Optimize images for web (use tools like TinyPNG)
 
 2. **Add real video content**
-   - Upload project demos to YouTube
-   - Replace embed links in `script.js`
-   - Consider adding video thumbnails
+   - Add your project demo videos (.mp4) to the `Video And Description` folder
+   - Update video file paths in `script.js`
+   - Ensure videos are web-optimized (H.264 codec) for best browser compatibility
+   - Consider adding custom video thumbnails in the HTML
 
 3. **Customize all text content**
    - Update descriptions to reflect your actual experience

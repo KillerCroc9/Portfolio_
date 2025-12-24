@@ -33,8 +33,9 @@ Use this checklist before deploying your portfolio to ensure everything is ready
 - [ ] Verify footer social links work
 
 ### Videos (Optional)
-- [ ] Upload project videos to YouTube/Vimeo
-- [ ] Update videoData object in script.js with embed URLs
+- [ ] Add your project video files (.mp4) to the `Video And Description` folder
+- [ ] Update videoData object in script.js with local video file paths
+- [ ] Ensure videos are web-optimized (H.264 codec recommended)
 - [ ] Test video modal functionality
 
 ## 🎨 Design & Branding

@@ -87,27 +87,26 @@ const closeModal = document.querySelector('.close-modal');
 // =============================================================================
 // CUSTOMIZATION: Update these video entries with your actual project videos
 // To add your own videos:
-// 1. Upload videos to YouTube or Vimeo
-// 2. Get the embed URL (e.g., https://www.youtube.com/embed/YOUR_VIDEO_ID)
-// 3. Replace the url values below
-// 4. Update title and description to match your projects
+// 1. Place video files in the "Video And Description" folder
+// 2. Update the url values below with the relative path to the video file
+// 3. Update title and description to match your projects
 // =============================================================================
 
 const videoData = {
     video1: {
         title: 'Drimon Controller - Dragon Movement & Abilities',
-        description: 'This video showcases our dragons' core movement system, featuring smooth flying and a set of basic abilities. We introduce the four elemental dragon types - Ice, Earth, Fire, and Lightning - and demonstrate their unique special powers, including instant teleportation and invisibility.',
-        url: '' // Video will be uploaded to YouTube - URL to be added
+        description: 'This video showcases our dragons\' core movement system, featuring smooth flying and a set of basic abilities. We introduce the four elemental dragon types - Ice, Earth, Fire, and Lightning - and demonstrate their unique special powers, including instant teleportation and invisibility.',
+        url: 'Video And Description/Drimon Controller.mp4'
     },
     video2: {
         title: 'Dance Plugin - Animation Controller & VFX System',
         description: 'Kids can host fun dance parties with synchronized animations and dynamic DMX-style light effects. The animation controller and VFX systems (DMX Plugin) are built independently, allowing artists and developers to work in parallel without blocking each other.',
-        url: '' // Video will be uploaded to YouTube - URL to be added
+        url: 'Video And Description/Dance Plugin.mp4'
     },
     video3: {
         title: 'Crowd Showcase - Interactive Dragon Experience',
         description: 'Multiple cute dragon types that kids can interact with in real time. They receive live updates on their devices and can watch their dragons play, eat, push objects, level up, and grow. Features include a talking dragon module for personal interactions, an active combat system in development, and console support for PS5 and Nintendo Switch.',
-        url: '' // Video will be uploaded to YouTube - URL to be added
+        url: 'Video And Description/Crowd Showcase.mp4'
     }
 };
 
@@ -140,7 +139,8 @@ document.querySelectorAll('.video-card').forEach(card => {
 // Close video modal
 closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
-    videoPlayer.src = ''; // Stop video playback
+    videoPlayer.pause(); // Pause the video
+    videoPlayer.src = ''; // Clear video source
     document.body.style.overflow = 'auto'; // Re-enable scrolling
 });
 
@@ -148,6 +148,7 @@ closeModal.addEventListener('click', () => {
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.style.display = 'none';
+        videoPlayer.pause(); // Pause the video
         videoPlayer.src = '';
         document.body.style.overflow = 'auto';
     }
@@ -157,6 +158,7 @@ window.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.style.display === 'block') {
         modal.style.display = 'none';
+        videoPlayer.pause(); // Pause the video
         videoPlayer.src = '';
         document.body.style.overflow = 'auto';
     }

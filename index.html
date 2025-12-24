@@ -581,7 +581,9 @@
         <div class="modal-content">
             <button class="close-modal" aria-label="Close video modal">&times;</button>
             <div class="video-container">
-                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Project video"></iframe>
+                <video id="videoPlayer" controls controlsList="nodownload" title="Project video">
+                    Your browser does not support the video tag.
+                </video>
             </div>
             <div class="video-description">
                 <h3 id="videoTitle"></h3>

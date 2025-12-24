@@ -37,22 +37,22 @@ This guide provides quick access to common customization tasks for your portfoli
 
 ### Add Video Content
 
-**Location:** `script.js` (Starting at line 82)
+**Location:** `script.js` (Starting at line 96)
 
 ```javascript
 const videoData = {
     video1: {
         title: 'Your Video Title',
         description: 'Detailed description of your video',
-        url: 'https://www.youtube.com/embed/YOUR_VIDEO_ID'
+        url: 'Video And Description/Your-Video-File.mp4'
     }
 };
 ```
 
-**Getting YouTube Embed URL:**
-1. Open your video on YouTube
-2. Click "Share" → "Embed"
-3. Copy the URL from `src="..."` attribute
+**Adding Local Videos:**
+1. Place your .mp4 video file in the `Video And Description` folder
+2. Update the `url` field with the relative path to your video file
+3. Ensure videos are web-optimized (H.264 codec recommended)
 
 ---
 

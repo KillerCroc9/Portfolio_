@@ -2,6 +2,27 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
+// Notification function for accessible user feedback
+function showNotification(message, type = 'info', duration = 3000) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.setAttribute('role', 'alert');
+    notification.setAttribute('aria-live', 'polite');
+    notification.textContent = message;
+    
+    // Add to document
+    document.body.appendChild(notification);
+    
+    // Remove after duration
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, duration);
+}
+
 hamburger.addEventListener('click', () => {
     const isExpanded = navMenu.classList.contains('active');
     navMenu.classList.toggle('active');
@@ -90,7 +111,7 @@ document.querySelectorAll('.video-card').forEach(card => {
         if (video) {
             // Check if video URL is provided
             if (!video.url) {
-                alert('Video coming soon! This video is not yet available.');
+                showNotification('Video coming soon! This video is not yet available.', 'info');
                 return;
             }
             
@@ -156,14 +177,17 @@ const contactForm = document.querySelector('.contact-form');
 
 // Form validation functions
 function validateEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(String(email).toLowerCase());
+    // Use browser's built-in email validation
+    const input = document.createElement('input');
+    input.type = 'email';
+    input.value = email;
+    return input.checkValidity();
 }
 
 function validateField(field) {
     const value = field.value.trim();
-    const fieldName = field.name;
-    const errorElement = document.getElementById(`${fieldName}Error`);
+    const fieldName = field.getAttribute('data-field-name') || field.placeholder || 'This field';
+    const errorElement = document.getElementById(`${field.name}Error`);
     let isValid = true;
     let errorMessage = '';
 
@@ -173,7 +197,7 @@ function validateField(field) {
 
     if (field.hasAttribute('required') && !value) {
         isValid = false;
-        errorMessage = `${field.placeholder} is required`;
+        errorMessage = `${fieldName} is required`;
     } else if (field.type === 'email' && value && !validateEmail(value)) {
         isValid = false;
         errorMessage = 'Please enter a valid email address';
@@ -181,7 +205,7 @@ function validateField(field) {
         const minLength = parseInt(field.getAttribute('minlength'));
         if (value.length > 0 && value.length < minLength) {
             isValid = false;
-            errorMessage = `${field.placeholder} must be at least ${minLength} characters`;
+            errorMessage = `${fieldName} must be at least ${minLength} characters`;
         }
     }
 
@@ -223,7 +247,7 @@ contactForm.addEventListener('submit', (e) => {
         
         // Here you would typically send the form data to a server
         // For now, we'll just show a success message
-        alert('Thank you for your message! I will get back to you soon.');
+        showNotification('Thank you for your message! I will get back to you soon.', 'success', 4000);
         contactForm.reset();
         
         // Clear any validation states

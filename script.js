@@ -113,11 +113,6 @@ const videoData = {
         title: 'Crowd Showcase - Interactive Dragon Experience',
         description: 'Multiple cute dragon types that kids can interact with in real time. They receive live updates on their devices and can watch their dragons play, eat, push objects, level up, and grow. Features include a talking dragon module for personal interactions, an active combat system in development, and console support for PS5 and Nintendo Switch.',
         url: '' // Video will be uploaded to YouTube - URL to be added
-    },
-    video4: {
-        title: 'Multiplayer Game Architecture',
-        description: 'Deep dive into scalable multiplayer game systems with AI-enhanced matchmaking. We cover server architecture, latency optimization, anti-cheat systems, and how machine learning improves player matching and game balance.',
-        url: '' // Add your video URL here: https://www.youtube.com/embed/YOUR_VIDEO_ID
     }
 };
 

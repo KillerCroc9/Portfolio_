@@ -1311,6 +1311,18 @@ section {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+    
+    .gen-images-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gen-project {
+        padding: 1.5rem;
+    }
+    
+    .gen-project-title {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {

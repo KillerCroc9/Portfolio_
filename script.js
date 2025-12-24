@@ -330,5 +330,5 @@ function typeWriter(element, text, speed = 100) {
 // typeWriter(heroSubtitle, originalText, 80);
 
 // Console message for developers
-console.log('%c👾 Game Dev & Gen AI Portfolio', 'color: #667eea; font-size: 20px; font-weight: bold;');
+console.log('%c👾 Abdul Muqeet - Lead Unreal Developer', 'color: #667eea; font-size: 20px; font-weight: bold;');
 console.log('%cInterested in collaborating? Let\'s build something amazing!', 'color: #764ba2; font-size: 14px;');

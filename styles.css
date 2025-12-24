@@ -658,6 +658,143 @@ section {
     color: var(--accent-color);
 }
 
+/* Generative AI Section */
+.generative-ai {
+    background: var(--dark-bg);
+    padding: 5rem 0;
+}
+
+.gen-project {
+    margin-bottom: 4rem;
+    padding: 2.5rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: var(--transition);
+}
+
+.gen-project:hover {
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+}
+
+.gen-project-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    background: var(--gradient-1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gen-project-description {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.gen-images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.gen-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: var(--transition);
+    border: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.gen-image:hover {
+    transform: scale(1.05);
+    border-color: rgba(102, 126, 234, 0.5);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.gen-image-single {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem auto;
+    display: block;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.gen-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+.gen-features-list li {
+    padding: 0.8rem 0 0.8rem 2rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.gen-features-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.gen-workflow {
+    margin-top: 1.5rem;
+}
+
+.gen-workflow h4 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.gen-workflow ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.gen-workflow ul li {
+    padding: 0.8rem 0 0.8rem 2rem;
+    position: relative;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.gen-workflow ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.gen-workflow p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-top: 1rem;
+}
+
+.gen-workflow strong {
+    color: var(--text-primary);
+}
+
+.gen-sprite-example {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
 /* Experience Section */
 .experience {
     background: var(--dark-bg);

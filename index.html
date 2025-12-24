@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of a Game Development and Generative AI Lead, showcasing innovative projects combining cutting-edge AI with immersive gaming experiences.">
+    <meta name="keywords" content="game development, generative AI, AI game mechanics, Unity, Unreal Engine, machine learning, game design, portfolio">
+    <meta name="author" content="Game Dev & Gen AI Lead">
+    <meta property="og:title" content="Portfolio - Game Dev & Gen AI Lead">
+    <meta property="og:description" content="Leading Innovation in Gaming and Generative AI">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio - Game Dev & Gen AI Lead">
+    <meta name="twitter:description" content="Leading Innovation in Gaming and Generative AI">
     <title>Portfolio - Game Dev & Gen AI Lead</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
             <div class="nav-brand">
                 <h1>Portfolio</h1>
@@ -22,11 +31,11 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
 
@@ -42,7 +51,7 @@
             </div>
         </div>
         <div class="hero-scroll">
-            <a href="#about"><i class="fas fa-chevron-down"></i></a>
+            <a href="#about" aria-label="Scroll down to about section"><i class="fas fa-chevron-down"></i></a>
         </div>
     </section>
 
@@ -353,18 +362,26 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" data-field-name="Name" placeholder="Your Name" required aria-required="true" minlength="2">
+                        <span class="error-message" id="nameError"></span>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" data-field-name="Email" placeholder="Your Email" required aria-required="true">
+                        <span class="error-message" id="emailError"></span>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject">
+                        <label for="subject" class="sr-only">Subject</label>
+                        <input type="text" id="subject" name="subject" data-field-name="Subject" placeholder="Subject" minlength="3">
+                        <span class="error-message" id="subjectError"></span>
                     </div>
                     <div class="form-group">
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea rows="5" id="message" name="message" data-field-name="Message" placeholder="Your Message" required aria-required="true" minlength="10"></textarea>
+                        <span class="error-message" id="messageError"></span>
                     </div>
                     <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
@@ -406,11 +423,11 @@
     </footer>
 
     <!-- Video Modal -->
-    <div id="videoModal" class="modal">
+    <div id="videoModal" class="modal" role="dialog" aria-labelledby="videoTitle" aria-modal="true">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <button class="close-modal" aria-label="Close video modal">&times;</button>
             <div class="video-container">
-                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="videoPlayer" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Project video"></iframe>
             </div>
             <div class="video-description">
                 <h3 id="videoTitle"></h3>

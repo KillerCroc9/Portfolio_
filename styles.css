@@ -97,6 +97,9 @@ body {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .hamburger span {
@@ -669,6 +672,81 @@ section {
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+.form-group input.invalid,
+.form-group textarea.invalid {
+    border-color: #f56565;
+}
+
+.error-message {
+    display: block;
+    color: #f56565;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    min-height: 1.25rem;
+}
+
+/* Notification/Toast Styles */
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-left: 4px solid var(--primary-color);
+    z-index: 3000;
+    animation: slideIn 0.3s ease;
+    max-width: 400px;
+}
+
+.notification.success {
+    border-left-color: #48bb78;
+}
+
+.notification.info {
+    border-left-color: #4299e1;
+}
+
+.notification.warning {
+    border-left-color: #ed8936;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .contact-form button {
     width: fit-content;
     cursor: pointer;
@@ -775,6 +853,10 @@ section {
     font-weight: bold;
     cursor: pointer;
     transition: var(--transition);
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
 }
 
 .close-modal:hover {

@@ -93,11 +93,6 @@ const closeModal = document.querySelector('.close-modal');
 // 4. Update title and description to match your projects
 // =============================================================================
 
-// Video data - Update these URLs with actual project videos
-// To add your own videos:
-// 1. Upload videos to YouTube or Vimeo
-// 2. Get the embed URL (e.g., https://www.youtube.com/embed/YOUR_VIDEO_ID)
-// 3. Replace the url values below
 const videoData = {
     video1: {
         title: 'Drimon Controller - Dragon Movement & Abilities',

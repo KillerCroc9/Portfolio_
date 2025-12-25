@@ -514,3 +514,49 @@ body {
         font-size: 1.2rem;
     }
 }
+
+/* About Button Styles */
+.about-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    animation: fadeIn 1s ease-out 0.5s backwards;
+}
+
+.about-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid var(--neon-green);
+    font-size: 1rem;
+    font-weight: 600;
+    transition: var(--transition);
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.about-button:hover {
+    background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
+    color: var(--deep-space);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 10px 30px var(--hover-glow),
+        0 0 25px var(--neon-green);
+    border-color: var(--neon-cyan);
+}
+
+.about-button i {
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.about-button:hover i {
+    transform: scale(1.1);
+}
+

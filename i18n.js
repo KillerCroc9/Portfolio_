@@ -262,16 +262,8 @@ function initI18n() {
     setCurrentLanguage(currentLang);
     updatePageTranslations(currentLang);
     
-    // Update language button
-    const langBtn = document.getElementById('language-toggle');
-    if (langBtn) {
-        const langText = langBtn.querySelector('.lang-text');
-        if (langText) {
-            langText.textContent = currentLang.toUpperCase();
-        }
-        
-        langBtn.addEventListener('click', toggleLanguage);
-    }
+    // Note: Language toggle button has been removed from the UI
+    // The i18n system still works for potential future use
 }
 
 // Initialize i18n when DOM is loaded

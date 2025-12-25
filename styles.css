@@ -107,6 +107,7 @@ body {
     padding: 0;
 }
 
+.nav-brand h1 {
     font-size: 1.5rem;
     background: var(--gradient-1);
     -webkit-background-clip: text;
@@ -141,16 +142,6 @@ body {
 
 .nav-menu a:hover::after {
     width: 100%;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 4px;
-    background: none;
-    border: none;
-    padding: 0;
 }
 
 .hamburger span {

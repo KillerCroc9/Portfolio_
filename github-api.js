@@ -101,7 +101,6 @@ function createRepoCard(repo) {
         html_url,
         stargazers_count,
         forks_count,
-        language,
         updated_at
     } = repo;
     
@@ -124,7 +123,6 @@ function createRepoCard(repo) {
                     <span>${forks_count}</span>
                 </span>
             </div>
-            ${language ? `<span class="repo-language">${language}</span>` : ''}
             <div class="repo-updated">Updated ${formatRelativeTime(updated_at)}</div>
         </div>
     `;

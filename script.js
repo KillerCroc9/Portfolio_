@@ -242,7 +242,7 @@ const videoData = {
         type: 'youtube'
     },
     video6: {
-        title: '🎥 Tech Art Portfolio – Blender · Unreal Engine · Real-Time Rendering',
+        title: 'Tech Art Portfolio – Blender · Unreal Engine · Real-Time Rendering',
         description: 'Showcasing a fusion of procedural artistry, AI-driven workflows, and real-time rendering tools across Blender and Unreal Engine.\n\n🔹 Geo Nodes to Vertex Animation: Procedural motion built in Blender using geometry nodes, exported to Unreal as performant vertex animations.\n\n🔹 MoCap to Meta Human Targeting Tool: Streamlined mocap data processing and custom targeting solutions for flexible animation retargeting.\n\n🔹 Shader Systems & LUTs: Custom Unreal materials with LUT-based grading and layered shader blending.\n\n🔹 Rendering Pipelines: Optimized real-time rendering flows, including custom post-process and LOD management.\n\n🔹 Crowd Systems: Efficient vertex-animated crowd systems for large-scale scenes.\n\n🔹 3D Modeling & Environment Art: Stylized and photoreal 3D assets integrated into immersive world-building pipelines.',
         url: 'https://www.youtube.com/watch?v=S--HI8G9OLA',
         type: 'youtube'

@@ -33,8 +33,6 @@ const translations = {
             awards_title: 'Awards & Leadership',
             videos_title: 'Project Showcase',
             projects_title: 'Relevant Projects',
-            github_title: 'GitHub Repositories',
-            github_subtitle: 'Live statistics from my most popular open source projects',
             experience_title: 'Experience',
             contact_title: 'Get In Touch',
             contact_subtitle: "Let's collaborate on your next game development project"
@@ -96,8 +94,6 @@ const translations = {
             awards_title: 'ایوارڈز اور قیادت',
             videos_title: 'پروجیکٹ شوکیس',
             projects_title: 'متعلقہ منصوبے',
-            github_title: 'گٹ ہب ریپوزٹریز',
-            github_subtitle: 'میرے مقبول اوپن سورس منصوبوں سے لائیو اعداد و شمار',
             experience_title: 'تجربہ',
             contact_title: 'رابطے میں رہیں',
             contact_subtitle: 'آئیے آپ کے اگلے گیم ڈویلپمنٹ پروجیکٹ پر تعاون کریں'

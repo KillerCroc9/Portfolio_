@@ -1331,6 +1331,36 @@ section {
     }
 }
 
+/* GSAP Animation Support */
+.gsap-animate {
+    will-change: transform, opacity;
+}
+
+/* 3D transform support for card hover effects */
+.project-card,
+.video-card,
+.award-card,
+.expertise-item {
+    transform-style: preserve-3d;
+    transition: var(--transition);
+}
+
+/* Smooth scroll behavior */
+html.smooth-scroll {
+    scroll-behavior: auto; /* Let GSAP handle smooth scrolling */
+}
+
+/* Performance optimization for animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 /* Lazy Loading Images */
 img[loading="lazy"] {
     opacity: 0;

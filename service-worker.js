@@ -2,8 +2,8 @@
 // SERVICE WORKER FOR PWA OFFLINE CAPABILITY
 // =============================================================================
 
-const CACHE_NAME = 'portfolio-v1.0.0';
-const DYNAMIC_CACHE_NAME = 'portfolio-dynamic-v1.0.0';
+const CACHE_NAME = 'portfolio-v1.1.0';
+const DYNAMIC_CACHE_NAME = 'portfolio-dynamic-v1.1.0';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -11,9 +11,13 @@ const STATIC_ASSETS = [
     '/Portfolio_/index.html',
     '/Portfolio_/styles.css',
     '/Portfolio_/script.js',
+    '/Portfolio_/animations.js',
     '/Portfolio_/i18n.js',
     '/Portfolio_/manifest.json',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js'
 ];
 
 // Install event - cache static assets

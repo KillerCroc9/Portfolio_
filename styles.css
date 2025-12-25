@@ -1379,6 +1379,11 @@ section {
     }
 }
 
+@keyframes glow-pulse {
+    0%, 100% { filter: drop-shadow(0 0 10px var(--neon-green)); }
+    50% { filter: drop-shadow(0 0 20px var(--neon-green)) drop-shadow(0 0 30px var(--neon-cyan)); }
+}
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
@@ -1398,6 +1403,11 @@ section {
     50% {
         opacity: 0.7;
     }
+}
+
+@keyframes pulse-bg {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 }
 
 /* GSAP Animation Support */

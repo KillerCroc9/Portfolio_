@@ -24,6 +24,12 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#667eea">
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Abdul Muqeet Portfolio">
+    
     <title>Abdul Muqeet - Lead Unreal Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,32 +42,40 @@
                 <h1>Abdul Muqeet</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#generative-ai">Generative AI</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#videos" data-i18n="nav.videos">Videos</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#generative-ai" data-i18n="nav.generative_ai">Generative AI</a></li>
+                <li><a href="#awards" data-i18n="nav.awards">Awards</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
-            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle dark/light theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="language-toggle" class="icon-btn" aria-label="Toggle language" title="Change language">
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1 class="hero-title">Abdul Muqeet</h1>
-            <p class="hero-subtitle">Lead Unreal Developer (C++)</p>
-            <p class="hero-description">Building immersive experiences with Unreal Engine, integrating AI technologies, and leading technical innovation</p>
+            <h1 class="hero-title" data-i18n="hero.title">Abdul Muqeet</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Lead Unreal Developer (C++)</p>
+            <p class="hero-description" data-i18n="hero.description">Building immersive experiences with Unreal Engine, integrating AI technologies, and leading technical innovation</p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <a href="#projects" class="btn btn-primary" data-i18n="hero.view_projects">View Projects</a>
+                <a href="#contact" class="btn btn-secondary" data-i18n="hero.get_in_touch">Get in Touch</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -72,7 +86,7 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title" data-i18n="sections.about_title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
                     <p class="about-intro">
@@ -114,7 +128,7 @@
     <!-- Video Showcase Section -->
     <section id="videos" class="videos">
         <div class="container">
-            <h2 class="section-title">Project Showcase</h2>
+            <h2 class="section-title" data-i18n="sections.videos_title">Project Showcase</h2>
             <p class="section-subtitle">Video demonstrations of dragon game systems, including movement, animations, and interactive gameplay</p>
             <div class="videos-grid">
                 <!-- Video 1: Drimon Controller -->
@@ -165,7 +179,7 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title" data-i18n="sections.education_title">Education</h2>
             <div class="education-content">
                 <div class="education-item">
                     <div class="education-icon">
@@ -194,7 +208,7 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
+            <h2 class="section-title" data-i18n="sections.skills_title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3><i class="fas fa-code"></i> Languages</h3>
@@ -251,7 +265,7 @@
     <!-- Awards and Leadership Section -->
     <section id="awards" class="awards">
         <div class="container">
-            <h2 class="section-title">Awards & Leadership</h2>
+            <h2 class="section-title" data-i18n="sections.awards_title">Awards & Leadership</h2>
             <div class="awards-grid">
                 <div class="award-card">
                     <div class="award-icon">
@@ -317,7 +331,7 @@
     <!-- Update project links from "#" to actual GitHub repos or live demos -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Relevant Projects</h2>
+            <h2 class="section-title" data-i18n="sections.projects_title">Relevant Projects</h2>
             <p class="section-subtitle">Academic and personal projects showcasing technical expertise</p>
             <div class="projects-grid">
                 <!-- Project 1 -->
@@ -387,6 +401,20 @@
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Details</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Repositories Section -->
+    <section id="github-repos" class="github-repos">
+        <div class="container">
+            <h2 class="section-title" data-i18n="sections.github_title">GitHub Repositories</h2>
+            <p class="section-subtitle" data-i18n="sections.github_subtitle">Live statistics from my most popular open source projects</p>
+            <div id="github-repos-grid" class="github-repos-grid">
+                <div class="loading-state">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading repositories...</p>
                 </div>
             </div>
         </div>
@@ -613,7 +641,7 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
+            <h2 class="section-title" data-i18n="sections.experience_title">Experience</h2>
             <p class="section-subtitle">Professional journey in game development</p>
             <div class="timeline">
                 <!-- Timeline Item 1 -->
@@ -708,8 +736,8 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's collaborate on your next game development project</p>
+            <h2 class="section-title" data-i18n="sections.contact_title">Get In Touch</h2>
+            <p class="section-subtitle" data-i18n="sections.contact_subtitle">Let's collaborate on your next game development project</p>
             <div class="contact-content">
                 <div class="contact-info">
                     <div class="contact-item">
@@ -736,26 +764,26 @@
                 </div>
                 <form class="contact-form" id="contactForm" novalidate>
                     <div class="form-group">
-                        <label for="name" class="sr-only">Your Name</label>
-                        <input type="text" id="name" name="name" data-field-name="Name" placeholder="Your Name" required aria-required="true" minlength="2">
+                        <label for="name" class="sr-only" data-i18n="form.name_placeholder">Your Name</label>
+                        <input type="text" id="name" name="name" data-field-name="Name" placeholder="Your Name" data-i18n-placeholder="form.name_placeholder" required aria-required="true" minlength="2">
                         <span class="error-message" id="nameError"></span>
                     </div>
                     <div class="form-group">
-                        <label for="email" class="sr-only">Your Email</label>
-                        <input type="email" id="email" name="email" data-field-name="Email" placeholder="Your Email" required aria-required="true">
+                        <label for="email" class="sr-only" data-i18n="form.email_placeholder">Your Email</label>
+                        <input type="email" id="email" name="email" data-field-name="Email" placeholder="Your Email" data-i18n-placeholder="form.email_placeholder" required aria-required="true">
                         <span class="error-message" id="emailError"></span>
                     </div>
                     <div class="form-group">
-                        <label for="subject" class="sr-only">Subject</label>
-                        <input type="text" id="subject" name="subject" data-field-name="Subject" placeholder="Subject" minlength="3">
+                        <label for="subject" class="sr-only" data-i18n="form.subject_placeholder">Subject</label>
+                        <input type="text" id="subject" name="subject" data-field-name="Subject" placeholder="Subject" data-i18n-placeholder="form.subject_placeholder" minlength="3">
                         <span class="error-message" id="subjectError"></span>
                     </div>
                     <div class="form-group">
-                        <label for="message" class="sr-only">Your Message</label>
-                        <textarea rows="5" id="message" name="message" data-field-name="Message" placeholder="Your Message" required aria-required="true" minlength="10"></textarea>
+                        <label for="message" class="sr-only" data-i18n="form.message_placeholder">Your Message</label>
+                        <textarea rows="5" id="message" name="message" data-field-name="Message" placeholder="Your Message" data-i18n-placeholder="form.message_placeholder" required aria-required="true" minlength="10"></textarea>
                         <span class="error-message" id="messageError"></span>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary" data-i18n="form.send_button">Send Message</button>
                 </form>
             </div>
         </div>
@@ -766,11 +794,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About</h3>
-                    <p>Lead Unreal Developer specializing in C++, AI integration, and game development</p>
+                    <h3 data-i18n="footer.about_heading">About</h3>
+                    <p data-i18n="footer.about_text">Lead Unreal Developer specializing in C++, AI integration, and game development</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h3 data-i18n="footer.quick_links">Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
@@ -782,7 +810,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Connect</h3>
+                    <h3 data-i18n="footer.connect">Connect</h3>
                     <div class="social-links">
                         <a href="https://github.com/KillerCroc9" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -811,6 +839,24 @@
         </div>
     </div>
 
+    <!-- Analytics Scripts -->
+    <!-- Google Analytics (Replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // Uncomment and add your GA4 tracking ID to enable
+        // gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Plausible Analytics (Alternative, privacy-friendly option) -->
+    <!-- Uncomment to enable Plausible Analytics -->
+    <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
+
     <script src="script.js"></script>
+    <script src="i18n.js"></script>
+    <script src="github-api.js"></script>
+    <script src="sw-register.js"></script>
 </body>
 </html>

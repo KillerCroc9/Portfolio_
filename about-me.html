@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get to Know Me - Personal projects and insights from KillerCroc9">
+    <meta name="keywords" content="game development, Unreal Engine, projects, portfolio, KillerCroc9">
+    <meta name="author" content="KillerCroc9">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://killercroc9.github.io/Portfolio_/about-me.html">
+    <meta property="og:title" content="KillerCroc9 - Get to Know Me">
+    <meta property="og:description" content="Personal projects and insights from KillerCroc9">
+    <meta property="og:image" content="https://killercroc9.github.io/Portfolio_/assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://killercroc9.github.io/Portfolio_/about-me.html">
+    <meta name="twitter:title" content="KillerCroc9 - Get to Know Me">
+    <meta name="twitter:description" content="Personal projects and insights from KillerCroc9">
+    <meta name="twitter:image" content="https://killercroc9.github.io/Portfolio_/assets/og-image.jpg">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#667eea">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="KillerCroc9 Portfolio">
+    
+    <title>KillerCroc9 - Get to Know Me</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- GSAP Library for Advanced Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTKWB1WRTZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DTKWB1WRTZ');
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>KillerCroc9</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Main</a></li>
+                <li><a href="unreal-portfolio.html"><i class="fas fa-gamepad"></i> Unreal Portfolio</a></li>
+                <li><a href="ai-portfolio.html"><i class="fas fa-brain"></i> AI Portfolio</a></li>
+                <li><a href="about-me.html" class="active">Get to Know Me</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle dark/light theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Get to Know Me</h1>
+            <p class="hero-subtitle">Personal Projects & Insights</p>
+            <p class="hero-description">A deeper look into my personal projects, experiments, and creative endeavors</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="unreal-portfolio.html" class="btn btn-secondary">Back to Portfolio</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <a href="#projects" aria-label="Scroll down to projects"><i class="fas fa-chevron-down"></i></a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Personal Projects</h2>
+            <p class="section-subtitle">Academic and personal projects showcasing technical expertise and passion</p>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/667eea/ffffff?text=OpenAI+Game+Project" alt="Final Year Project">
+                        <div class="project-overlay">
+                            <span class="status-badge active">Completed</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Final Year Project - AI NPC Dialogue System</h3>
+                        <p>Developed a game using OpenAI's fine-tuned models to generate dynamic protagonist-NPC interaction dialogues. The dialogues reflect each NPC's unique personality and history, created using a handcrafted dataset.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">Fine-tuning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/764ba2/ffffff?text=Motion+Capture" alt="Mocap Project">
+                        <div class="project-overlay">
+                            <span class="status-badge active">Completed</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Motion Capture Project</h3>
+                        <p>Worked on a Motion Capture project using MediaPipe and Blender. Utilized MediaPipe to capture motion data and Blender to process it, creating high-quality animations from the processed data with ChArUco calibration.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MediaPipe</span>
+                            <span class="tech-tag">Blender</span>
+                            <span class="tech-tag">ChArUco</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/600x400/f093fb/ffffff?text=Reinforcement+Learning" alt="RL Project">
+                        <div class="project-overlay">
+                            <span class="status-badge active">Active Development</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Reinforcement Learning Project</h3>
+                        <p>Developing a chess and cube game in Unreal Engine where players avoid obstacles. Handling data management, optimization, and simulation of 10,000+ scenarios for RL agent training, collaborating on AI development and model implementation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Unreal Engine</span>
+                            <span class="tech-tag">RL</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's collaborate on your next project</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>Muqeeta2@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <h3>LinkedIn</h3>
+                            <p><a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">abdul-muqeet-765283207</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <h3>GitHub</h3>
+                            <p><a href="https://github.com/KillerCroc9" target="_blank" style="color: var(--text-secondary); text-decoration: none;">KillerCroc9</a></p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="sr-only">Your Name</label>
+                        <input type="text" id="name" name="name" data-field-name="Name" placeholder="Your Name" required aria-required="true" minlength="2">
+                        <span class="error-message" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="sr-only">Your Email</label>
+                        <input type="email" id="email" name="email" data-field-name="Email" placeholder="Your Email" required aria-required="true">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" class="sr-only">Subject</label>
+                        <input type="text" id="subject" name="subject" data-field-name="Subject" placeholder="Subject" minlength="3">
+                        <span class="error-message" id="subjectError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="sr-only">Your Message</label>
+                        <textarea rows="5" id="message" name="message" data-field-name="Message" placeholder="Your Message" required aria-required="true" minlength="10"></textarea>
+                        <span class="error-message" id="messageError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>Team Lead - Unreal Developer specializing in C++, AI integration, and team leadership</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="unreal-portfolio.html">Unreal Portfolio</a></li>
+                        <li><a href="ai-portfolio.html">AI Portfolio</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/KillerCroc9" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 KillerCroc9. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

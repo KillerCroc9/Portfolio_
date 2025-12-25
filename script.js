@@ -214,23 +214,47 @@ const videoData = {
     video1: {
         title: 'Drimon Controller - Dragon Movement & Abilities',
         description: 'This video showcases our dragons\' core movement system, featuring smooth flying and a set of basic abilities. We introduce the four elemental dragon types - Ice, Earth, Fire, and Lightning - and demonstrate their unique special powers, including instant teleportation and invisibility.',
-        url: 'Video And Description/Drimon Controller.mp4'
+        url: 'Video And Description/Drimon Controller.mp4',
+        type: 'local'
     },
     video2: {
         title: 'Dance Plugin - Animation Controller & VFX System',
         description: 'Kids can host fun dance parties with synchronized animations and dynamic DMX-style light effects. The animation controller and VFX systems (DMX Plugin) are built independently, allowing artists and developers to work in parallel without blocking each other.',
-        url: 'Video And Description/Dance Plugin.mp4'
+        url: 'Video And Description/Dance Plugin.mp4',
+        type: 'local'
     },
     video3: {
         title: 'Crowd Showcase - Interactive Dragon Experience',
         description: 'Multiple cute dragon types that kids can interact with in real time. They receive live updates on their devices and can watch their dragons play, eat, push objects, level up, and grow. Features include a talking dragon module for personal interactions, an active combat system in development, and console support for PS5 and Nintendo Switch.',
-        url: 'Video And Description/Crowd Showcase.mp4'
+        url: 'Video And Description/Crowd Showcase.mp4',
+        type: 'local'
+    },
+    video4: {
+        title: 'Featured Project Demo 1',
+        description: 'Watch this project demonstration showcasing development work and technical implementation.',
+        url: 'https://www.youtube.com/watch?v=C00zGXMSzhg',
+        type: 'youtube'
+    },
+    video5: {
+        title: 'Featured Project Demo 2',
+        description: 'Explore this project showcasing technical skills and development expertise.',
+        url: 'https://www.youtube.com/watch?v=l9VfiII_DP8',
+        type: 'youtube'
+    },
+    video6: {
+        title: 'Featured Project Demo 3',
+        description: 'Detailed demonstration of technical implementation and project features.',
+        url: 'https://www.youtube.com/watch?v=S--HI8G9OLA',
+        type: 'youtube'
     }
 };
 
 // =============================================================================
 // VIDEO MODAL INTERACTIONS
 // =============================================================================
+
+// Get YouTube player element
+const youtubePlayer = document.getElementById('youtubePlayer');
 
 // Open video modal
 document.querySelectorAll('.video-card').forEach(card => {
@@ -250,7 +274,23 @@ document.querySelectorAll('.video-card').forEach(card => {
             
             videoTitle.textContent = video.title;
             videoDesc.textContent = video.description;
-            videoPlayer.src = video.url;
+            
+            // Handle YouTube videos
+            if (video.type === 'youtube') {
+                // Extract YouTube ID from URL
+                const youtubeIdMatch = video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+                if (youtubeIdMatch && youtubeIdMatch[1]) {
+                    videoPlayer.style.display = 'none';
+                    youtubePlayer.style.display = 'block';
+                    youtubePlayer.src = `https://www.youtube.com/embed/${youtubeIdMatch[1]}?autoplay=1`;
+                }
+            } else {
+                // Handle local videos
+                youtubePlayer.style.display = 'none';
+                videoPlayer.style.display = 'block';
+                videoPlayer.src = video.url;
+            }
+            
             modal.style.display = 'block';
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
@@ -262,6 +302,7 @@ closeModal.addEventListener('click', () => {
     modal.style.display = 'none';
     videoPlayer.pause(); // Pause the video
     videoPlayer.src = ''; // Clear video source
+    youtubePlayer.src = ''; // Clear YouTube iframe
     document.body.style.overflow = 'auto'; // Re-enable scrolling
 });
 
@@ -271,6 +312,7 @@ window.addEventListener('click', (e) => {
         modal.style.display = 'none';
         videoPlayer.pause(); // Pause the video
         videoPlayer.src = '';
+        youtubePlayer.src = ''; // Clear YouTube iframe
         document.body.style.overflow = 'auto';
     }
 });
@@ -281,6 +323,7 @@ document.addEventListener('keydown', (e) => {
         modal.style.display = 'none';
         videoPlayer.pause(); // Pause the video
         videoPlayer.src = '';
+        youtubePlayer.src = ''; // Clear YouTube iframe
         document.body.style.overflow = 'auto';
     }
 });

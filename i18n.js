@@ -20,9 +20,9 @@ const translations = {
             contact: 'Contact'
         },
         hero: {
-            title: 'Abdul Muqeet',
-            subtitle: 'Lead Unreal Developer (C++)',
-            description: 'Building immersive experiences with Unreal Engine, integrating AI technologies, and leading technical innovation',
+            title: 'KillerCroc9',
+            subtitle: 'Team Lead - Unreal Developer (C++)',
+            description: 'Leading a dedicated Unreal Engine team, building immersive experiences with cutting-edge AI technologies and driving company growth',
             view_projects: 'View Projects',
             get_in_touch: 'Get in Touch'
         },
@@ -52,7 +52,7 @@ const translations = {
         },
         footer: {
             about_heading: 'About',
-            about_text: 'Lead Unreal Developer specializing in C++, AI integration, and game development',
+            about_text: 'Team Lead - Unreal Developer specializing in C++, AI integration, and team leadership',
             quick_links: 'Quick Links',
             connect: 'Connect',
             copyright: 'All rights reserved.'

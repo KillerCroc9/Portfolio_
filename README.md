@@ -1,11 +1,11 @@
-# Portfolio Website - Lead Unreal Developer
+# Portfolio Website - Team Lead - Unreal Developer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-> A modern, professional portfolio website showcasing expertise in Unreal Engine development, C++ programming, AI integration, and game development leadership.
+> A modern, professional portfolio website showcasing expertise in Unreal Engine development, C++ programming, AI integration, team leadership, and driving company growth.
 
 **Live Demo:** [View Portfolio](https://killercroc9.github.io/Portfolio_/)
 
@@ -133,7 +133,7 @@ Showcase of relevant academic and personal projects including:
 
 ### 7. **Experience Section**
 Professional timeline featuring:
-- Lead Unreal Developer at AB {Ark} Private Limited
+- Team Lead - Unreal Developer at AB {Ark} Private Limited
 - Senior Unreal Developer at Moshpit Studios
 - Freelance Game Development
 - Unity Development at Virtual Dive
@@ -464,7 +464,7 @@ You are free to:
 
 ## 📧 Contact
 
-**Abdul Muqeet** - Lead Unreal Developer
+**KillerCroc9** - Team Lead - Unreal Developer
 
 - Email: [Muqeeta2@gmail.com](mailto:Muqeeta2@gmail.com)
 - LinkedIn: [abdul-muqeet-765283207](https://www.linkedin.com/in/abdul-muqeet-765283207/)
@@ -485,6 +485,6 @@ You are free to:
 
 **⭐ Star this repo if you found it helpful!**
 
-Made with ❤️ by Abdul Muqeet
+Made with ❤️ by KillerCroc9
 
 </div>

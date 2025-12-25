@@ -28,6 +28,7 @@
 
 ## 📚 Additional Documentation
 
+- **[ANIMATIONS.md](ANIMATIONS.md)** - Complete guide to GSAP animations and customization (NEW)
 - **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick reference for common customization tasks
 - **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** - Comprehensive pre-deployment checklist
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to this project
@@ -40,6 +41,7 @@ A modern, professional portfolio website showcasing expertise in game developmen
 ## ✨ Features
 
 - **Responsive Design** - Seamlessly adapts to desktop, tablet, and mobile devices with fluid layouts
+- **Advanced Animations** - Powered by GSAP for smooth, professional animations throughout the site
 - **Professional Sections** - Comprehensive showcase including About, Experience, Projects, Awards, and Contact
 - **Video Showcase** - Display project demos and explanations with embedded video player modal
 - **GitHub API Integration** - Live repository statistics with stars, forks, and last update
@@ -51,9 +53,9 @@ A modern, professional portfolio website showcasing expertise in game developmen
 - **Progressive Web App** - Installable, works offline, and provides app-like experience
 - **Analytics Integration** - Google Analytics and Plausible Analytics support
 - **Performance Optimized** - Lazy loading images, service worker caching, and optimized assets
-- **Smooth Animations** - Modern UI with intersection observer-based scroll animations
+- **Smooth Scroll Animations** - GSAP-powered scroll-triggered animations and parallax effects
 - **SEO Optimized** - Includes meta tags for social sharing and search engines
-- **Accessible** - ARIA labels and semantic HTML for screen readers
+- **Accessible** - ARIA labels, semantic HTML, and respects prefers-reduced-motion
 
 ---
 
@@ -70,12 +72,14 @@ Portfolio_/
 ├── index.html                    # Main HTML structure
 ├── styles.css                    # Complete styling with responsive design
 ├── script.js                     # Core interactive features and animations
+├── animations.js                 # GSAP-powered advanced animations (NEW)
 ├── github-api.js                 # GitHub API integration
 ├── i18n.js                       # Internationalization system
 ├── sw-register.js                # Service worker registration
 ├── service-worker.js             # PWA service worker for offline support
 ├── manifest.json                 # PWA manifest configuration
 ├── README.md                     # Main documentation
+├── ANIMATIONS.md                 # Advanced animations documentation (NEW)
 ├── FEATURES.md                   # Detailed features documentation
 ├── LICENSE                       # MIT License
 ├── CONTRIBUTING.md               # Contribution guidelines
@@ -356,8 +360,10 @@ You can deploy this portfolio to any static hosting service:
 | **HTML5** | Semantic markup and structure |
 | **CSS3** | Styling with Flexbox, Grid, and Animations |
 | **JavaScript (ES6+)** | Interactive features and form validation |
+| **GSAP 3.12.5** | Advanced animations and scroll effects |
+| **ScrollTrigger** | Scroll-based animation triggers |
 | **Font Awesome 6.4.0** | Icon library for UI elements |
-| **Intersection Observer API** | Scroll-based animations |
+| **Intersection Observer API** | Fallback scroll animations |
 | **CSS Custom Properties** | Theming and easy customization |
 
 ---
@@ -402,6 +408,10 @@ You can deploy this portfolio to any static hosting service:
 
 The following features have been implemented:
 
+- ✅ **Advanced GSAP animations** with smooth scroll triggers and parallax effects
+- ✅ **3D card hover effects** with dynamic tilt based on mouse position
+- ✅ **Professional entrance animations** for all sections and elements
+- ✅ **Accessibility support** respecting prefers-reduced-motion preferences
 - ✅ **GitHub API integration** to show live repository statistics
 - ✅ **Analytics tracking** (Google Analytics, Plausible, etc.)
 - ✅ **Dark/Light theme toggle** for user preference
@@ -409,7 +419,7 @@ The following features have been implemented:
 - ✅ **PWA features** for offline capability and installability
 - ✅ **Performance optimization** with lazy loading and caching
 
-📖 For detailed documentation, see [FEATURES.md](FEATURES.md)
+📖 For detailed documentation, see [FEATURES.md](FEATURES.md) and [ANIMATIONS.md](ANIMATIONS.md)
 
 ## 🔮 Future Enhancements
 
@@ -422,7 +432,7 @@ Consider adding:
 - [ ] **Backend integration** for functional contact form
 - [ ] **Blog/CMS integration** with headless CMS
 - [ ] **More languages** (Spanish, Arabic, French, etc.)
-- [ ] **Advanced animations** with GSAP or Framer Motion
+- [x] **Advanced animations** with GSAP ✅ (Completed!)
 
 ---
 

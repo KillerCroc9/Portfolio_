@@ -291,7 +291,12 @@ document.querySelectorAll('.video-card').forEach(card => {
                 videoPlayer.src = video.url;
             }
             
-            modal.style.display = 'block';
+            // Use GSAP animation if available
+            if (window.portfolioAnimations && window.portfolioAnimations.animateModalOpen) {
+                window.portfolioAnimations.animateModalOpen(modal);
+            } else {
+                modal.style.display = 'block';
+            }
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
     });
@@ -299,20 +304,32 @@ document.querySelectorAll('.video-card').forEach(card => {
 
 // Close video modal
 closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
     videoPlayer.pause(); // Pause the video
     videoPlayer.src = ''; // Clear video source
     youtubePlayer.src = ''; // Clear YouTube iframe
+    
+    // Use GSAP animation if available
+    if (window.portfolioAnimations && window.portfolioAnimations.animateModalClose) {
+        window.portfolioAnimations.animateModalClose(modal);
+    } else {
+        modal.style.display = 'none';
+    }
     document.body.style.overflow = 'auto'; // Re-enable scrolling
 });
 
 // Close modal when clicking outside
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
-        modal.style.display = 'none';
         videoPlayer.pause(); // Pause the video
         videoPlayer.src = '';
         youtubePlayer.src = ''; // Clear YouTube iframe
+        
+        // Use GSAP animation if available
+        if (window.portfolioAnimations && window.portfolioAnimations.animateModalClose) {
+            window.portfolioAnimations.animateModalClose(modal);
+        } else {
+            modal.style.display = 'none';
+        }
         document.body.style.overflow = 'auto';
     }
 });
@@ -320,10 +337,16 @@ window.addEventListener('click', (e) => {
 // Close modal with Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.style.display === 'block') {
-        modal.style.display = 'none';
         videoPlayer.pause(); // Pause the video
         videoPlayer.src = '';
         youtubePlayer.src = ''; // Clear YouTube iframe
+        
+        // Use GSAP animation if available
+        if (window.portfolioAnimations && window.portfolioAnimations.animateModalClose) {
+            window.portfolioAnimations.animateModalClose(modal);
+        } else {
+            modal.style.display = 'none';
+        }
         document.body.style.overflow = 'auto';
     }
 });
@@ -332,7 +355,8 @@ document.addEventListener('keydown', (e) => {
 // SCROLL ANIMATIONS
 // =============================================================================
 
-// Animate elements on scroll
+// Animate elements on scroll - Handled by GSAP in animations.js
+// This observer is kept for fallback when GSAP animations are disabled
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -340,7 +364,8 @@ const observerOptions = {
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        // Only apply if GSAP animations are not active
+        if (entry.isIntersecting && (!window.portfolioAnimations || !window.portfolioAnimations.shouldAnimate || !window.portfolioAnimations.shouldAnimate())) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
         }
@@ -349,9 +374,12 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe all cards and timeline items
 document.querySelectorAll('.video-card, .project-card, .timeline-item, .expertise-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    // Only set initial state if GSAP is not handling animations
+    if (!window.portfolioAnimations || !window.portfolioAnimations.shouldAnimate || !window.portfolioAnimations.shouldAnimate()) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    }
     observer.observe(el);
 });
 
@@ -555,13 +583,16 @@ window.addEventListener('scroll', () => {
 // PARALLAX EFFECTS
 // =============================================================================
 
-// Parallax effect for hero section
+// Parallax effect for hero section - Handled by GSAP in animations.js
+// This is kept as fallback when GSAP is disabled
 window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const hero = document.querySelector('.hero-content');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled * 0.002);
+    if (!window.portfolioAnimations || !window.portfolioAnimations.shouldAnimate || !window.portfolioAnimations.shouldAnimate()) {
+        const scrolled = window.scrollY;
+        const hero = document.querySelector('.hero-content');
+        if (hero) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            hero.style.opacity = 1 - (scrolled * 0.002);
+        }
     }
 });
 
@@ -569,13 +600,16 @@ window.addEventListener('scroll', () => {
 // PAGE LOAD ANIMATION
 // =============================================================================
 
-// Add loading animation
+// Add loading animation - Simplified as GSAP handles most animations
 window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
+    // Only apply if GSAP is not handling animations
+    if (!window.portfolioAnimations || !window.portfolioAnimations.shouldAnimate || !window.portfolioAnimations.shouldAnimate()) {
+        document.body.style.opacity = '0';
+        setTimeout(() => {
+            document.body.style.transition = 'opacity 0.5s ease';
+            document.body.style.opacity = '1';
+        }, 100);
+    }
 });
 
 // =============================================================================

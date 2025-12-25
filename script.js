@@ -230,20 +230,20 @@ const videoData = {
         type: 'local'
     },
     video4: {
-        title: 'Featured Project Demo 1',
-        description: 'Watch this project demonstration showcasing development work and technical implementation.',
+        title: 'Unreal Engine AI Integration Demo',
+        description: 'Advanced AI integration demonstration showcasing real-time conversation systems and OpenAI implementation in Unreal Engine.',
         url: 'https://www.youtube.com/watch?v=C00zGXMSzhg',
         type: 'youtube'
     },
     video5: {
-        title: 'Featured Project Demo 2',
-        description: 'Explore this project showcasing technical skills and development expertise.',
+        title: 'Game Development Showcase',
+        description: 'Comprehensive showcase of game development projects featuring gameplay mechanics and technical implementations.',
         url: 'https://www.youtube.com/watch?v=l9VfiII_DP8',
         type: 'youtube'
     },
     video6: {
-        title: 'Featured Project Demo 3',
-        description: 'Detailed demonstration of technical implementation and project features.',
+        title: 'Technical Implementation Demo',
+        description: 'Detailed technical demonstration highlighting C++ programming, system architecture, and performance optimization.',
         url: 'https://www.youtube.com/watch?v=S--HI8G9OLA',
         type: 'youtube'
     }

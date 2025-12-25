@@ -1332,107 +1332,6 @@ section {
     }
 }
 
-/* GitHub Repositories Section */
-.github-repos {
-    background: var(--dark-bg);
-}
-
-.github-repos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-}
-
-.loading-state {
-    grid-column: 1 / -1;
-    text-align: center;
-    padding: 3rem;
-    color: var(--text-secondary);
-}
-
-.loading-state i {
-    font-size: 3rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.repo-card {
-    background: var(--card-bg);
-    border-radius: 15px;
-    padding: 2rem;
-    border: 1px solid rgba(102, 126, 234, 0.2);
-    transition: var(--transition);
-    display: flex;
-    flex-direction: column;
-}
-
-.repo-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-    border-color: var(--primary-color);
-}
-
-.repo-header {
-    display: flex;
-    align-items: start;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.repo-icon {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-}
-
-.repo-title {
-    flex: 1;
-}
-
-.repo-title h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-}
-
-.repo-title a {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.repo-title a:hover {
-    color: var(--primary-color);
-}
-
-.repo-description {
-    color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-    line-height: 1.6;
-}
-
-.repo-stats {
-    display: flex;
-    gap: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
-
-.repo-stat {
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.repo-stat i {
-    color: var(--primary-color);
-}
-
-.repo-updated {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-top: 1rem;
-}
-
 /* Lazy Loading Images */
 img[loading="lazy"] {
     opacity: 0;
@@ -1576,10 +1475,6 @@ img[loading="lazy"].loaded {
     .gen-videos-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-    }
-    
-    .github-repos-grid {
-        grid-template-columns: 1fr;
     }
 }
 

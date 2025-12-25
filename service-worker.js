@@ -11,7 +11,6 @@ const STATIC_ASSETS = [
     '/Portfolio_/index.html',
     '/Portfolio_/styles.css',
     '/Portfolio_/script.js',
-    '/Portfolio_/github-api.js',
     '/Portfolio_/i18n.js',
     '/Portfolio_/manifest.json',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'

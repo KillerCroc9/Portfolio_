@@ -485,6 +485,6 @@ You are free to:
 
 **⭐ Star this repo if you found it helpful!**
 
-Made with ❤️ by Abdul Muqeet
+Made with ❤️ by KillerCroc9
 
 </div>

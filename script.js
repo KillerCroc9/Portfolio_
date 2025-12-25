@@ -6,6 +6,124 @@
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
+// =============================================================================
+// THEME TOGGLE
+// =============================================================================
+
+const THEME_STORAGE_KEY = 'theme_preference';
+
+/**
+ * Gets the current theme from localStorage or system preference
+ */
+function getCurrentTheme() {
+    try {
+        const stored = localStorage.getItem(THEME_STORAGE_KEY);
+        if (stored) {
+            return stored;
+        }
+        
+        // Check system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            return 'light';
+        }
+    } catch (error) {
+        console.error('Error reading theme preference:', error);
+    }
+    
+    return 'dark';
+}
+
+/**
+ * Sets the theme and saves preference
+ */
+function setTheme(theme) {
+    try {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem(THEME_STORAGE_KEY, theme);
+        
+        // Update theme toggle button icon
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            const icon = themeBtn.querySelector('i');
+            if (icon) {
+                if (theme === 'dark') {
+                    icon.className = 'fas fa-moon';
+                    themeBtn.setAttribute('title', 'Switch to light theme');
+                } else {
+                    icon.className = 'fas fa-sun';
+                    themeBtn.setAttribute('title', 'Switch to dark theme');
+                }
+            }
+        }
+        
+        // Track analytics event
+        trackEvent('Theme', 'Change', theme);
+    } catch (error) {
+        console.error('Error saving theme preference:', error);
+    }
+}
+
+/**
+ * Toggles between light and dark themes
+ */
+function toggleTheme() {
+    const currentTheme = getCurrentTheme();
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    showNotification(`Switched to ${newTheme} theme`, 'info', 2000);
+}
+
+/**
+ * Initializes theme on page load
+ */
+function initTheme() {
+    const theme = getCurrentTheme();
+    setTheme(theme);
+    
+    // Add event listener to theme toggle button
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', toggleTheme);
+    }
+}
+
+// Initialize theme
+initTheme();
+
+// =============================================================================
+// ANALYTICS TRACKING
+// =============================================================================
+
+/**
+ * Tracks custom events to analytics platforms
+ */
+function trackEvent(category, action, label, value) {
+    // Google Analytics 4
+    if (typeof gtag === 'function') {
+        gtag('event', action, {
+            event_category: category,
+            event_label: label,
+            value: value
+        });
+    }
+    
+    // Plausible Analytics
+    if (typeof plausible === 'function') {
+        plausible(action, {
+            props: {
+                category: category,
+                label: label,
+                value: value
+            }
+        });
+    }
+    
+    // Log to console in development
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        console.log('Analytics Event:', { category, action, label, value });
+    }
+}
+
 // Notification function for accessible user feedback
 function showNotification(message, type = 'info', duration = 3000) {
     // Create notification element
@@ -127,6 +245,9 @@ document.querySelectorAll('.video-card').forEach(card => {
                 return;
             }
             
+            // Track video view
+            trackEvent('Video', 'View', video.title);
+            
             videoTitle.textContent = video.title;
             videoDesc.textContent = video.description;
             videoPlayer.src = video.url;
@@ -190,6 +311,52 @@ document.querySelectorAll('.video-card, .project-card, .timeline-item, .expertis
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
 });
+
+// =============================================================================
+// LAZY LOADING IMAGES
+// =============================================================================
+
+/**
+ * Lazy loads images when they come into viewport
+ */
+function lazyLoadImages() {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                
+                // Load the image
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                }
+                
+                // Add loaded class for fade-in effect
+                img.addEventListener('load', () => {
+                    img.classList.add('loaded');
+                });
+                
+                // Stop observing this image
+                observer.unobserve(img);
+            }
+        });
+    }, {
+        rootMargin: '50px'
+    });
+    
+    // Observe all images with data-src attribute
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+    });
+    
+    // Also observe images with loading="lazy" attribute
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        imageObserver.observe(img);
+    });
+}
+
+// Initialize lazy loading
+lazyLoadImages();
 
 // =============================================================================
 // CONTACT FORM
@@ -268,6 +435,9 @@ contactForm.addEventListener('submit', (e) => {
         const formData = new FormData(contactForm);
         const data = Object.fromEntries(formData);
         
+        // Track form submission
+        trackEvent('Contact Form', 'Submit', 'Success');
+        
         // =============================================================================
         // FORM SUBMISSION CUSTOMIZATION
         // =============================================================================
@@ -286,7 +456,10 @@ contactForm.addEventListener('submit', (e) => {
         
         // Here you would typically send the form data to a server
         // For now, we'll just show a success message
-        showNotification('Thank you for your message! I will get back to you soon.', 'success', 4000);
+        const currentLang = getCurrentLanguage ? getCurrentLanguage() : 'en';
+        const successMsg = getTranslation ? getTranslation('form.success_message', currentLang) : 
+                          'Thank you for your message! I will get back to you soon.';
+        showNotification(successMsg, 'success', 4000);
         contactForm.reset();
         
         // Clear any validation states
@@ -298,6 +471,9 @@ contactForm.addEventListener('submit', (e) => {
             }
         });
     } else {
+        // Track validation error
+        trackEvent('Contact Form', 'Validation Error', 'Field validation failed');
+        
         // Focus on the first invalid field
         const firstInvalid = contactForm.querySelector('.invalid');
         if (firstInvalid) {

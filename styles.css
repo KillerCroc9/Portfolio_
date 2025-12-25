@@ -19,6 +19,17 @@
     --transition: all 0.3s ease;
 }
 
+/* Light Theme Variables */
+[data-theme="light"] {
+    --dark-bg: #f7fafc;
+    --light-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --primary-color: #5a67d8;
+    --secondary-color: #6b46c1;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -55,7 +66,47 @@ body {
     align-items: center;
 }
 
-.nav-brand h1 {
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.icon-btn:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.lang-text {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
     font-size: 1.5rem;
     background: var(--gradient-1);
     -webkit-background-clip: text;
@@ -1281,10 +1332,170 @@ section {
     }
 }
 
+/* GitHub Repositories Section */
+.github-repos {
+    background: var(--dark-bg);
+}
+
+.github-repos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.loading-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-secondary);
+}
+
+.loading-state i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.repo-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    border-color: var(--primary-color);
+}
+
+.repo-header {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.repo-icon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.repo-title {
+    flex: 1;
+}
+
+.repo-title h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.repo-title a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.repo-title a:hover {
+    color: var(--primary-color);
+}
+
+.repo-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.repo-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.repo-stat i {
+    color: var(--primary-color);
+}
+
+.repo-language {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    background: rgba(102, 126, 234, 0.2);
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+.repo-updated {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+}
+
+/* Lazy Loading Images */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .hero::before {
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(240, 147, 251, 0.05) 0%, transparent 50%);
+}
+
+[data-theme="light"] .repo-card,
+[data-theme="light"] .project-card,
+[data-theme="light"] .expertise-item,
+[data-theme="light"] .award-card,
+[data-theme="light"] .education-item,
+[data-theme="light"] .skill-category,
+[data-theme="light"] .timeline-content,
+[data-theme="light"] .video-card,
+[data-theme="light"] .gen-project {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .modal {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+    
+    .nav-controls {
+        gap: 0.5rem;
+    }
+    
+    .icon-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
     }
     
     .nav-menu {
@@ -1376,6 +1587,10 @@ section {
     .gen-videos-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+    
+    .github-repos-grid {
+        grid-template-columns: 1fr;
     }
 }
 

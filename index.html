@@ -24,6 +24,12 @@
     <!-- Theme Color -->
     <meta name="theme-color" content="#667eea">
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Abdul Muqeet Portfolio">
+    
     <title>Abdul Muqeet - Lead Unreal Developer Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,20 +42,28 @@
                 <h1>Abdul Muqeet</h1>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#videos">Videos</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#generative-ai">Generative AI</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#about" data-i18n="nav.about">About</a></li>
+                <li><a href="#videos" data-i18n="nav.videos">Videos</a></li>
+                <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+                <li><a href="#generative-ai" data-i18n="nav.generative_ai">Generative AI</a></li>
+                <li><a href="#awards" data-i18n="nav.awards">Awards</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
-            <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle dark/light theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="language-toggle" class="icon-btn" aria-label="Toggle language" title="Change language">
+                    <span class="lang-text">EN</span>
+                </button>
+                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -387,6 +401,20 @@
                             <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Details</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Repositories Section -->
+    <section id="github-repos" class="github-repos">
+        <div class="container">
+            <h2 class="section-title">GitHub Repositories</h2>
+            <p class="section-subtitle">Live statistics from my most popular open source projects</p>
+            <div id="github-repos-grid" class="github-repos-grid">
+                <div class="loading-state">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading repositories...</p>
                 </div>
             </div>
         </div>
@@ -811,6 +839,24 @@
         </div>
     </div>
 
+    <!-- Analytics Scripts -->
+    <!-- Google Analytics (Replace with your tracking ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        // Uncomment and add your GA4 tracking ID to enable
+        // gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- Plausible Analytics (Alternative, privacy-friendly option) -->
+    <!-- Uncomment to enable Plausible Analytics -->
+    <!-- <script defer data-domain="yourdomain.com" src="https://plausible.io/js/script.js"></script> -->
+
     <script src="script.js"></script>
+    <script src="i18n.js"></script>
+    <script src="github-api.js"></script>
+    <script src="sw-register.js"></script>
 </body>
 </html>

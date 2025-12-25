@@ -233,21 +233,18 @@ const videoData = {
         title: 'Featured Project Demo 1',
         description: 'Watch this project demonstration showcasing development work and technical implementation.',
         url: 'https://www.youtube.com/watch?v=C00zGXMSzhg',
-        youtubeId: 'C00zGXMSzhg',
         type: 'youtube'
     },
     video5: {
         title: 'Featured Project Demo 2',
         description: 'Explore this project showcasing technical skills and development expertise.',
         url: 'https://www.youtube.com/watch?v=l9VfiII_DP8',
-        youtubeId: 'l9VfiII_DP8',
         type: 'youtube'
     },
     video6: {
         title: 'Featured Project Demo 3',
         description: 'Detailed demonstration of technical implementation and project features.',
         url: 'https://www.youtube.com/watch?v=S--HI8G9OLA',
-        youtubeId: 'S--HI8G9OLA',
         type: 'youtube'
     }
 };
@@ -279,10 +276,14 @@ document.querySelectorAll('.video-card').forEach(card => {
             videoDesc.textContent = video.description;
             
             // Handle YouTube videos
-            if (video.type === 'youtube' && video.youtubeId) {
-                videoPlayer.style.display = 'none';
-                youtubePlayer.style.display = 'block';
-                youtubePlayer.src = `https://www.youtube.com/embed/${video.youtubeId}?autoplay=1`;
+            if (video.type === 'youtube') {
+                // Extract YouTube ID from URL
+                const youtubeIdMatch = video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+                if (youtubeIdMatch && youtubeIdMatch[1]) {
+                    videoPlayer.style.display = 'none';
+                    youtubePlayer.style.display = 'block';
+                    youtubePlayer.src = `https://www.youtube.com/embed/${youtubeIdMatch[1]}?autoplay=1`;
+                }
             } else {
                 // Handle local videos
                 youtubePlayer.style.display = 'none';

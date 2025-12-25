@@ -230,20 +230,20 @@ const videoData = {
         type: 'local'
     },
     video4: {
-        title: 'Unreal Engine AI Integration Demo',
-        description: 'Advanced AI integration demonstration showcasing real-time conversation systems and OpenAI implementation in Unreal Engine.',
+        title: 'Dragons On Air – Live Park Broadcast System',
+        description: 'Unreal Engine · Real-Time Rendering · Park Media Integration\n\nThis system features a cast of hand-crafted Dragons characters brought to life in Unreal Engine and broadcast across theme park screens — from cafeterias to lounge areas.\n\n🔹 Scripted Play & World Exploration\nDragons engage in playful, story-rich scenes — exploring environments, dancing, and performing activities in looping real-time sequences.\n\n🔹 Seamless Park-Wide Broadcast\nDisplayed on TVs and screens throughout the park, the Dragons add a continuous layer of ambient storytelling to enhance the visitor atmosphere.\n\n🔹 Optimized Unreal Pipeline\nAll characters, animations, and environments are rendered and sequenced in Unreal Engine — designed for smooth playback and aesthetic consistency across multiple displays.\n\n🔹 Living Digital Presence\nRather than static signage or looping ads, Dragons offer a subtle, always-moving visual world that adds personality and charm to physical park spaces.',
         url: 'https://www.youtube.com/watch?v=C00zGXMSzhg',
         type: 'youtube'
     },
     video5: {
-        title: 'Game Development Showcase',
-        description: 'Comprehensive showcase of game development projects featuring gameplay mechanics and technical implementations.',
+        title: 'AI Rendering Plugin for Unreal Engine Demo',
+        description: 'Advanced AI rendering plugin demonstration for Unreal Engine, showcasing cutting-edge real-time rendering capabilities and AI-driven workflow integration for enhanced visual quality and performance optimization.',
         url: 'https://www.youtube.com/watch?v=l9VfiII_DP8',
         type: 'youtube'
     },
     video6: {
-        title: 'Technical Implementation Demo',
-        description: 'Detailed technical demonstration highlighting C++ programming, system architecture, and performance optimization.',
+        title: '🎥 Tech Art Portfolio – Blender · Unreal Engine · Real-Time Rendering',
+        description: 'Showcasing a fusion of procedural artistry, AI-driven workflows, and real-time rendering tools across Blender and Unreal Engine.\n\n🔹 Geo Nodes to Vertex Animation: Procedural motion built in Blender using geometry nodes, exported to Unreal as performant vertex animations.\n\n🔹 MoCap to Meta Human Targeting Tool: Streamlined mocap data processing and custom targeting solutions for flexible animation retargeting.\n\n🔹 Shader Systems & LUTs: Custom Unreal materials with LUT-based grading and layered shader blending.\n\n🔹 Rendering Pipelines: Optimized real-time rendering flows, including custom post-process and LOD management.\n\n🔹 Crowd Systems: Efficient vertex-animated crowd systems for large-scale scenes.\n\n🔹 3D Modeling & Environment Art: Stylized and photoreal 3D assets integrated into immersive world-building pipelines.',
         url: 'https://www.youtube.com/watch?v=S--HI8G9OLA',
         type: 'youtube'
     }

@@ -218,14 +218,14 @@ Modify CSS custom properties in `styles.css` (around line 8):
 
 ```css
 :root {
-    --primary-color: #667eea;      /* Main purple */
-    --secondary-color: #764ba2;    /* Dark purple */
-    --accent-color: #f093fb;       /* Pink accent */
-    --dark-bg: #0f0f23;            /* Background */
-    --light-bg: #1a1a2e;           /* Secondary bg */
-    --card-bg: #16213e;            /* Card backgrounds */
-    --text-primary: #ffffff;       /* Main text */
-    --text-secondary: #a0aec0;     /* Secondary text */
+    --primary-color: #00ff41;      /* Neon green */
+    --secondary-color: #00d4aa;    /* Cyan-green */
+    --accent-color: #00ffff;       /* Cyan */
+    --dark-bg: #000000;            /* Background */
+    --light-bg: #0a0a0a;           /* Secondary bg */
+    --card-bg: #0d0d0d;            /* Card backgrounds */
+    --text-primary: #00ff41;       /* Main text */
+    --text-secondary: #00d4aa;     /* Secondary text */
 }
 ```
 

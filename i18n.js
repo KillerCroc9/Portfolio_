@@ -52,7 +52,7 @@ const translations = {
         },
         footer: {
             about_heading: 'About',
-            about_text: 'Team Lead - Unreal Developer specializing in C++, AI integration, and team leadership',
+            about_text: 'Team Lead - Unreal Developer at AB {Ark} Private Limited, specializing in C++, AI integration, and team leadership',
             quick_links: 'Quick Links',
             connect: 'Connect',
             copyright: 'All rights reserved.'
@@ -113,7 +113,7 @@ const translations = {
         },
         footer: {
             about_heading: 'تعارف',
-            about_text: 'لیڈ انریل ڈویلپر سی++، اے آئی انٹیگریشن، اور گیم ڈویلپمنٹ میں مہارت',
+            about_text: 'AB {Ark} Private Limited میں لیڈ انریل ڈویلپر، سی++، اے آئی انٹیگریشن، اور گیم ڈویلپمنٹ میں مہارت',
             quick_links: 'فوری لنکس',
             connect: 'رابطہ',
             copyright: 'تمام حقوق محفوظ ہیں۔'

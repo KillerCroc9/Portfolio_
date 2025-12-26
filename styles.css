@@ -68,7 +68,7 @@ body::before {
             transparent 2px,
             rgba(0, 191, 255, 0.03) 3px
         ),
-        radial-gradient(ellipse at center, #1a1000 0%, #000000 70%);
+        radial-gradient(ellipse at center, #001a2e 0%, #000000 70%);
     z-index: -1;
     pointer-events: none;
 }

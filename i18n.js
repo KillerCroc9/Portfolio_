@@ -48,7 +48,8 @@ const translations = {
             email_invalid: 'Please enter a valid email address',
             message_required: 'Message is required',
             success_message: 'Thank you for your message! I will get back to you soon.',
-            error_message: 'Please fill in all required fields correctly.'
+            error_message: 'Please fill in all required fields correctly.',
+            submission_error: 'Failed to send message. Please try again or contact me directly via email.'
         },
         footer: {
             about_heading: 'About',
@@ -109,7 +110,8 @@ const translations = {
             email_invalid: 'براہ کرم درست ای میل درج کریں',
             message_required: 'پیغام ضروری ہے',
             success_message: 'آپ کے پیغام کا شکریہ! میں جلد ہی آپ سے رابطہ کروں گا۔',
-            error_message: 'براہ کرم تمام ضروری فیلڈز درست طریقے سے پر کریں۔'
+            error_message: 'براہ کرم تمام ضروری فیلڈز درست طریقے سے پر کریں۔',
+            submission_error: 'پیغام بھیجنے میں ناکامی۔ براہ کرم دوبارہ کوشش کریں یا براہ راست ای میل کے ذریعے رابطہ کریں۔'
         },
         footer: {
             about_heading: 'تعارف',

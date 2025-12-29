@@ -506,42 +506,81 @@ contactForm.addEventListener('submit', (e) => {
     if (isFormValid) {
         // Get form data
         const formData = new FormData(contactForm);
-        const data = Object.fromEntries(formData);
         
-        // Track form submission
-        trackEvent('Contact Form', 'Submit', 'Success');
+        // Track form submission attempt
+        trackEvent('Contact Form', 'Submit', 'Attempt');
+        
+        // Disable submit button to prevent multiple submissions
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
         
         // =============================================================================
-        // FORM SUBMISSION CUSTOMIZATION
+        // WEB3FORMS EMAIL INTEGRATION
         // =============================================================================
-        // CUSTOMIZATION: Replace this section with actual form submission logic
-        // Options:
-        // 1. Use a form service like Formspree, FormSubmit, or Netlify Forms
-        // 2. Send to your own backend API endpoint
-        // 3. Use EmailJS for client-side email sending
-        // Example with fetch API:
-        // fetch('YOUR_API_ENDPOINT', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // }).then(response => { ... });
+        // Submit form to Web3Forms API
+        // Web3Forms is a free service for static websites to handle form submissions
+        // Get your free access key at: https://web3forms.com/
         // =============================================================================
         
-        // Here you would typically send the form data to a server
-        // For now, we'll just show a success message
-        const currentLang = (typeof getCurrentLanguage === 'function') ? getCurrentLanguage() : 'en';
-        const successMsg = (typeof getTranslation === 'function') ? getTranslation('form.success_message', currentLang) : 
-                          'Thank you for your message! I will get back to you soon.';
-        showNotification(successMsg, 'success', 4000);
-        contactForm.reset();
-        
-        // Clear any validation states
-        fields.forEach(field => {
-            field.classList.remove('invalid');
-            const errorElement = document.getElementById(`${field.name}Error`);
-            if (errorElement) {
-                errorElement.textContent = '';
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            
+            if (data.success) {
+                // Track successful submission
+                trackEvent('Contact Form', 'Submit', 'Success');
+                
+                // Show success message
+                const currentLang = (typeof getCurrentLanguage === 'function') ? getCurrentLanguage() : 'en';
+                const successMsg = (typeof getTranslation === 'function') ? getTranslation('form.success_message', currentLang) : 
+                                  'Thank you for your message! I will get back to you soon.';
+                showNotification(successMsg, 'success', 4000);
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Clear any validation states
+                fields.forEach(field => {
+                    field.classList.remove('invalid');
+                    const errorElement = document.getElementById(`${field.name}Error`);
+                    if (errorElement) {
+                        errorElement.textContent = '';
+                    }
+                });
+            } else {
+                // Track submission error
+                trackEvent('Contact Form', 'Submit', 'Error');
+                
+                // Show error message
+                const currentLang = (typeof getCurrentLanguage === 'function') ? getCurrentLanguage() : 'en';
+                const errorMsg = (typeof getTranslation === 'function') ? getTranslation('form.submission_error', currentLang) : 
+                                'Failed to send message. Please try again or contact me directly via email.';
+                showNotification(errorMsg, 'error', 5000);
             }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            
+            // Re-enable submit button
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+            
+            // Track submission error
+            trackEvent('Contact Form', 'Submit', 'Error');
+            
+            // Show error message
+            const currentLang = (typeof getCurrentLanguage === 'function') ? getCurrentLanguage() : 'en';
+            const errorMsg = (typeof getTranslation === 'function') ? getTranslation('form.submission_error', currentLang) : 
+                            'Failed to send message. Please try again or contact me directly via email.';
+            showNotification(errorMsg, 'error', 5000);
         });
     } else {
         // Track validation error

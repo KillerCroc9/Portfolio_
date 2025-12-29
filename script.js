@@ -193,7 +193,8 @@ window.addEventListener('scroll', () => {
 // VIDEO MODAL
 // =============================================================================
 
-// Video Modal Functionality
+// Video Modal Functionality - Temporarily Disabled
+/* 
 const modal = document.getElementById('videoModal');
 const videoPlayer = document.getElementById('videoPlayer');
 const videoTitle = document.getElementById('videoTitle');
@@ -350,6 +351,7 @@ document.addEventListener('keydown', (e) => {
         document.body.style.overflow = 'auto';
     }
 });
+*/
 
 // =============================================================================
 // SCROLL ANIMATIONS

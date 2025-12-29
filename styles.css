@@ -949,6 +949,67 @@ section {
     border: none;
 }
 
+/* Video Link Placeholder for Google Drive videos */
+.gen-video-link {
+    display: block;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(102, 126, 234, 0.1));
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.gen-video-link.portrait {
+    padding-bottom: 177.78%; /* 9:16 aspect ratio for portrait videos */
+}
+
+.gen-video-link:hover {
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.2), rgba(102, 126, 234, 0.2));
+    transform: translateY(-2px);
+}
+
+.gen-video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+}
+
+.gen-video-link:hover .gen-video-placeholder {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.gen-video-placeholder i {
+    font-size: 4rem;
+    color: var(--neon-cyan);
+    transition: var(--transition);
+}
+
+.gen-video-link:hover .gen-video-placeholder i {
+    color: var(--neon-green);
+    transform: scale(1.1);
+}
+
+.gen-video-placeholder span {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0 1rem;
+}
+
 /* Experience Section */
 .experience {
     background: var(--dark-bg);

@@ -529,8 +529,8 @@ contactForm.addEventListener('submit', (e) => {
         
         // Here you would typically send the form data to a server
         // For now, we'll just show a success message
-        const currentLang = getCurrentLanguage ? getCurrentLanguage() : 'en';
-        const successMsg = getTranslation ? getTranslation('form.success_message', currentLang) : 
+        const currentLang = (typeof getCurrentLanguage === 'function') ? getCurrentLanguage() : 'en';
+        const successMsg = (typeof getTranslation === 'function') ? getTranslation('form.success_message', currentLang) : 
                           'Thank you for your message! I will get back to you soon.';
         showNotification(successMsg, 'success', 4000);
         contactForm.reset();

@@ -222,7 +222,11 @@ Navigate to: `http://localhost:8000`
 
 ---
 
-### ✅ Contact Form Validation
+### ✅ Contact Form Validation & Email Submission
+
+**Prerequisites:**
+- Web3Forms access key configured (see EMAIL_SETUP.md)
+- Internet connection for API access
 
 **Test Steps:**
 
@@ -237,17 +241,40 @@ Navigate to: `http://localhost:8000`
 4. Verify email error
 
 **Test 3: Valid Submission**
-1. Fill all required fields correctly
+1. Fill all required fields correctly:
+   - Name: "Test User"
+   - Email: "test@example.com"
+   - Subject: "Test Message"
+   - Message: "This is a test message from the contact form"
 2. Submit form
-3. Verify success notification
-4. Check form clears
+3. Verify button shows "Sending..." during submission
+4. Check success notification appears
+5. Verify form clears after success
+6. Check your email inbox for the submission
+
+**Test 4: Network Error Handling**
+1. Disable internet connection (or use browser DevTools to simulate offline)
+2. Fill and submit form
+3. Verify error notification appears
+4. Re-enable connection and try again
 
 **Expected Results:**
 - ✅ Real-time validation on blur
 - ✅ Clear error messages
-- ✅ Success notification appears
+- ✅ Submit button disabled during submission
+- ✅ Button text changes to "Sending..." while processing
+- ✅ Success notification appears on successful submission
+- ✅ Error notification appears on failed submission
 - ✅ Form resets after success
+- ✅ Email received in your inbox within 1-2 minutes
 - ✅ Analytics event tracked
+- ✅ Works in both English and Urdu languages
+
+**Troubleshooting:**
+- If emails not received: Check spam folder
+- If submission fails: Verify access key is correct in HTML files
+- If validation errors persist: Check browser console for JavaScript errors
+- For setup issues: See EMAIL_SETUP.md for detailed instructions
 
 ---
 

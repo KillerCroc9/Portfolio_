@@ -28,7 +28,8 @@
 
 ## 📚 Additional Documentation
 
-- **[ANIMATIONS.md](ANIMATIONS.md)** - Complete guide to GSAP animations and customization (NEW)
+- **[EMAIL_SETUP.md](EMAIL_SETUP.md)** - Complete guide to setting up the contact form email functionality (NEW)
+- **[ANIMATIONS.md](ANIMATIONS.md)** - Complete guide to GSAP animations and customization
 - **[QUICK_REFERENCE.md](QUICK_REFERENCE.md)** - Quick reference for common customization tasks
 - **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** - Comprehensive pre-deployment checklist
 - **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to this project

@@ -484,6 +484,11 @@ function validateField(field) {
     let isValid = true;
     let errorMessage = '';
 
+    // Skip validation if no error element exists (e.g., hidden fields)
+    if (!errorElement) {
+        return true;
+    }
+
     // Clear previous error
     errorElement.textContent = '';
     field.classList.remove('invalid');
@@ -511,7 +516,7 @@ function validateField(field) {
 }
 
 // Add real-time validation
-contactForm.querySelectorAll('input, textarea').forEach(field => {
+contactForm.querySelectorAll('input:not([type="hidden"]), textarea').forEach(field => {
     field.addEventListener('blur', () => validateField(field));
     field.addEventListener('input', () => {
         if (field.classList.contains('invalid')) {
@@ -523,8 +528,8 @@ contactForm.querySelectorAll('input, textarea').forEach(field => {
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Validate all fields
-    const fields = contactForm.querySelectorAll('input, textarea');
+    // Validate all fields (excluding hidden fields)
+    const fields = contactForm.querySelectorAll('input:not([type="hidden"]), textarea');
     let isFormValid = true;
     
     fields.forEach(field => {

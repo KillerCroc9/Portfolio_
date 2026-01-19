@@ -567,7 +567,8 @@ contactForm.addEventListener('submit', (e) => {
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
             
-            if (response.ok) {
+            // Check for successful submission (200-299) or redirect (300-399)
+            if (response.ok || (response.status >= 300 && response.status < 400)) {
                 // Track successful submission
                 trackEvent('Contact Form', 'Submit', 'Success');
                 

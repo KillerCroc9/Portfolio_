@@ -468,6 +468,9 @@ lazyLoadImages();
 // Contact Form Handling
 const contactForm = document.querySelector('.contact-form');
 
+// Selector for visible form fields (excludes hidden fields)
+const VISIBLE_FIELD_SELECTOR = 'input:not([type="hidden"]), textarea';
+
 // Form validation functions
 function validateEmail(email) {
     // Use browser's built-in email validation
@@ -483,6 +486,11 @@ function validateField(field) {
     const errorElement = document.getElementById(`${field.name}Error`);
     let isValid = true;
     let errorMessage = '';
+
+    // Skip validation if no error element exists
+    if (!errorElement) {
+        return true;
+    }
 
     // Clear previous error
     errorElement.textContent = '';
@@ -511,7 +519,7 @@ function validateField(field) {
 }
 
 // Add real-time validation
-contactForm.querySelectorAll('input, textarea').forEach(field => {
+contactForm.querySelectorAll(VISIBLE_FIELD_SELECTOR).forEach(field => {
     field.addEventListener('blur', () => validateField(field));
     field.addEventListener('input', () => {
         if (field.classList.contains('invalid')) {
@@ -523,8 +531,8 @@ contactForm.querySelectorAll('input, textarea').forEach(field => {
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Validate all fields
-    const fields = contactForm.querySelectorAll('input, textarea');
+    // Validate all fields (excluding hidden fields)
+    const fields = contactForm.querySelectorAll(VISIBLE_FIELD_SELECTOR);
     let isFormValid = true;
     
     fields.forEach(field => {

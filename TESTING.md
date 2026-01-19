@@ -225,8 +225,8 @@ Navigate to: `http://localhost:8000`
 ### ✅ Contact Form Validation & Email Submission
 
 **Prerequisites:**
-- Web3Forms access key configured (see EMAIL_SETUP.md)
-- Internet connection for API access
+- FormSubmit email confirmed (see EMAIL_SETUP.md)
+- Internet connection for form submission
 
 **Test Steps:**
 
@@ -250,7 +250,7 @@ Navigate to: `http://localhost:8000`
 3. Verify button shows "Sending..." during submission
 4. Check success notification appears
 5. Verify form clears after success
-6. Check your email inbox for the submission
+6. Check your email inbox (muqeeta2@gmail.com) for the submission
 
 **Test 4: Network Error Handling**
 1. Disable internet connection (or use browser DevTools to simulate offline)
@@ -271,10 +271,10 @@ Navigate to: `http://localhost:8000`
 - ✅ Works in both English and Urdu languages
 
 **Troubleshooting:**
-- If emails not received: Check spam folder
-- If submission fails: Verify access key is correct in HTML files
+- If emails not received: Check spam folder and verify email confirmation
+- If submission fails: Check internet connection and browser console
 - If validation errors persist: Check browser console for JavaScript errors
-- For setup issues: See EMAIL_SETUP.md for detailed instructions
+- For setup issues: See EMAIL_SETUP.md or FORMSUBMIT_SETUP.md for detailed instructions
 
 ---
 

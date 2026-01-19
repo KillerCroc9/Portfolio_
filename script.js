@@ -547,24 +547,29 @@ contactForm.addEventListener('submit', (e) => {
         submitButton.textContent = 'Sending...';
         
         // =============================================================================
-        // WEB3FORMS EMAIL INTEGRATION
+        // FORMSUBMIT EMAIL INTEGRATION
         // =============================================================================
-        // Submit form to Web3Forms API
-        // Web3Forms is a free service for static websites to handle form submissions
-        // Get your free access key at: https://web3forms.com/
+        // Submit form to FormSubmit API
+        // FormSubmit is a free service for static websites to handle form submissions
+        // No registration required - just verify your email on first use
+        // Learn more at: https://formsubmit.co/
         // =============================================================================
         
-        fetch('https://api.web3forms.com/submit', {
+        fetch(contactForm.action, {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
         })
-        .then(response => response.json())
-        .then(data => {
-            // Re-enable submit button
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            
-            if (data.success) {
+        .then(response => {
+            // FormSubmit may return either a 200 OK with JSON or a 3xx redirect after successful submission
+            // We treat both as successful since the email has been sent
+            if (response.ok || (response.status >= 300 && response.status < 400)) {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                
                 // Track successful submission
                 trackEvent('Contact Form', 'Submit', 'Success');
                 
@@ -586,6 +591,10 @@ contactForm.addEventListener('submit', (e) => {
                     }
                 });
             } else {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                
                 // Track submission error
                 trackEvent('Contact Form', 'Submit', 'Error');
                 

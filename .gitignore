@@ -69,3 +69,23 @@ coverage/
 connect.lock
 typings/
 .eslintcache
+
+# Media files (exclude non-image media from repository)
+*.mp4
+*.mp3
+*.avi
+*.mov
+*.wmv
+*.flv
+*.mkv
+*.webm
+*.m4v
+*.3gp
+*.mpeg
+*.mpg
+*.wav
+*.ogg
+*.m4a
+*.aac
+*.flac
+*.wma

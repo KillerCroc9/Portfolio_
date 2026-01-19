@@ -547,24 +547,27 @@ contactForm.addEventListener('submit', (e) => {
         submitButton.textContent = 'Sending...';
         
         // =============================================================================
-        // WEB3FORMS EMAIL INTEGRATION
+        // FORMSUBMIT EMAIL INTEGRATION
         // =============================================================================
-        // Submit form to Web3Forms API
-        // Web3Forms is a free service for static websites to handle form submissions
-        // Get your free access key at: https://web3forms.com/
+        // Submit form to FormSubmit API
+        // FormSubmit is a free service for static websites to handle form submissions
+        // No registration required - just verify your email on first use
+        // Learn more at: https://formsubmit.co/
         // =============================================================================
         
-        fetch('https://api.web3forms.com/submit', {
+        fetch(contactForm.action, {
             method: 'POST',
-            body: formData
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
         })
-        .then(response => response.json())
-        .then(data => {
+        .then(response => {
             // Re-enable submit button
             submitButton.disabled = false;
             submitButton.textContent = originalButtonText;
             
-            if (data.success) {
+            if (response.ok) {
                 // Track successful submission
                 trackEvent('Contact Form', 'Submit', 'Success');
                 

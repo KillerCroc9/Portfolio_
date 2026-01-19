@@ -563,12 +563,13 @@ contactForm.addEventListener('submit', (e) => {
             }
         })
         .then(response => {
-            // Re-enable submit button
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
-            
-            // Check for successful submission (200-299) or redirect (300-399)
+            // FormSubmit may return either a 200 OK with JSON or a 3xx redirect after successful submission
+            // We treat both as successful since the email has been sent
             if (response.ok || (response.status >= 300 && response.status < 400)) {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                
                 // Track successful submission
                 trackEvent('Contact Form', 'Submit', 'Success');
                 
@@ -590,6 +591,10 @@ contactForm.addEventListener('submit', (e) => {
                     }
                 });
             } else {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+                
                 // Track submission error
                 trackEvent('Contact Form', 'Submit', 'Error');
                 

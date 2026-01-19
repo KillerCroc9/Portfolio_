@@ -484,8 +484,8 @@ function validateField(field) {
     let isValid = true;
     let errorMessage = '';
 
-    // Skip validation if no error element exists (e.g., hidden fields)
-    if (!errorElement) {
+    // Skip validation for hidden fields or if no error element exists
+    if (field.type === 'hidden' || !errorElement) {
         return true;
     }
 

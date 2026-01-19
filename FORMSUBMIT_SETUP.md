@@ -39,7 +39,7 @@ Each contact form includes these hidden fields:
 <form action="https://formsubmit.co/muqeeta2@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio">
     <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none">
+    <input type="text" name="_honey" style="position:absolute;left:-9999px;width:1px;height:1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
     <input type="hidden" name="_template" value="table">
 </form>
 ```
@@ -49,7 +49,7 @@ Each contact form includes these hidden fields:
 - `action="https://formsubmit.co/muqeeta2@gmail.com"` - Sends form to your email
 - `_subject` - Customizes the email subject line
 - `_captcha="false"` - Disables CAPTCHA for better UX
-- `_honey` - Honeypot field to catch spam bots (hidden from users)
+- `_honey` - Honeypot field to catch spam bots (positioned off-screen, hidden from screen readers)
 - `_template="table"` - Formats email content as a neat table
 
 ## 📧 What You'll Receive
@@ -94,7 +94,11 @@ If you want to change the email address that receives form submissions:
 
 ## 🛡️ Spam Protection
 
-The forms include a honeypot field (`_honey`) that is hidden from real users but visible to bots. If a bot fills out this field, FormSubmit automatically rejects the submission.
+The forms include built-in spam protection:
+
+1. **Honeypot Field**: A hidden field (`_honey`) that is positioned off-screen and hidden from screen readers with `aria-hidden="true"` and `tabindex="-1"`. Bots often fill out all fields, but humans won't see or interact with this field. If it's filled out, FormSubmit automatically rejects the submission.
+2. **CAPTCHA**: Can be enabled if needed (currently disabled for better UX)
+3. **Rate Limiting**: FormSubmit automatically limits submissions from the same IP
 
 ## 📊 No Dashboard Needed
 

@@ -249,32 +249,32 @@ const videoData = {
         type: 'youtube'
     },
     video7: {
-        title: 'Project Showcase Video 1',
-        description: 'Showcasing game development work, featuring Unreal Engine projects, gameplay systems, and technical implementations.',
+        title: 'Real Estate Video Furniture Swap',
+        description: 'AI-powered real estate visualization showcasing dynamic furniture style transformations. Using generative AI to swap and customize interior design elements, demonstrating automated virtual staging capabilities for property marketing.',
         url: 'https://www.youtube.com/watch?v=PSnfUz9hrjQ',
         type: 'youtube'
     },
     video8: {
-        title: 'Project Showcase Video 2',
-        description: 'Demonstrating advanced game mechanics, AI integration, and performance optimization techniques in Unreal Engine.',
+        title: 'The Promise Unkept',
+        description: 'AI-generated animated short film demonstrating character consistency and narrative storytelling through generative video technology. Showcases advanced AI video generation techniques with cohesive visual style and compelling narrative.',
         url: 'https://www.youtube.com/watch?v=643ba2nN2Jk',
         type: 'youtube'
     },
     video9: {
-        title: 'Project Showcase Video 3',
-        description: 'Highlighting character systems, animations, and interactive gameplay features developed using Unreal Engine and C++.',
+        title: 'Market Videos Automation with Custom Voice',
+        description: 'Automated marketing video generation system featuring custom AI voice synthesis. End-to-end pipeline for creating professional marketing content with personalized voiceovers, demonstrating AI-driven content automation for business applications.',
         url: 'https://www.youtube.com/watch?v=y03qlguaX1c',
         type: 'youtube'
     },
     video10: {
-        title: 'Project Showcase Video 4',
-        description: 'Technical showcase of multiplayer systems, networking features, and real-time gameplay mechanics.',
+        title: 'Real Estate Visualization',
+        description: 'AI-powered real estate video showcase featuring architectural visualization and property presentation. Demonstrates generative AI capabilities for creating engaging property tours and marketing materials.',
         url: 'https://www.youtube.com/watch?v=yGvD7qlnTxw',
         type: 'youtube'
     },
     video11: {
-        title: 'Project Showcase Video 5',
-        description: 'Demonstrating custom plugin development, editor tools, and workflow automation in Unreal Engine.',
+        title: 'Furniture Styles Swap',
+        description: 'Interactive furniture style transformation using generative AI. Showcases the ability to instantly visualize different interior design styles and furniture arrangements, perfect for real estate staging and interior design visualization.',
         url: 'https://www.youtube.com/watch?v=Muv_8_re9ZY',
         type: 'youtube'
     }

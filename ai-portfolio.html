@@ -143,21 +143,21 @@
                 <div class="gen-videos-grid">
                     <div class="gen-video-container">
                         <h4>Final Architectural Demo</h4>
-                        <a href="https://youtu.be/PSnfUz9hrjQ" target="_blank" rel="noopener noreferrer" class="gen-video-link">
+                        <div class="gen-video-link" data-youtube="PSnfUz9hrjQ" data-title="Final Architectural Demo" data-desc="In this project, I developed a system that allows users to transform static images of their apartment into dynamic 3D videos with custom camera movements and personalized elements.">
                             <div class="gen-video-placeholder">
                                 <i class="fas fa-play-circle"></i>
-                                <span>Watch Video on YouTube</span>
+                                <span>Watch Video</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div class="gen-video-container">
                         <h4>Architectural Demo Video</h4>
-                        <a href="https://youtu.be/yGvD7qlnTxw" target="_blank" rel="noopener noreferrer" class="gen-video-link">
+                        <div class="gen-video-link" data-youtube="yGvD7qlnTxw" data-title="Architectural Demo Video" data-desc="Personalized 3D video creation system with custom camera movements and architectural visualization.">
                             <div class="gen-video-placeholder">
                                 <i class="fas fa-play-circle"></i>
-                                <span>Watch Video on YouTube</span>
+                                <span>Watch Video</span>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -186,21 +186,21 @@
                     <div class="gen-videos-grid">
                         <div class="gen-video-container">
                             <h4>Ad Creation Demo</h4>
-                            <a href="https://youtu.be/oyEtjY4alfs" target="_blank" rel="noopener noreferrer" class="gen-video-link">
+                            <div class="gen-video-link" data-youtube="oyEtjY4alfs" data-title="Ad Creation Demo" data-desc="AI-generated advertisement featuring realistic characters, natural dialogues, expressive lip-syncing, and consistent voice performance using Veo3 and ElevenLabs.">
                                 <div class="gen-video-placeholder">
                                     <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on YouTube</span>
+                                    <span>Watch Video</span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <div class="gen-video-container">
                             <h4>Generated Ad Output</h4>
-                            <a href="https://youtube.com/shorts/YkisLmYsBiY?feature=share" target="_blank" rel="noopener noreferrer" class="gen-video-link portrait">
+                            <div class="gen-video-link portrait" data-youtube="YkisLmYsBiY" data-title="Generated Ad Output" data-desc="Final AI-generated advertisement output demonstrating the complete automated ad production pipeline.">
                                 <div class="gen-video-placeholder">
                                     <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on YouTube</span>
+                                    <span>Watch Video</span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -282,12 +282,12 @@
                         </div>
                         <div class="gen-video-container">
                             <h4>Product Ad Example</h4>
-                            <a href="https://youtu.be/y03qlguaX1c" target="_blank" rel="noopener noreferrer" class="gen-video-link">
+                            <div class="gen-video-link" data-youtube="y03qlguaX1c" data-title="Product Ad Example" data-desc="Professional-grade product advertisement demonstrating the capability of generative AI to handle complex, multi-stage creative production.">
                                 <div class="gen-video-placeholder">
                                     <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on YouTube</span>
+                                    <span>Watch Video</span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -316,21 +316,21 @@
                     <div class="gen-videos-grid">
                         <div class="gen-video-container">
                             <h4>George Washington</h4>
-                            <a href="https://youtu.be/SKD7Bxq41a8" target="_blank" rel="noopener noreferrer" class="gen-video-link">
+                            <div class="gen-video-link" data-youtube="SKD7Bxq41a8" data-title="George Washington" data-desc="AI-generated animated short film showcasing character consistency and cinematic storytelling.">
                                 <div class="gen-video-placeholder">
                                     <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on YouTube</span>
+                                    <span>Watch Video</span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                         <div class="gen-video-container">
                             <h4>The Promise Unkept</h4>
-                            <a href="https://www.youtube.com/watch?v=643ba2nN2Jk" target="_blank" rel="noopener noreferrer" class="gen-video-link">
+                            <div class="gen-video-link" data-youtube="643ba2nN2Jk" data-title="The Promise Unkept" data-desc="A fully realized short animated movie demonstrating character consistency over extended sequences and complex narrative storytelling.">
                                 <div class="gen-video-placeholder">
                                     <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on YouTube</span>
+                                    <span>Watch Video</span>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                     <p><strong>Outcome:</strong> The result is a fully realized, short animated movie that demonstrates the capability 
@@ -434,8 +434,93 @@
         </div>
     </footer>
 
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal" role="dialog" aria-labelledby="videoTitle" aria-modal="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close video modal">&times;</button>
+            <div class="video-container">
+                <iframe id="youtubePlayer" style="border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-description">
+                <h3 id="videoTitle"></h3>
+                <p id="videoDesc"></p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
     <script src="animations.js"></script>
     <script src="sw-register.js"></script>
+    
+    <!-- AI Portfolio Video Modal Script -->
+    <script>
+        // Video Modal Functionality for AI Portfolio
+        (function() {
+            const modal = document.getElementById('videoModal');
+            const youtubePlayer = document.getElementById('youtubePlayer');
+            const videoTitle = document.getElementById('videoTitle');
+            const videoDesc = document.getElementById('videoDesc');
+            const closeModal = document.querySelector('.close-modal');
+            
+            if (!modal || !youtubePlayer || !closeModal) {
+                console.warn('Video modal elements not found');
+                return;
+            }
+            
+            // Open video modal when clicking on video links
+            document.querySelectorAll('.gen-video-link[data-youtube]').forEach(link => {
+                link.style.cursor = 'pointer';
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const youtubeId = this.getAttribute('data-youtube');
+                    const title = this.getAttribute('data-title') || 'Video';
+                    const description = this.getAttribute('data-desc') || '';
+                    
+                    if (youtubeId && /^[a-zA-Z0-9_-]{11}$/.test(youtubeId)) {
+                        // Set modal content
+                        videoTitle.textContent = title;
+                        videoDesc.textContent = description;
+                        
+                        // Load YouTube video in iframe (video ID validated)
+                        youtubePlayer.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
+                        
+                        // Show modal
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                        
+                        // Track video view
+                        if (typeof trackEvent === 'function') {
+                            trackEvent('Video', 'View', title);
+                        }
+                    }
+                });
+            });
+            
+            // Close modal function
+            function closeVideoModal() {
+                youtubePlayer.src = '';
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Close modal when clicking close button
+            closeModal.addEventListener('click', closeVideoModal);
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeVideoModal();
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeVideoModal();
+                }
+            });
+        })();
+    </script>
+
 </body>
 </html>

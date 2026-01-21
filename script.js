@@ -323,7 +323,8 @@ document.querySelectorAll('.video-card').forEach(card => {
                 }
                 
                 // Set iframe src with YouTube embed URL
-                if (videoId) {
+                // Validate YouTube video ID format (11 characters, alphanumeric, hyphens, underscores)
+                if (videoId && /^[a-zA-Z0-9_-]{11}$/.test(videoId)) {
                     youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
                     youtubePlayer.style.display = 'block';
                     videoPlayer.style.display = 'none';

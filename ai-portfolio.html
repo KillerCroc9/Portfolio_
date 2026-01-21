@@ -439,7 +439,7 @@
         <div class="modal-content">
             <button class="close-modal" aria-label="Close video modal">&times;</button>
             <div class="video-container">
-                <iframe id="youtubePlayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe id="youtubePlayer" style="border: none;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div class="video-description">
                 <h3 id="videoTitle"></h3>
@@ -476,12 +476,12 @@
                     const title = this.getAttribute('data-title') || 'Video';
                     const description = this.getAttribute('data-desc') || '';
                     
-                    if (youtubeId) {
+                    if (youtubeId && /^[a-zA-Z0-9_-]{11}$/.test(youtubeId)) {
                         // Set modal content
                         videoTitle.textContent = title;
                         videoDesc.textContent = description;
                         
-                        // Load YouTube video in iframe
+                        // Load YouTube video in iframe (video ID validated)
                         youtubePlayer.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1`;
                         
                         // Show modal

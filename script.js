@@ -303,24 +303,18 @@ document.querySelectorAll('.video-card').forEach(card => {
             // Track video view
             trackEvent('Video', 'View', video.title);
             
+            // Handle YouTube videos - open in new tab
+            if (video.type === 'youtube') {
+                window.open(video.url, '_blank', 'noopener,noreferrer');
+                return;
+            }
+            
+            // Handle local videos in modal
             videoTitle.textContent = video.title;
             videoDesc.textContent = video.description;
-            
-            // Handle YouTube videos
-            if (video.type === 'youtube') {
-                // Extract YouTube ID from URL
-                const youtubeIdMatch = video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
-                if (youtubeIdMatch && youtubeIdMatch[1]) {
-                    videoPlayer.style.display = 'none';
-                    youtubePlayer.style.display = 'block';
-                    youtubePlayer.src = `https://www.youtube.com/embed/${youtubeIdMatch[1]}?autoplay=1`;
-                }
-            } else {
-                // Handle local videos
-                youtubePlayer.style.display = 'none';
-                videoPlayer.style.display = 'block';
-                videoPlayer.src = video.url;
-            }
+            youtubePlayer.style.display = 'none';
+            videoPlayer.style.display = 'block';
+            videoPlayer.src = video.url;
             
             // Use GSAP animation if available
             if (window.portfolioAnimations && window.portfolioAnimations.animateModalOpen) {

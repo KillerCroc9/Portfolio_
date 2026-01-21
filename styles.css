@@ -624,6 +624,31 @@ section {
     transform: translate(-50%, -50%) scale(1.2);
 }
 
+/* YouTube Thumbnail Placeholder Styles */
+.youtube-thumbnail .youtube-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.youtube-thumbnail .youtube-placeholder i {
+    font-size: 5rem;
+    color: #FF0000;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.video-card:hover .youtube-thumbnail .youtube-placeholder i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
 .video-info {
     padding: 1.5rem;
 }

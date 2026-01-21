@@ -303,18 +303,39 @@ document.querySelectorAll('.video-card').forEach(card => {
             // Track video view
             trackEvent('Video', 'View', video.title);
             
-            // Handle YouTube videos - open in new tab
-            if (video.type === 'youtube') {
-                window.open(video.url, '_blank', 'noopener,noreferrer');
-                return;
-            }
-            
-            // Handle local videos in modal
+            // Set modal content
             videoTitle.textContent = video.title;
             videoDesc.textContent = video.description;
-            youtubePlayer.style.display = 'none';
-            videoPlayer.style.display = 'block';
-            videoPlayer.src = video.url;
+            
+            // Handle YouTube videos - play in iframe
+            if (video.type === 'youtube') {
+                // Extract YouTube video ID from URL
+                let videoId = '';
+                const url = video.url;
+                
+                // Handle different YouTube URL formats
+                if (url.includes('youtube.com/watch')) {
+                    const urlParams = new URLSearchParams(new URL(url).search);
+                    videoId = urlParams.get('v');
+                } else if (url.includes('youtu.be/')) {
+                    videoId = url.split('youtu.be/')[1].split('?')[0];
+                } else if (url.includes('youtube.com/shorts/')) {
+                    videoId = url.split('shorts/')[1].split('?')[0];
+                }
+                
+                // Set iframe src with YouTube embed URL
+                if (videoId) {
+                    youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    youtubePlayer.style.display = 'block';
+                    videoPlayer.style.display = 'none';
+                    videoPlayer.src = '';
+                }
+            } else {
+                // Handle local videos in modal
+                youtubePlayer.style.display = 'none';
+                videoPlayer.style.display = 'block';
+                videoPlayer.src = video.url;
+            }
             
             // Use GSAP animation if available
             if (window.portfolioAnimations && window.portfolioAnimations.animateModalOpen) {

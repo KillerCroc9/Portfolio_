@@ -48,8 +48,54 @@
 
       gtag('config', 'G-DTKWB1WRTZ');
     </script>
+    <script>
+      // Enforce dark mode on all devices
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    </script>
 </head>
-<body>
+<body class="dark-mode">
+    <!-- Shooting Stars Background -->
+    <div id="stars-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden;"></div>
+    <style>
+        .shooting-star {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #00bfff, transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px 3px #00d4ff, 0 0 20px 5px rgba(0, 212, 255, 0.5);
+            animation: shootingStar linear forwards;
+        }
+        @keyframes shootingStar {
+            0% {
+                transform: translateX(0) translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-800px) translateY(800px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+    <script>
+        function createShootingStar() {
+            const container = document.getElementById('stars-container');
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 50 + '%';
+            star.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
+            container.appendChild(star);
+            setTimeout(() => star.remove(), 1500);
+        }
+        // Create initial batch of stars
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createShootingStar, i * 100);
+        }
+        // Continuous shooting stars
+        setInterval(createShootingStar, 150);
+    </script>
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
@@ -60,12 +106,8 @@
                 <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="unreal-portfolio.html"><i class="fas fa-gamepad"></i> Unreal Portfolio</a></li>
                 <li><a href="#generative-ai" class="active">Generative AI</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
-                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle dark/light theme">
-                    <i class="fas fa-moon"></i>
-                </button>
                 <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -96,7 +138,77 @@
         <div class="container">
             <h2 class="section-title">Generative AI Projects</h2>
             <p class="section-subtitle">Exploring the frontiers of AI-powered content creation and automation</p>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;"><strong>Tools I Use:</strong> Kling, Runway, HeyGen, Veo3, ElevenLabs, Hulio, Kontext Flux, MuseTalk & more</p>
             
+            <!-- Project: AI-Generated Animated Movie Shorts -->
+            <div class="gen-project">
+                <h3 class="gen-project-title">AI-Generated Animated Movie Shorts (1-2 Minutes)</h3>
+                <p class="gen-project-description">
+                    Automated pipeline for creating short animated movies (1-2 minutes), placing strong emphasis on 
+                    <strong>character and stylistic consistency</strong> throughout the entire narrative.
+                </p>
+                <div class="gen-workflow">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Script & Storyboard</strong> — AI-driven narrative and scene planning</li>
+                        <li><strong>Character Consistency</strong> — Same character maintained across all scenes</li>
+                        <li><strong>Voice & Assembly</strong> — Synthesized dialogue with cinematic editing</li>
+                    </ul>
+                    <div class="gen-videos-grid">
+                        <div class="gen-video-container">
+                            <h4>George Washington</h4>
+                            <div class="gen-video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/SKD7Bxq41a8?loop=1&playlist=SKD7Bxq41a8" title="George Washington" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="gen-video-container">
+                            <h4>The Promise Unkept</h4>
+                            <div class="gen-video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project: AI-Generated Ad Creation -->
+            <div class="gen-project">
+                <h3 class="gen-project-title">AI-Generated Ad Creation</h3>
+                <p class="gen-project-description">
+                    End-to-end automated pipeline for creating <strong>AI-generated advertisements</strong> — from script to final video with lip-syncing and dynamic video generation.
+                </p>
+                <div class="gen-workflow">
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>AI Scriptwriting</strong> — Auto-generated ad narratives and product copy</li>
+                        <li><strong>Lip-Sync & Voice</strong> — Lip-synced videos with realistic voiceovers</li>
+                        <li><strong>Auto Assembly</strong> — Dynamic visuals stitched into polished final ads</li>
+                    </ul>
+                    <div class="gen-videos-grid">
+                        <div class="gen-video-container">
+                            <h4>Niki Product Showcase</h4>
+                            <div class="gen-video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/4eatWipS-0k?loop=1&playlist=4eatWipS-0k" title="Niki Product Showcase" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="gen-video-container">
+                            <h4>Product Ad Example</h4>
+                            <div class="gen-video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/y03qlguaX1c?loop=1&playlist=y03qlguaX1c" title="Product Ad Example" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gen-videos-grid" style="justify-content: center;">
+                        <div class="gen-video-container">
+                            <h4>Market Campaign</h4>
+                            <div class="gen-video-wrapper">
+                                <iframe src="https://www.youtube.com/embed/xAGDRRxfhKA?loop=1&playlist=xAGDRRxfhKA" title="Market Campaign" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Project: Consistent Character -->
             <div class="gen-project">
                 <h3 class="gen-project-title">Consistent Character Across Multiple Scenes</h3>
@@ -109,86 +221,40 @@
                     versatile and instantly recognizable.
                 </p>
                 <div class="gen-images-grid">
-                    <img src="assets/generative-ai/Image1.jpg" alt="Character Scene 1" class="gen-image">
-                    <img src="assets/generative-ai/Image2.jpg" alt="Character Scene 2" class="gen-image">
-                    <img src="assets/generative-ai/Image3.jpg" alt="Character Scene 3" class="gen-image">
-                    <img src="assets/generative-ai/Image4.jpg" alt="Character Scene 4" class="gen-image">
-                    <img src="assets/generative-ai/Image5.jpg" alt="Character Scene 5" class="gen-image">
-                    <img src="assets/generative-ai/Image6.jpg" alt="Character Scene 6" class="gen-image">
+                    <img src="assets/generative-ai/Image01.jpg" alt="Character Scene 1" class="gen-image">
+                    <img src="assets/generative-ai/Image02.jpg" alt="Character Scene 2" class="gen-image">
+                    <img src="assets/generative-ai/Image03.jpg" alt="Character Scene 3" class="gen-image">
+                    <img src="assets/generative-ai/Image04.jpg" alt="Character Scene 4" class="gen-image">
+                    <img src="assets/generative-ai/Image05.jpg" alt="Character Scene 5" class="gen-image">
+                    <img src="assets/generative-ai/Image06.jpg" alt="Character Scene 6" class="gen-image">
                 </div>
             </div>
 
             <!-- Project: Architectural Visualization -->
             <div class="gen-project">
-                <h3 class="gen-project-title">Architectural Visualization Demo: Personalized 3D Video Creation</h3>
+                <h3 class="gen-project-title">Architectural Visualization Demo</h3>
                 <p class="gen-project-description">
-                    In this project, I developed a system that allows users to transform static images of their apartment 
-                    into dynamic 3D videos with custom camera movements and personalized elements. The process is straightforward 
-                    and user-friendly, offering a range of customizable features:
+                    System that transforms static apartment images into dynamic 3D videos with custom camera movements and personalized elements.
                 </p>
                 <ul class="gen-features-list">
-                    <li>Images of the Apartment: Users upload photos of their apartment or interior design.</li>
-                    <li>Camera Motion Preferences: Users specify the desired camera motion or path for each image to create a smooth, cinematic effect.</li>
-                    <li>Background Text: The user can input text that will be displayed in the background of the video, enhancing the narrative.</li>
-                    <li>Voiceover: Users can select the voice they prefer for the background narration, providing a personalized touch.</li>
-                    <li>Email for Final Video Delivery: The system sends the final video to the user's designated email address.</li>
-                    <li>Image Editing Options: Users can remove distractions like cars or people from the uploaded images for a cleaner, more focused scene.</li>
-                    <li>Model Selection: Users can choose the model they want to use for generating the video, offering flexibility in style and presentation.</li>
-                    <li>Resolution Choice: Users can select the resolution they want for the final video, ensuring it meets their quality preferences.</li>
-                    <li>Company Logo Integration: Users have the option to add their company logo to the video, giving it a professional branding touch.</li>
-                    <li>Watermark Option: A watermark can be added to the video for copyright protection or branding.</li>
-                    <li>Image Replacement: If desired, users can replace images with different ones, allowing them to refresh or update their visuals.</li>
-                    <li>Video Order Customization: Users can rearrange the order of the images/videos, tailoring the sequence to their preferences.</li>
+                    <li>Upload apartment photos with custom camera motion paths</li>
+                    <li>AI voiceover with selectable voices and background text</li>
+                    <li>Remove distractions (cars, people) from images</li>
+                    <li>Choose resolution and video sequence order</li>
+                    <li>Add company logo and watermark branding</li>
+                    <li>Final video delivered via email</li>
                 </ul>
                 <div class="gen-videos-grid">
                     <div class="gen-video-container">
                         <h4>Final Architectural Demo</h4>
                         <div class="gen-video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/PSnfUz9hrjQ" title="Final Architectural Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/PSnfUz9hrjQ?loop=1&playlist=PSnfUz9hrjQ" title="Final Architectural Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="gen-video-container">
                         <h4>Architectural Demo Video</h4>
                         <div class="gen-video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/yGvD7qlnTxw" title="Architectural Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project: AI-Generated Ad Creation -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">AI-Generated Ad Creation with Veo3</h3>
-                <p class="gen-project-description">
-                    This project focuses on creating <strong>AI-generated advertisements</strong> using a fully automated generative 
-                    video pipeline. The system combines <strong>scriptwriting, lip-syncing, and AI voice synthesis</strong> to produce 
-                    high-quality, realistic ad videos from scratch.
-                </p>
-                <div class="gen-workflow">
-                    <h4>Key Features and Workflow:</h4>
-                    <ul>
-                        <li><strong>Script Generation:</strong> The process begins with AI-driven scriptwriting that creates compelling ad narratives tailored to the desired message or brand tone.</li>
-                        <li><strong>Video Generation with Veo3:</strong> The generated scripts are transformed into lip-synced videos using Veo3, ensuring expressive facial movements and natural dialogue delivery.</li>
-                        <li><strong>Voice Enhancement with ElevenLabs:</strong> The videos are enhanced with realistic voiceovers from ElevenLabs, improving tone consistency and emotional depth.</li>
-                        <li><strong>Lip-Sync Integration:</strong> The ElevenLabs audio is perfectly synchronized with Veo3's visuals, achieving seamless lip-sync and natural pacing.</li>
-                        <li><strong>End-to-End Ad Production:</strong> The pipeline outputs a polished video ad, ready for use across digital platforms.</li>
-                    </ul>
-                    <p><strong>Outcome:</strong> The final result is a fully AI-generated advertisement featuring realistic characters, 
-                    natural dialogues, expressive lip-syncing, and consistent voice performance. This project demonstrates the power of 
-                    multimodal generative AI — integrating text, audio, and video — to automate creative production pipelines for marketing 
-                    and storytelling.</p>
-                    <div class="gen-videos-grid">
-                        <div class="gen-video-container">
-                            <h4>Ad Creation Demo</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/oyEtjY4alfs" title="Ad Creation Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="gen-video-container">
-                            <h4>Generated Ad Output</h4>
-                            <div class="gen-video-wrapper portrait">
-                                <iframe src="https://www.youtube.com/embed/YkisLmYsBiY" title="Generated Ad Output" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
+                            <iframe src="https://www.youtube.com/embed/yGvD7qlnTxw?loop=1&playlist=yGvD7qlnTxw" title="Architectural Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -203,181 +269,51 @@
                     — from single images to complete animation-ready sheets.
                 </p>
                 <div class="gen-workflow">
-                    <h4>Key Features and Workflow:</h4>
+                    <h4>Key Features:</h4>
                     <ul>
-                        <li><strong>Image Generation or Upload:</strong> Users can either generate a base image using text prompts or upload their own image as a starting point.</li>
-                        <li><strong>Image Editing:</strong> Once the image is generated, users can make adjustments — such as refining poses, changing backgrounds, or enhancing visual elements — before finalizing it.</li>
-                        <li><strong>Animation Type Selection:</strong> After finalizing the image, users can choose the type of sprite animation they want to create — Run, Walk, or Static.</li>
-                        <li><strong>Frame Generation:</strong> The system then generates multiple image frames corresponding to the chosen animation style.</li>
-                        <li><strong>Frame Selection:</strong> Users can preview and select their preferred frames from the generated set.</li>
-                        <li><strong>Sprite Sheet Compilation:</strong> The selected frames are automatically arranged into a well-formatted sprite sheet, ready for integration into games, animations, or creative projects.</li>
+                        <li><strong>Generate or Upload</strong> — Create base image via prompts or upload your own</li>
+                        <li><strong>Edit & Animate</strong> — Refine poses, select Run/Walk/Static animations</li>
+                        <li><strong>Auto Compilation</strong> — Frames arranged into game-ready sprite sheets</li>
                     </ul>
                     <div class="gen-videos-grid">
                         <div class="gen-video-container">
-                            <h4>Sprite Generation Process</h4>
-                            <a href="https://drive.google.com/file/d/1i7UrQTuY3AOp7J5Q0PRRfwrgg5IEKI34/view" target="_blank" rel="noopener noreferrer" class="gen-video-link">
-                                <div class="gen-video-placeholder">
-                                    <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on Google Drive</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="gen-video-container">
-                            <h4>Image to Video Animation</h4>
-                            <a href="https://drive.google.com/file/d/1SZkhGVutzDAfoHXij1njeSJHfFTMKLeM/view" target="_blank" rel="noopener noreferrer" class="gen-video-link portrait">
-                                <div class="gen-video-placeholder">
-                                    <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on Google Drive</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="gen-sprite-example">
-                        <img src="assets/generative-ai/SpriteSheet.png" alt="Sprite Sheet Example" class="gen-image-single">
-                    </div>
-                    <p><strong>Outcome:</strong> The final output is a custom sprite sheet that captures consistent character design and 
-                    smooth animation frames. This project demonstrates how generative AI can streamline asset creation, reducing manual 
-                    effort while maintaining artistic control and flexibility.</p>
-                </div>
-            </div>
-
-            <!-- Project: AI-Generated Product Ad Videos -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">AI-Generated Product Ad Videos (Text-to-Video Workflow)</h3>
-                <p class="gen-project-description">
-                    This project focuses on a complete, end-to-end workflow for creating product advertisements using a multi-step 
-                    generative AI pipeline. The system automates the creative process from initial concept to final video assembly, 
-                    resulting in polished, ready-to-deploy product ads.
-                </p>
-                <div class="gen-workflow">
-                    <h4>Key Features and Workflow:</h4>
-                    <ul>
-                        <li><strong>Script Creation:</strong> The workflow begins with the creation of a compelling ad script, generated by an AI model tailored to the specific product and marketing message.</li>
-                        <li><strong>Image Generation:</strong> Based on the script's visual descriptions, high-quality, product-focused images are generated using a text-to-image model. These images serve as the key visual elements for the video scenes.</li>
-                        <li><strong>Video Generation:</strong> The static images are then transformed into dynamic video segments, applying custom camera movements and animation effects to bring the visuals to life.</li>
-                        <li><strong>Video Stitching and Assembly:</strong> Multiple video clips and segments are merged and edited together to form the final, cohesive advertisement sequence, ensuring smooth transitions and narrative flow.</li>
-                        <li><strong>Final Output:</strong> The result is a professional-grade product advertisement, demonstrating the capability of generative AI to handle complex, multi-stage creative production.</li>
-                    </ul>
-                    <div class="gen-videos-grid">
-                        <div class="gen-video-container">
-                            <h4>Merged Product Ad</h4>
-                            <a href="https://drive.google.com/file/d/10FslF3XI46-twQotWmudPneIEWf6ynI4/view" target="_blank" rel="noopener noreferrer" class="gen-video-link">
-                                <div class="gen-video-placeholder">
-                                    <i class="fas fa-play-circle"></i>
-                                    <span>Watch Video on Google Drive</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="gen-video-container">
-                            <h4>Product Ad Example</h4>
+                            <h4>2D Animated Character</h4>
                             <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/y03qlguaX1c" title="Product Ad Example" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project: AI-Generated Animated Movie Shorts -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">AI-Generated Animated Movie Shorts (1-2 Minutes)</h3>
-                <p class="gen-project-description">
-                    This project showcases an automated pipeline for creating short animated movies (1-2 minutes in length), 
-                    placing a strong emphasis on maintaining <strong>character and stylistic consistency</strong> throughout the 
-                    entire narrative. The workflow leverages the efficiency of generative AI models, mirroring the multi-stage 
-                    production process used for generating ads and other video content.
-                </p>
-                <div class="gen-workflow">
-                    <p><strong>Core Objective:</strong> To produce short, narrative-driven animated films with high character 
-                    fidelity and smooth, cinematic flow.</p>
-                    <h4>Key Features and Workflow (Adapted for Film):</h4>
-                    <ul>
-                        <li><strong>Scriptwriting & Storyboarding:</strong> The process starts with an AI-driven script and initial storyboard creation, defining the scene actions, dialogue, and overall visual narrative structure.</li>
-                        <li><strong>Consistent Character Generation:</strong> Using advanced generative models, the primary character is created and maintained across all scenes, ensuring features, proportions, and style remain consistent regardless of pose, expression, or background change.</li>
-                        <li><strong>Scene-Specific Image/Video Generation:</strong> Based on the script and storyboard, high-fidelity scene visuals (both static images and dynamic video clips) are generated, focusing on world consistency and artistic style.</li>
-                        <li><strong>Voiceover & Dialogue Synthesis:</strong> Realistic voiceovers and character dialogues are generated using high-quality text-to-speech models, which are then integrated and synchronized with the visuals.</li>
-                        <li><strong>Editing and Cinematic Assembly:</strong> All generated clips and audio tracks are stitched together, adding necessary transitions, effects, and music to create a cohesive, finished 1-2 minute animated movie short.</li>
-                    </ul>
-                    <div class="gen-videos-grid">
-                        <div class="gen-video-container">
-                            <h4>George Washington</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/SKD7Bxq41a8" title="George Washington" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/PkTjlwuDdAQ?loop=1&playlist=PkTjlwuDdAQ" title="2D Animated Character" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                         <div class="gen-video-container">
-                            <h4>The Promise Unkept</h4>
+                            <h4>Bluebird</h4>
                             <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/643ba2nN2Jk" title="The Promise Unkept" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/4XUpsQ1aH_Y?loop=1&playlist=4XUpsQ1aH_Y" title="Bluebird" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
-                    <p><strong>Outcome:</strong> The result is a fully realized, short animated movie that demonstrates the capability 
-                    of generative AI to handle complex, long-form creative projects while successfully solving one of the biggest 
-                    challenges in AI animation: <strong>character consistency</strong> over extended sequences.</p>
+                    <div class="gen-sprite-example" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                        <img src="assets/generative-ai/SpriteSheet BlueBird.png" alt="Sprite Sheet BlueBird" class="gen-image-single" style="max-width: 45%; height: auto; object-fit: contain;">
+                        <img src="assets/generative-ai/SpriteSheet Cute Anime.png" alt="Sprite Sheet Cute Anime" class="gen-image-single" style="max-width: 45%; height: auto; object-fit: contain;">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Portrait Videos Section -->
+    <section class="generative-ai" style="padding-top: 2rem;">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Let's collaborate on your next AI or game development project</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>Muqeeta2@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">abdul-muqeet-765283207</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <h3>GitHub</h3>
-                            <p><a href="https://github.com/KillerCroc9" target="_blank" style="color: var(--text-secondary); text-decoration: none;">KillerCroc9</a></p>
-                        </div>
+            <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
+                <div style="width: 345px; text-align: center; border: 3px solid #00d4ff; border-radius: 12px; padding: 1rem; box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);">
+                    <h4 style="margin-bottom: 1rem;">Generated Ad Output</h4>
+                    <div class="gen-video-wrapper portrait">
+                        <iframe src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <form class="contact-form" id="contactForm" action="https://formsubmit.co/muqeeta2@gmail.com" method="POST" novalidate>
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="_honey" style="position:absolute;left:-9999px;width:1px;height:1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <input type="hidden" name="_template" value="table">
-                    
-                    <div class="form-group">
-                        <label for="name" class="sr-only">Your Name</label>
-                        <input type="text" id="name" name="name" data-field-name="Name" placeholder="Your Name" required aria-required="true" minlength="2">
-                        <span class="error-message" id="nameError"></span>
+                <div style="width: 345px; text-align: center; border: 3px solid #00d4ff; border-radius: 12px; padding: 1rem; box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);">
+                    <h4 style="margin-bottom: 1rem;">2D Character AI Generated</h4>
+                    <div class="gen-video-wrapper portrait">
+                        <iframe src="https://www.youtube.com/embed/5ECxVt1YLA4?loop=1&playlist=5ECxVt1YLA4" title="2D Character AI Generated" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
-                    <div class="form-group">
-                        <label for="email" class="sr-only">Your Email</label>
-                        <input type="email" id="email" name="email" data-field-name="Email" placeholder="Your Email" required aria-required="true">
-                        <span class="error-message" id="emailError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="sr-only">Subject</label>
-                        <input type="text" id="subject" name="subject" data-field-name="Subject" placeholder="Subject" minlength="3">
-                        <span class="error-message" id="subjectError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="sr-only">Your Message</label>
-                        <textarea rows="5" id="message" name="message" data-field-name="Message" placeholder="Your Message" required aria-required="true" minlength="10"></textarea>
-                        <span class="error-message" id="messageError"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                </div>
             </div>
         </div>
     </section>
@@ -396,14 +332,14 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="unreal-portfolio.html">Unreal Portfolio</a></li>
                         <li><a href="#generative-ai">AI Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>
-                    <div class="social-links">
-                        <a href="https://github.com/KillerCroc9" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <div class="social-links" style="display: flex; gap: 1.5rem; margin-top: 1rem;">
+                        <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:Muqeeta2@gmail.com" aria-label="Email" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>

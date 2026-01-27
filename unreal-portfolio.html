@@ -50,6 +50,57 @@
     </script>
 </head>
 <body>
+    <!-- Force dark mode -->
+    <script>document.documentElement.setAttribute('data-theme', 'dark'); localStorage.setItem('theme', 'dark');</script>
+    
+    <!-- Shooting Stars Background -->
+    <style>
+        .shooting-stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .shooting-star {
+            position: absolute;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, transparent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00bfff;
+            animation: shoot 1.5s linear forwards;
+            opacity: 0;
+        }
+        @keyframes shoot {
+            0% {
+                transform: translateX(0) translateY(0) rotate(-45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(800px) translateY(800px) rotate(-45deg);
+                opacity: 0;
+            }
+        }
+    </style>
+    <div class="shooting-stars-container" id="shootingStars"></div>
+    <script>
+        function createShootingStar() {
+            const container = document.getElementById('shootingStars');
+            const star = document.createElement('div');
+            star.className = 'shooting-star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 50 + '%';
+            star.style.animationDuration = (Math.random() * 1 + 1) + 's';
+            container.appendChild(star);
+            setTimeout(() => star.remove(), 2000);
+        }
+        setInterval(createShootingStar, 150);
+    </script>
+
     <!-- Navigation -->
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
@@ -63,12 +114,8 @@
                 <li><a href="#videos" data-i18n="nav.videos">Videos</a></li>
                 <li><a href="ai-portfolio.html"><i class="fas fa-brain"></i> AI Portfolio</a></li>
                 <li><a href="about-me.html"><i class="fas fa-user"></i> Get to Know Me</a></li>
-                <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <div class="nav-controls">
-                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme" title="Toggle dark/light theme">
-                    <i class="fas fa-moon"></i>
-                </button>
                 <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -86,7 +133,7 @@
             <p class="hero-description" data-i18n="hero.description">Leading a dedicated Unreal Engine team, building immersive experiences with cutting-edge AI technologies and driving company growth</p>
             <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary" data-i18n="hero.view_showcase">View Portfolio</a>
-                <a href="#contact" class="btn btn-secondary" data-i18n="hero.get_in_touch">Get in Touch</a>
+                <a href="mailto:muqeeta2@gmail.com" class="btn btn-secondary">Get in Touch</a>
             </div>
         </div>
         <div class="hero-scroll">
@@ -187,7 +234,7 @@
                 <!-- Video 4: YouTube Video 1 -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/C00zGXMSzhg" title="Dragons On Air – Live Park Broadcast System" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/C00zGXMSzhg?loop=1&playlist=C00zGXMSzhg" title="Dragons On Air – Live Park Broadcast System" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Dragons On Air – Live Park Broadcast System</h3>
@@ -198,7 +245,7 @@
                 <!-- Video 5: YouTube Video 2 -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/l9VfiII_DP8" title="AI Rendering Plugin for Unreal Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/l9VfiII_DP8?loop=1&playlist=l9VfiII_DP8" title="AI Rendering Plugin for Unreal Engine Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>AI Rendering Plugin for Unreal Engine Demo</h3>
@@ -209,7 +256,7 @@
                 <!-- Video 6: YouTube Video 3 -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/S--HI8G9OLA" title="Tech Art Portfolio – Blender · Unreal Engine · Real-Time Rendering" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/S--HI8G9OLA?loop=1&playlist=S--HI8G9OLA" title="Tech Art Portfolio – Blender · Unreal Engine · Real-Time Rendering" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Tech Art Portfolio – Blender · Unreal Engine · Real-Time Rendering</h3>
@@ -220,7 +267,7 @@
                 <!-- Video 7: Real Estate Video Furniture Swap -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/PSnfUz9hrjQ" title="Real Estate Video Furniture Swap" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/PSnfUz9hrjQ?loop=1&playlist=PSnfUz9hrjQ" title="Real Estate Video Furniture Swap" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Real Estate Video Furniture Swap</h3>
@@ -231,7 +278,7 @@
                 <!-- Video 8: The Promise Unkept -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/643ba2nN2Jk" title="The Promise Unkept" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>The Promise Unkept</h3>
@@ -242,7 +289,7 @@
                 <!-- Video 9: Market Videos Automation with Custom Voice -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/y03qlguaX1c" title="Market Videos Automation with Custom Voice" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/y03qlguaX1c?loop=1&playlist=y03qlguaX1c" title="Market Videos Automation with Custom Voice" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Market Videos Automation with Custom Voice</h3>
@@ -253,7 +300,7 @@
                 <!-- Video 10: Real Estate Visualization -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/yGvD7qlnTxw" title="Real Estate Visualization" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/yGvD7qlnTxw?loop=1&playlist=yGvD7qlnTxw" title="Real Estate Visualization" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Real Estate Visualization</h3>
@@ -264,7 +311,7 @@
                 <!-- Video 11: Furniture Styles Swap -->
                 <div class="video-card">
                     <div class="gen-video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/Muv_8_re9ZY" title="Furniture Styles Swap" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/Muv_8_re9ZY?loop=1&playlist=Muv_8_re9ZY" title="Furniture Styles Swap" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="video-info">
                         <h3>Furniture Styles Swap</h3>
@@ -333,68 +380,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title" data-i18n="sections.contact_title">Get In Touch</h2>
-            <p class="section-subtitle" data-i18n="sections.contact_subtitle">Let's collaborate on your next game development project</p>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>Muqeeta2@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <div>
-                            <h3>LinkedIn</h3>
-                            <p><a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" style="color: var(--text-secondary); text-decoration: none;">abdul-muqeet-765283207</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-github"></i>
-                        <div>
-                            <h3>GitHub</h3>
-                            <p><a href="https://github.com/KillerCroc9" target="_blank" style="color: var(--text-secondary); text-decoration: none;">KillerCroc9</a></p>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contactForm" action="https://formsubmit.co/muqeeta2@gmail.com" method="POST" novalidate>
-                    <!-- FormSubmit Configuration -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - Portfolio">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="text" name="_honey" style="position:absolute;left:-9999px;width:1px;height:1px;" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <input type="hidden" name="_template" value="table">
-                    
-                    <div class="form-group">
-                        <label for="name" class="sr-only" data-i18n="form.name_placeholder">Your Name</label>
-                        <input type="text" id="name" name="name" data-field-name="Name" placeholder="Your Name" data-i18n-placeholder="form.name_placeholder" required aria-required="true" minlength="2">
-                        <span class="error-message" id="nameError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="sr-only" data-i18n="form.email_placeholder">Your Email</label>
-                        <input type="email" id="email" name="email" data-field-name="Email" placeholder="Your Email" data-i18n-placeholder="form.email_placeholder" required aria-required="true">
-                        <span class="error-message" id="emailError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="sr-only" data-i18n="form.subject_placeholder">Subject</label>
-                        <input type="text" id="subject" name="subject" data-field-name="Subject" placeholder="Subject" data-i18n-placeholder="form.subject_placeholder" minlength="3">
-                        <span class="error-message" id="subjectError"></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="sr-only" data-i18n="form.message_placeholder">Your Message</label>
-                        <textarea rows="5" id="message" name="message" data-field-name="Message" placeholder="Your Message" data-i18n-placeholder="form.message_placeholder" required aria-required="true" minlength="10"></textarea>
-                        <span class="error-message" id="messageError"></span>
-                    </div>
-                    <button type="submit" class="btn btn-primary" data-i18n="form.send_button">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -410,14 +395,14 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#videos">Videos</a></li>
                         <li><a href="about-me.html">Get to Know Me</a></li>
-                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3 data-i18n="footer.connect">Connect</h3>
                     <div class="social-links">
-                        <a href="https://github.com/KillerCroc9" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:muqeeta2@gmail.com" aria-label="Email" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>

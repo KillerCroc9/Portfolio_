@@ -3,336 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="KillerCroc9's Generative AI Portfolio - Exploring AI-powered content creation, character consistency, video generation, and automated workflows.">
-    <meta name="keywords" content="generative AI, AI art, character consistency, video generation, AI automation, KillerCroc9">
-    <meta name="author" content="KillerCroc9">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://killercroc9.github.io/Portfolio_/ai-portfolio.html">
-    <meta property="og:title" content="KillerCroc9 - Generative AI Portfolio">
-    <meta property="og:description" content="Generative AI Expert showcasing character consistency, architectural visualization, and AI-powered video creation">
-    <meta property="og:image" content="https://killercroc9.github.io/Portfolio_/assets/og-image.jpg">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://killercroc9.github.io/Portfolio_/ai-portfolio.html">
-    <meta name="twitter:title" content="KillerCroc9 - Generative AI Portfolio">
-    <meta name="twitter:description" content="Generative AI Expert showcasing character consistency, architectural visualization, and AI-powered video creation">
-    <meta name="twitter:image" content="https://killercroc9.github.io/Portfolio_/assets/og-image.jpg">
-    
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#00bfff">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="KillerCroc9 AI Portfolio">
-    
     <title>KillerCroc9 - Generative AI Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- GSAP Library for Advanced Animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTKWB1WRTZ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-DTKWB1WRTZ');
-    </script>
-    <script>
-    // Dark/light mode removed
-    </script>
-</head>
-<body>
-    <!-- Shooting Stars Background -->
-    <div id="stars-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden;"></div>
     <style>
-        .shooting-star {
-            position: absolute;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, #00d4ff, #00bfff, transparent);
-            border-radius: 50%;
-            box-shadow: 0 0 10px 3px #00d4ff, 0 0 20px 5px rgba(0, 212, 255, 0.5);
-            animation: shootingStar linear forwards;
+        body {
+            margin: 0;
+            font-family: 'Geist', 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #f3f3f3;
         }
-        @keyframes shootingStar {
-            0% {
-                transform: translateX(0) translateY(0) rotate(-45deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(-800px) translateY(800px) rotate(-45deg);
-                opacity: 0;
-            }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .hero {
+            text-align: center;
+            padding: 5rem 1rem 3rem 1rem;
+        }
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+        }
+        .hero-desc {
+            color: #b0b0b0;
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .section {
+            margin: 3rem 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        .section-desc {
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 0.75rem;
+            background: #181818;
+            border: 1px solid #222;
+            object-fit: cover;
+        }
+        .videos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .video-embed {
+            aspect-ratio: 16/9;
+            width: 100%;
+            border-radius: 0.75rem;
+            border: 1px solid #222;
+            background: #181818;
+        }
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 1.25rem; }
         }
     </style>
-    <script>
-        function createShootingStar() {
-            const container = document.getElementById('stars-container');
-            const star = document.createElement('div');
-            star.className = 'shooting-star';
-            star.style.left = Math.random() * 100 + '%';
-            star.style.top = Math.random() * 50 + '%';
-            star.style.animationDuration = (Math.random() * 1 + 0.5) + 's';
-            container.appendChild(star);
-            setTimeout(() => star.remove(), 1500);
-        }
-        // Create initial batch of stars
-        for (let i = 0; i < 5; i++) {
-            setTimeout(createShootingStar, i * 100);
-        }
-        // Continuous shooting stars
-        setInterval(createShootingStar, 150);
-    </script>
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+</head>
+<body>
         <div class="container">
-            <div class="nav-brand">
-                <h1>KillerCroc9</h1>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                <li><a href="#generative-ai" class="active">Generative AI</a></li>
-            </ul>
-            <div class="nav-controls">
-                <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
+            <section class="hero">
+                <div class="hero-title">KillerCroc9</div>
+                <div class="hero-desc">Exploring the frontiers of AI-generated content. From animated narratives to architectural visions, pushing the boundaries of what machines can create.</div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">AI-Generated Animated Movie Shorts</div>
+                <div class="section-desc">Crafting compelling narratives through AI-powered animation, bringing stories to life with cutting-edge generative technology.</div>
+                <div class="videos">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/SKD7Bxq41a8?loop=1&playlist=SKD7Bxq41a8" title="George Washington" allowfullscreen></iframe>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">AI-Generated Ad Creation</div>
+                <div class="section-desc">Transforming brand storytelling with AI-crafted advertisements that captivate and convert.</div>
+                <div class="videos">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/4eatWipS-0k?loop=1&playlist=4eatWipS-0k" title="Niki Product Showcase" allowfullscreen></iframe>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/y03qlguaX1c?loop=1&playlist=y03qlguaX1c" title="Product Ad Example" allowfullscreen></iframe>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/xAGDRRxfhKA?loop=1&playlist=xAGDRRxfhKA" title="Market Campaign" allowfullscreen></iframe>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">Consistent Character Across Multiple Scenes</div>
+                <div class="section-desc">Demonstrating AI's ability to maintain character identity and style consistency across varied contexts and environments.</div>
+                <div class="gallery">
+                    <img src="assets/generative-ai/Image01.jpg" alt="Character Scene 1">
+                    <img src="assets/generative-ai/Image02.jpg" alt="Character Scene 2">
+                    <img src="assets/generative-ai/Image03.jpg" alt="Character Scene 3">
+                    <img src="assets/generative-ai/Image04.jpg" alt="Character Scene 4">
+                    <img src="assets/generative-ai/Image05.jpg" alt="Character Scene 5">
+                    <img src="assets/generative-ai/Image06.jpg" alt="Character Scene 6">
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">Architectural Visualization Demo</div>
+                <div class="section-desc">Reimagining spaces through AI-powered architectural rendering and visualization.</div>
+                <div class="videos">
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/PSnfUz9hrjQ?loop=1&playlist=PSnfUz9hrjQ" title="Final Architectural Demo" allowfullscreen></iframe>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/yGvD7qlnTxw?loop=1&playlist=yGvD7qlnTxw" title="Architectural Demo Video" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-title">AI-Powered Sprite Sheet Generator</div>
+                <div class="section-desc">Automated game asset creation with consistent style and animation-ready sprite sheets.</div>
+                <div class="gallery">
+                    <img src="assets/generative-ai/SpriteSheet BlueBird.png" alt="Sprite Sheet BlueBird">
+                    <img src="assets/generative-ai/SpriteSheet Cute Anime.png" alt="Sprite Sheet Cute Anime">
+                </div>
+            </section>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Generative AI Portfolio</h1>
-            <p class="hero-subtitle">AI-Powered Content Creation & Automation</p>
-            <p class="hero-description">Exploring the frontiers of generative AI with character consistency, video generation, and automated creative workflows</p>
-            <div class="hero-buttons">
-                <a href="#generative-ai" class="btn btn-primary">View Projects</a>
-            </div>
-        </div>
-        <div class="hero-scroll">
-            <a href="#generative-ai" aria-label="Scroll down to projects"><i class="fas fa-chevron-down"></i></a>
-        </div>
-    </section>
-
-    <!-- Generative AI Section -->
-    <section id="generative-ai" class="generative-ai">
-        <div class="container">
-            <h2 class="section-title">Generative AI Projects</h2>
-            <p class="section-subtitle">Exploring the frontiers of AI-powered content creation and automation</p>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;"><strong>Tools I Use:</strong> Kling, Runway, HeyGen, Veo3, ElevenLabs, Hulio, Kontext Flux, MuseTalk & more</p>
-            
-            <!-- Project: AI-Generated Animated Movie Shorts -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">AI-Generated Animated Movie Shorts (1-2 Minutes)</h3>
-                <p class="gen-project-description">
-                    Automated pipeline for creating short animated movies (1-2 minutes), placing strong emphasis on 
-                    <strong>character and stylistic consistency</strong> throughout the entire narrative.
-                </p>
-                <div class="gen-workflow">
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><strong>Script & Storyboard</strong> — AI-driven narrative and scene planning</li>
-                        <li><strong>Character Consistency</strong> — Same character maintained across all scenes</li>
-                        <li><strong>Voice & Assembly</strong> — Synthesized dialogue with cinematic editing</li>
-                    </ul>
-                    <div class="gen-videos-grid">
-                        <div class="gen-video-container">
-                            <h4>George Washington</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/SKD7Bxq41a8?loop=1&playlist=SKD7Bxq41a8" title="George Washington" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="gen-video-container">
-                            <h4>The Promise Unkept</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project: AI-Generated Ad Creation -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">AI-Generated Ad Creation</h3>
-                <p class="gen-project-description">
-                    End-to-end automated pipeline for creating <strong>AI-generated advertisements</strong> — from script to final video with lip-syncing and dynamic video generation.
-                </p>
-                <div class="gen-workflow">
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><strong>AI Scriptwriting</strong> — Auto-generated ad narratives and product copy</li>
-                        <li><strong>Lip-Sync & Voice</strong> — Lip-synced videos with realistic voiceovers</li>
-                        <li><strong>Auto Assembly</strong> — Dynamic visuals stitched into polished final ads</li>
-                    </ul>
-                    <div class="gen-videos-grid">
-                        <div class="gen-video-container">
-                            <h4>Niki Product Showcase</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/4eatWipS-0k?loop=1&playlist=4eatWipS-0k" title="Niki Product Showcase" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="gen-video-container">
-                            <h4>Product Ad Example</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/y03qlguaX1c?loop=1&playlist=y03qlguaX1c" title="Product Ad Example" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gen-videos-grid" style="justify-content: center;">
-                        <div class="gen-video-container" style="width: 75%; min-width: 500px; max-width: 800px; margin: 0 auto;">
-                            <h4>Market Campaign</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/xAGDRRxfhKA?loop=1&playlist=xAGDRRxfhKA" title="Market Campaign" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gen-videos-grid" style="justify-content: center; margin-top: 1.5rem;">
-                        <div class="gen-video-container" style="width: 50%; min-width: 240px; max-width: 480px; margin: 0 auto;">
-                            <div class="gen-video-wrapper portrait">
-                                <iframe src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project: Consistent Character -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">Consistent Character Across Multiple Scenes</h3>
-                <p class="gen-project-description">
-                    We used generative AI models to maintain a consistent character design across various scenes. 
-                    By leveraging advanced models, we ensured the character stays true to its features while exploring 
-                    different looks, poses, and outfits. Whether it's a formal attire, casual wear, or a specific action pose, 
-                    the AI adapts the character's appearance while keeping the essence intact. This approach highlights the 
-                    flexibility of generative AI in preserving identity across diverse scenarios, making the character both 
-                    versatile and instantly recognizable.
-                </p>
-                <div class="gen-images-grid">
-                    <img src="assets/generative-ai/Image01.jpg" alt="Character Scene 1" class="gen-image">
-                    <img src="assets/generative-ai/Image02.jpg" alt="Character Scene 2" class="gen-image">
-                    <img src="assets/generative-ai/Image03.jpg" alt="Character Scene 3" class="gen-image">
-                    <img src="assets/generative-ai/Image04.jpg" alt="Character Scene 4" class="gen-image">
-                    <img src="assets/generative-ai/Image05.jpg" alt="Character Scene 5" class="gen-image">
-                    <img src="assets/generative-ai/Image06.jpg" alt="Character Scene 6" class="gen-image">
-                </div>
-            </div>
-
-            <!-- Project: Architectural Visualization -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">Architectural Visualization Demo</h3>
-                <p class="gen-project-description">
-                    System that transforms static apartment images into dynamic 3D videos with custom camera movements and personalized elements.
-                </p>
-                <ul class="gen-features-list">
-                    <li>Upload apartment photos, set camera paths, and remove distractions (cars, people)</li>
-                    <li>AI voiceover with selectable voices, background text, and company branding</li>
-                    <li>Choose resolution, video order, and receive final video via email</li>
-                </ul>
-                <div class="gen-videos-grid">
-                    <div class="gen-video-container">
-                        <h4>Final Architectural Demo</h4>
-                        <div class="gen-video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/PSnfUz9hrjQ?loop=1&playlist=PSnfUz9hrjQ" title="Final Architectural Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="gen-video-container">
-                        <h4>Architectural Demo Video</h4>
-                        <div class="gen-video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/yGvD7qlnTxw?loop=1&playlist=yGvD7qlnTxw" title="Architectural Demo Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project: AI-Powered Sprite Sheet Generator -->
-            <div class="gen-project">
-                <h3 class="gen-project-title">AI-Powered Sprite Sheet Generator</h3>
-                <p class="gen-project-description">
-                    This project focuses on automating the process of sprite sheet creation using generative AI and user-driven 
-                    customization. It enables artists, developers, and creators to generate and refine character sprites efficiently 
-                    — from single images to complete animation-ready sheets.
-                </p>
-                <div class="gen-workflow">
-                    <h4>Key Features:</h4>
-                    <ul>
-                        <li><strong>Generate or Upload</strong> — Create base image via prompts or upload your own</li>
-                        <li><strong>Edit & Animate</strong> — Refine poses, select Run/Walk/Static animations</li>
-                        <li><strong>Auto Compilation</strong> — Frames arranged into game-ready sprite sheets</li>
-                    </ul>
-                    <div class="gen-videos-grid">
-                        <div class="gen-video-container">
-                            <h4>2D Animated Character</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/PkTjlwuDdAQ?loop=1&playlist=PkTjlwuDdAQ" title="2D Animated Character" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="gen-video-container">
-                            <h4>Bluebird</h4>
-                            <div class="gen-video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/4XUpsQ1aH_Y?loop=1&playlist=4XUpsQ1aH_Y" title="Bluebird" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="gen-sprite-example" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
-                        <img src="assets/generative-ai/SpriteSheet BlueBird.png" alt="Sprite Sheet BlueBird" class="gen-image-single" style="max-width: 45%; height: auto; object-fit: contain;">
-                        <img src="assets/generative-ai/SpriteSheet Cute Anime.png" alt="Sprite Sheet Cute Anime" class="gen-image-single" style="max-width: 45%; height: auto; object-fit: contain;">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portrait Videos Section removed. -->
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About</h3>
-                    <p>Generative AI Expert at AB {Ark} Private Limited, specializing in character consistency, video generation, and automated creative workflows</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#generative-ai">AI Projects</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-links" style="display: flex; gap: 1.5rem; margin-top: 1rem;">
-                        <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:Muqeeta2@gmail.com" aria-label="Email" style="color: #00d4ff; font-size: 1.8rem; transition: transform 0.3s;"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 KillerCroc9. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="animations.js"></script>
-    <script src="sw-register.js"></script>
-
-</body>
+    </body>
 </html>
+             <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; color: #b0b0b0; font-size: 1rem; border-top: 1px solid #222;">
+                        <div style="margin-bottom: 0.5rem;">
+                            &copy; 2026 KillerCroc9. All rights reserved.
+                        </div>
+                        <div style="margin-bottom: 0.5rem;">
+                            <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">GitHub</a>
+                            <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">LinkedIn</a>
+                            <a href="mailto:Muqeeta2@gmail.com" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">Email</a>
+                        </div>
+                    </footer>

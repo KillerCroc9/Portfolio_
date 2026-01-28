@@ -10,10 +10,10 @@
     --secondary-color: #1e90ff;
     --accent-color: #00d4ff;
     --dark-bg: #000000;
-    --light-bg: #0a0a0a;
-    --card-bg: #0d0d0d;
-    --text-primary: #00bfff;
-    --text-secondary: #1e90ff;
+    --light-bg: #000000;
+    --card-bg: #000000;
+    --text-primary: #00d4ff;
+    --text-secondary: #00bfff;
     --gradient-1: linear-gradient(135deg, #00bfff 0%, #00d4ff 100%);
     --gradient-2: linear-gradient(135deg, #00d4ff 0%, #00bfff 100%);
     --transition: all 0.3s ease;

@@ -22,7 +22,7 @@
     <meta name="twitter:image" content="https://killercroc9.github.io/Portfolio_/assets/og-image.jpg">
     
     <!-- Theme Color -->
-    <meta name="theme-color" content="#667eea">
+    <meta name="theme-color" content="#00bfff">
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
@@ -49,12 +49,10 @@
       gtag('config', 'G-DTKWB1WRTZ');
     </script>
     <script>
-      // Enforce dark mode on all devices
-      document.documentElement.setAttribute('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
+    // Dark/light mode removed
     </script>
 </head>
-<body class="dark-mode">
+<body>
     <!-- Shooting Stars Background -->
     <div id="stars-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden;"></div>
     <style>
@@ -197,10 +195,17 @@
                         </div>
                     </div>
                     <div class="gen-videos-grid" style="justify-content: center;">
-                        <div class="gen-video-container">
+                        <div class="gen-video-container" style="width: 75%; min-width: 500px; max-width: 800px; margin: 0 auto;">
                             <h4>Market Campaign</h4>
                             <div class="gen-video-wrapper">
                                 <iframe src="https://www.youtube.com/embed/xAGDRRxfhKA?loop=1&playlist=xAGDRRxfhKA" title="Market Campaign" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gen-videos-grid" style="justify-content: center; margin-top: 1.5rem;">
+                        <div class="gen-video-container" style="width: 50%; min-width: 240px; max-width: 480px; margin: 0 auto;">
+                            <div class="gen-video-wrapper portrait">
+                                <iframe src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -235,12 +240,9 @@
                     System that transforms static apartment images into dynamic 3D videos with custom camera movements and personalized elements.
                 </p>
                 <ul class="gen-features-list">
-                    <li>Upload apartment photos with custom camera motion paths</li>
-                    <li>AI voiceover with selectable voices and background text</li>
-                    <li>Remove distractions (cars, people) from images</li>
-                    <li>Choose resolution and video sequence order</li>
-                    <li>Add company logo and watermark branding</li>
-                    <li>Final video delivered via email</li>
+                    <li>Upload apartment photos, set camera paths, and remove distractions (cars, people)</li>
+                    <li>AI voiceover with selectable voices, background text, and company branding</li>
+                    <li>Choose resolution, video order, and receive final video via email</li>
                 </ul>
                 <div class="gen-videos-grid">
                     <div class="gen-video-container">
@@ -296,25 +298,7 @@
         </div>
     </section>
 
-    <!-- Portrait Videos Section -->
-    <section class="generative-ai" style="padding-top: 2rem;">
-        <div class="container">
-            <div style="display: flex; justify-content: center; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
-                <div style="width: 345px; text-align: center; border: 3px solid #00d4ff; border-radius: 12px; padding: 1rem; box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);">
-                    <h4 style="margin-bottom: 1rem;">Generated Ad Output</h4>
-                    <div class="gen-video-wrapper portrait">
-                        <iframe src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div style="width: 345px; text-align: center; border: 3px solid #00d4ff; border-radius: 12px; padding: 1rem; box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);">
-                    <h4 style="margin-bottom: 1rem;">2D Character AI Generated</h4>
-                    <div class="gen-video-wrapper portrait">
-                        <iframe src="https://www.youtube.com/embed/5ECxVt1YLA4?loop=1&playlist=5ECxVt1YLA4" title="2D Character AI Generated" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Portrait Videos Section removed. -->
 
     <!-- Footer -->
     <footer class="footer">

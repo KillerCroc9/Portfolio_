@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KillerCroc9 - Portfolio</title>
-    <meta name="description" content="KillerCroc9 — Specializing in AI-generated content. Animation, ads, architectural visualization, character consistency. Also game development.">
+    <meta name="description" content="KillerCroc9 — AI-generated content and game dev. Animation, ads, architectural visualization, character consistency.">
     <meta property="og:title" content="KillerCroc9 - Portfolio">
-    <meta property="og:description" content="Specializing in AI-generated content. Animation, ads, arch viz, character consistency. Also game dev.">
+    <meta property="og:description" content="KillerCroc9 — AI-generated content and game dev. Animation, ads, architectural visualization, character consistency.">
     <meta property="og:type" content="website">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
@@ -144,6 +144,8 @@
             border: 1px solid #222;
             background: #181818;
         }
+        .skip-link { position: absolute; left: -9999px; z-index: 9999; padding: 0.75rem 1rem; background: #111; color: #fff; text-decoration: none; border: 2px solid #fff; border-radius: 0.5rem; font-size: 0.9rem; }
+        .skip-link:focus { left: 1rem; top: 1rem; }
         @media (max-width: 600px) {
             .hero-title { font-size: 2rem; }
             .section-title { font-size: 1.25rem; }
@@ -151,6 +153,7 @@
     </style>
     </head>
     <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
                 <svg id="svg-bg" viewBox="0 0 1200 800" fill="none" style="background: transparent !important;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
                     <defs>
                         <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
@@ -260,7 +263,7 @@
                         <!-- (Add more threads and circles as needed for full effect) -->
                     </g>
                 </svg>
-        <div class="container">
+        <div class="container" id="main">
             <section class="hero">
                 <div class="hero-title">KillerCroc9</div>
                 <div class="hero-desc">Exploring the frontiers of AI-generated content—animated narratives, ads, architectural visualization, character consistency, and more. Also game development.</div>
@@ -275,8 +278,8 @@
                 <div class="section-title">AI-Generated Animated Movie Shorts</div>
                 <div class="section-desc">Crafting compelling narratives through AI-powered animation, bringing stories to life with cutting-edge generative technology.</div>
                 <div class="videos">
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/SKD7Bxq41a8?loop=1&playlist=SKD7Bxq41a8" title="George Washington" allowfullscreen></iframe>
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/SKD7Bxq41a8?loop=1&playlist=SKD7Bxq41a8" title="George Washington" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allowfullscreen></iframe>
                 </div>
             </section>
 
@@ -284,10 +287,10 @@
                 <div class="section-title">AI-Generated Ad Creation</div>
                 <div class="section-desc">Transforming brand storytelling with AI-crafted advertisements that captivate and convert.</div>
                 <div class="videos">
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/4eatWipS-0k?loop=1&playlist=4eatWipS-0k" title="Niki Product Showcase" allowfullscreen></iframe>
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/y03qlguaX1c?loop=1&playlist=y03qlguaX1c" title="Product Ad Example" allowfullscreen></iframe>
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/xAGDRRxfhKA?loop=1&playlist=xAGDRRxfhKA" title="Market Campaign" allowfullscreen></iframe>
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/4eatWipS-0k?loop=1&playlist=4eatWipS-0k" title="Niki Product Showcase" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/y03qlguaX1c?loop=1&playlist=y03qlguaX1c" title="Product Ad Example" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/xAGDRRxfhKA?loop=1&playlist=xAGDRRxfhKA" title="Market Campaign" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allowfullscreen></iframe>
                 </div>
             </section>
 
@@ -295,8 +298,8 @@
                 <div class="section-title">Architectural Visualization Demo</div>
                 <div class="section-desc">Reimagining spaces through AI-powered architectural rendering and visualization.</div>
                 <div class="videos">
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/PSnfUz9hrjQ?loop=1&playlist=PSnfUz9hrjQ" title="Final Architectural Demo" allowfullscreen></iframe>
-                    <iframe class="video-embed" src="https://www.youtube.com/embed/yGvD7qlnTxw?loop=1&playlist=yGvD7qlnTxw" title="Architectural Demo Video" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/PSnfUz9hrjQ?loop=1&playlist=PSnfUz9hrjQ" title="Final Architectural Demo" allowfullscreen></iframe>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/yGvD7qlnTxw?loop=1&playlist=yGvD7qlnTxw" title="Architectural Demo Video" allowfullscreen></iframe>
                 </div>
             </section>
 
@@ -304,12 +307,12 @@
                 <div class="section-title">Consistent Character Across Multiple Scenes</div>
                 <div class="section-desc">Demonstrating AI's ability to maintain character identity and style consistency across varied contexts and environments.</div>
                 <div class="gallery">
-                    <img src="assets/generative-ai/Image01.jpg" alt="Character Scene 1">
-                    <img src="assets/generative-ai/Image02.jpg" alt="Character Scene 2">
-                    <img src="assets/generative-ai/Image03.jpg" alt="Character Scene 3">
-                    <img src="assets/generative-ai/Image04.jpg" alt="Character Scene 4">
-                    <img src="assets/generative-ai/Image05.jpg" alt="Character Scene 5">
-                    <img src="assets/generative-ai/Image06.jpg" alt="Character Scene 6">
+                    <img loading="lazy" src="assets/generative-ai/Image01.jpg" alt="Character Scene 1">
+                    <img loading="lazy" src="assets/generative-ai/Image02.jpg" alt="Character Scene 2">
+                    <img loading="lazy" src="assets/generative-ai/Image03.jpg" alt="Character Scene 3">
+                    <img loading="lazy" src="assets/generative-ai/Image04.jpg" alt="Character Scene 4">
+                    <img loading="lazy" src="assets/generative-ai/Image05.jpg" alt="Character Scene 5">
+                    <img loading="lazy" src="assets/generative-ai/Image06.jpg" alt="Character Scene 6">
                 </div>
             </section>
 
@@ -317,8 +320,8 @@
                 <div class="section-title">AI-Powered Sprite Sheet Generator</div>
                 <div class="section-desc">Automated game asset creation with consistent style and animation-ready sprite sheets.</div>
                 <div class="gallery">
-                    <img src="assets/generative-ai/SpriteSheet BlueBird.png" alt="Sprite Sheet BlueBird">
-                    <img src="assets/generative-ai/SpriteSheet Cute Anime.png" alt="Sprite Sheet Cute Anime">
+                    <img loading="lazy" src="assets/generative-ai/SpriteSheet BlueBird.png" alt="Sprite Sheet BlueBird">
+                    <img loading="lazy" src="assets/generative-ai/SpriteSheet Cute Anime.png" alt="Sprite Sheet Cute Anime">
                 </div>
             </section>
         </div>
@@ -326,7 +329,7 @@
         <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; color: #b0b0b0; font-size: 1rem; border-top: 1px solid #222;">
             <div style="margin-bottom: 0.5rem;">&copy; 2026 KillerCroc9. All rights reserved.</div>
             <div style="margin-bottom: 0.5rem;">
-                <a href="ai-portfolio.html" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">AI Portfolio</a>
+                <a href="index.html" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">Home</a>
                 <a href="game-dev.html" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">Game Dev</a>
                 <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">GitHub</a>
                 <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">LinkedIn</a>

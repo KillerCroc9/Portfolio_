@@ -8,6 +8,7 @@
     <meta property="og:title" content="KillerCroc9 - Game Development">
     <meta property="og:description" content="Game dev: Drimoland, Order of Dannan, technical art.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="og-image.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
         #svg-bg {
@@ -63,6 +64,8 @@
         .video-caption { color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem; }
         .features { color: #b0b0b0; font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.25rem; }
         .features li { margin-bottom: 0.35rem; }
+        .skip-link { position: absolute; left: -9999px; z-index: 9999; padding: 0.75rem 1rem; background: #111; color: #fff; text-decoration: none; border: 2px solid #fff; border-radius: 0.5rem; font-size: 0.9rem; }
+        .skip-link:focus { left: 1rem; top: 1rem; }
         @media (max-width: 600px) {
             .hero-title { font-size: 2rem; }
             .section-title { font-size: 1.25rem; }
@@ -70,6 +73,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
     <svg id="svg-bg" viewBox="0 0 1200 800" fill="none" style="background: transparent !important;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
         <defs>
             <radialGradient id="gdNeon1" cx="50%" cy="50%" r="50%">
@@ -93,7 +97,7 @@
         <circle r="2.5" fill="url(#gdNeon1)" opacity="1" filter="url(#gdGlow)"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#gdT2" /></animateMotion></circle>
     </svg>
 
-    <div class="container">
+    <div class="container" id="main">
         <section class="hero">
             <div class="hero-title">Game Development</div>
             <div class="hero-role" style="color: #f97316; font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; letter-spacing: 0.5px;">Technical Artist & Game Developer</div>
@@ -155,7 +159,7 @@
         <div style="margin-bottom: 0.5rem;">
             <a href="index.html" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">Home</a>
             <a href="ai-portfolio.html" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">AI Portfolio</a>
-            <a href="game-dev.html" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">Game Dev</a>
+            <span style="color: #b0b0b0; margin: 0 0.75rem;">Game Dev</span>
             <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">GitHub</a>
             <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">LinkedIn</a>
             <a href="mailto:Muqeeta2@gmail.com" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">Email</a>

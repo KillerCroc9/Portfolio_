@@ -8,6 +8,7 @@
     <meta property="og:title" content="KillerCroc9 - Generative AI Portfolio">
     <meta property="og:description" content="AI-generated animation, ads, architectural visualization, character consistency, and sprite sheets.">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="og-image.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <style>
                         /* Animated SVG wave background */
@@ -144,6 +145,8 @@
             border: 1px solid #222;
             background: #181818;
         }
+        .skip-link { position: absolute; left: -9999px; z-index: 9999; padding: 0.75rem 1rem; background: #111; color: #fff; text-decoration: none; border: 2px solid #fff; border-radius: 0.5rem; font-size: 0.9rem; }
+        .skip-link:focus { left: 1rem; top: 1rem; }
         @media (max-width: 600px) {
             .hero-title { font-size: 2rem; }
             .section-title { font-size: 1.25rem; }
@@ -151,6 +154,7 @@
     </style>
     </head>
     <body>
+        <a href="#main" class="skip-link">Skip to main content</a>
                 <svg id="svg-bg" viewBox="0 0 1200 800" fill="none" style="background: transparent !important;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
                     <defs>
                         <radialGradient id="neonPulse1" cx="50%" cy="50%" r="50%">
@@ -260,7 +264,7 @@
                         <!-- (Add more threads and circles as needed for full effect) -->
                     </g>
                 </svg>
-        <div class="container">
+        <div class="container" id="main">
             <section class="hero">
                 <div class="hero-title">KillerCroc9</div>
                 <div class="hero-desc">Exploring the frontiers of AI-generated content. From animated narratives to architectural visions, pushing the boundaries of what machines can create.</div>
@@ -328,6 +332,7 @@
             <div style="margin-bottom: 0.5rem;">&copy; 2026 KillerCroc9. All rights reserved.</div>
             <div style="margin-bottom: 0.5rem;">
                 <a href="index.html" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">Home</a>
+                <span style="color: #b0b0b0; margin: 0 1rem;">AI Portfolio</span>
                 <a href="game-dev.html" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">Game Dev</a>
                 <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">GitHub</a>
                 <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">LinkedIn</a>

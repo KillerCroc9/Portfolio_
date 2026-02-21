@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KillerCroc9 - Game Development</title>
+    <style>
+        #svg-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
+        body, .container, .hero, .section, footer { position: relative; z-index: 1; }
+        body {
+            margin: 0;
+            font-family: 'Geist', 'Segoe UI', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #f3f3f3;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+        .hero { text-align: center; padding: 2.5rem 1rem; }
+        .hero-title { font-size: 3rem; font-weight: 300; letter-spacing: -2px; margin-bottom: 1rem; color: #fff; }
+        .hero-desc { color: #b0b0b0; font-size: 1.25rem; margin-bottom: 2rem; }
+        .hero-buttons { margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .hero-btn {
+            background: #111; color: #fff; border: 2px solid #fff; border-radius: 2rem;
+            padding: 0.85rem 2.2rem; font-size: 1rem; font-family: inherit; font-weight: 500;
+            text-decoration: none; cursor: pointer;
+            transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+        }
+        .hero-btn:hover { background: #222; transform: translateY(-2px); box-shadow: 0 4px 24px rgba(255,255,255,0.1); }
+        .section { margin: 3rem 0; }
+        .section-title { font-size: 2rem; font-weight: 300; margin-bottom: 0.5rem; color: #fff; }
+        .section-desc { color: #b0b0b0; margin-bottom: 2rem; }
+        .disclaimer {
+            background: rgba(251, 146, 60, 0.12);
+            border: 1px solid rgba(251, 146, 60, 0.4);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #fbb87a;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .disclaimer strong { display: block; margin-bottom: 0.25rem; color: #fff; }
+        .videos { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+        .video-embed {
+            aspect-ratio: 16/9;
+            width: 100%;
+            border-radius: 0.75rem;
+            border: 1px solid #222;
+            background: #181818;
+        }
+        .video-item { margin-bottom: 2rem; }
+        .video-item:last-child { margin-bottom: 0; }
+        .video-caption { color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .features { color: #b0b0b0; font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.25rem; }
+        .features li { margin-bottom: 0.35rem; }
+        @media (max-width: 600px) {
+            .hero-title { font-size: 2rem; }
+            .section-title { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <svg id="svg-bg" viewBox="0 0 1200 800" fill="none" style="background: transparent !important;" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <radialGradient id="gdNeon1" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(255,255,255,1)" />
+                <stop offset="30%" stop-color="rgba(251,146,60,1)" />
+                <stop offset="100%" stop-color="rgba(249,115,22,0)" />
+            </radialGradient>
+            <linearGradient id="gdThread1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(0,0,0,1)" />
+                <stop offset="50%" stop-color="rgba(249,115,22,0.8)" />
+                <stop offset="100%" stop-color="rgba(0,0,0,1)" />
+            </linearGradient>
+            <filter id="gdGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="2" result="blur" />
+                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+            </filter>
+        </defs>
+        <path id="gdT1" d="M50 720 Q350 540 650 520 Q950 460 1200 340" stroke="url(#gdThread1)" stroke-width="0.8" fill="none" opacity="0.7" />
+        <circle r="2" fill="url(#gdNeon1)" opacity="1" filter="url(#gdGlow)"><animateMotion dur="4s" repeatCount="indefinite"><mpath href="#gdT1" /></animateMotion></circle>
+        <path id="gdT2" d="M80 730 Q400 570 700 550 Q1000 490 1300 370" stroke="url(#gdThread1)" stroke-width="1" fill="none" opacity="0.6" />
+        <circle r="2.5" fill="url(#gdNeon1)" opacity="1" filter="url(#gdGlow)"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#gdT2" /></animateMotion></circle>
+    </svg>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-title">Game Development</div>
+            <div class="hero-desc">Current and past game dev work—led by Drimoland, my main project in development, plus other titles and technical art.</div>
+            <div class="hero-buttons">
+                <a href="#" class="hero-btn" onclick="document.querySelector('.section').scrollIntoView({behavior: 'smooth'}); return false;">View Work</a>
+                <a href="mailto:Muqeeta2@gmail.com" class="hero-btn">Get in Touch</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Drimoland</div>
+            <div class="section-desc">A game project currently in development. The three videos below show three different environments with NPC and controller—work-in-progress, not the final product.</div>
+            <div class="disclaimer">
+                <strong>Work in progress</strong>
+                This is under active development. What you see is a showcase of current progress, not the final game.
+            </div>
+            <div class="videos">
+                <div class="video-item">
+                    <div class="video-caption">Environment 1 — NPC and controller</div>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/LJbD8vayFJE" title="Drimoland – Environment 1 (NPC and controller)" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <div class="video-caption">Environment 2 — NPC and controller</div>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/7wmbiIaELeM" title="Drimoland – Environment 2 (NPC and controller)" allowfullscreen></iframe>
+                </div>
+                <div class="video-item">
+                    <div class="video-caption">Environment 3 — NPC and controller</div>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/LRR2LpbOli8" title="Drimoland – Environment 3 (NPC and controller)" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Order of Dannan</div>
+            <div class="section-desc">Step into the world of Order of Dannan, a fantasy RPG built in Unreal Engine. Explore immersive environments, battle powerful enemies, and uncover the secrets of an ancient order.</div>
+            <ul class="features">
+                <li>Rich fantasy world</li>
+                <li>Action-packed combat</li>
+                <li>Built with Unreal Engine</li>
+            </ul>
+            <div class="videos">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/Ab_Gi41qFdw" title="Order of Dannan - Fantasy RPG" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">Technical Artist</div>
+            <div class="section-desc">Technical art and pipeline work for games.</div>
+            <div class="videos">
+                <iframe class="video-embed" src="https://www.youtube.com/embed/S--HI8G9OLA" title="Technical Artist" allowfullscreen></iframe>
+            </div>
+        </section>
+    </div>
+
+    <footer style="margin-top: 4rem; padding: 2rem 0; text-align: center; color: #b0b0b0; font-size: 1rem; border-top: 1px solid #222;">
+        <div style="margin-bottom: 0.5rem;">&copy; 2026 KillerCroc9. All rights reserved.</div>
+        <div style="margin-bottom: 0.5rem;">
+            <a href="index.html" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">Home</a>
+            <a href="ai-portfolio.html" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">AI Portfolio</a>
+            <a href="game-dev.html" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">Game Dev</a>
+            <a href="https://github.com/KillerCroc9" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">GitHub</a>
+            <a href="https://www.linkedin.com/in/abdul-muqeet-765283207/" target="_blank" rel="noopener noreferrer" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">LinkedIn</a>
+            <a href="mailto:Muqeeta2@gmail.com" style="color: #00d4ff; margin: 0 0.75rem; text-decoration: none;">Email</a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,7 +1,7 @@
 "use client"
 
 import { SvgBackground } from "@/components/svg-background"
-// Portfolio page - renders the static HTML portfolio as a Next.js page for preview
+// Portfolio page
 
 const videos = {
   movieShorts: [

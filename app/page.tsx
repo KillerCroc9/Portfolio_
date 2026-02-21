@@ -21,17 +21,17 @@ const videos = {
 }
 
 const characterImages = [
-  { src: "assets/generative-ai/Image01.jpg", alt: "Character Scene 1" },
-  { src: "assets/generative-ai/Image02.jpg", alt: "Character Scene 2" },
-  { src: "assets/generative-ai/Image03.jpg", alt: "Character Scene 3" },
-  { src: "assets/generative-ai/Image04.jpg", alt: "Character Scene 4" },
-  { src: "assets/generative-ai/Image05.jpg", alt: "Character Scene 5" },
-  { src: "assets/generative-ai/Image06.jpg", alt: "Character Scene 6" },
+  { src: "/assets/generative-ai/Image01.jpg", alt: "Character Scene 1" },
+  { src: "/assets/generative-ai/Image02.jpg", alt: "Character Scene 2" },
+  { src: "/assets/generative-ai/Image03.jpg", alt: "Character Scene 3" },
+  { src: "/assets/generative-ai/Image04.jpg", alt: "Character Scene 4" },
+  { src: "/assets/generative-ai/Image05.jpg", alt: "Character Scene 5" },
+  { src: "/assets/generative-ai/Image06.jpg", alt: "Character Scene 6" },
 ]
 
 const spriteImages = [
-  { src: "assets/generative-ai/SpriteSheet BlueBird.png", alt: "Sprite Sheet BlueBird" },
-  { src: "assets/generative-ai/SpriteSheet Cute Anime.png", alt: "Sprite Sheet Cute Anime" },
+  { src: "/assets/generative-ai/SpriteSheet BlueBird.png", alt: "Sprite Sheet BlueBird" },
+  { src: "/assets/generative-ai/SpriteSheet Cute Anime.png", alt: "Sprite Sheet Cute Anime" },
 ]
 
 function VideoGrid({ items }: { items: { src: string; title: string }[] }) {

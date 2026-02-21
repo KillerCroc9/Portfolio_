@@ -36,6 +36,7 @@ jspm_packages/
 bower_components/
 
 # Build outputs
+.next/
 dist/
 build/
 out/
@@ -55,10 +56,9 @@ temp/
 .env.test.local
 .env.production.local
 
-# Package manager files
+# Package manager files (keep pnpm-lock.yaml for v0 sandbox)
 package-lock.json
 yarn.lock
-pnpm-lock.yaml
 
 # Testing
 coverage/

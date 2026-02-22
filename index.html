@@ -147,6 +147,22 @@
         }
         .skip-link { position: absolute; left: -9999px; z-index: 9999; padding: 0.75rem 1rem; background: #111; color: #fff; text-decoration: none; border: 2px solid #fff; border-radius: 0.5rem; font-size: 0.9rem; }
         .skip-link:focus { left: 1rem; top: 1rem; }
+        .disclaimer {
+            background: rgba(251, 146, 60, 0.12);
+            border: 1px solid rgba(251, 146, 60, 0.4);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #fbb87a;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .disclaimer strong { display: block; margin-bottom: 0.25rem; color: #fff; }
+        .video-item { margin-bottom: 2rem; }
+        .video-item:last-child { margin-bottom: 0; }
+        .video-caption { color: #b0b0b0; font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .features { color: #b0b0b0; font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.25rem; }
+        .features li { margin-bottom: 0.35rem; }
         @media (max-width: 600px) {
             .hero-title { font-size: 2rem; }
             .section-title { font-size: 1.25rem; }
@@ -272,14 +288,13 @@
                     <a href="#" class="hero-btn" onclick="document.querySelector('.section').scrollIntoView({behavior: 'smooth'}); return false;">View Work</a>
                     <a href="mailto:Muqeeta2@gmail.com" class="hero-btn">Get in Touch</a>
                 </div>
-                <p style="margin-top: 1.25rem; font-size: 0.9rem; color: #666;"><a href="game-dev.html" style="color: #666; text-decoration: none;">Game Dev</a></p>
+                <p style="margin-top: 1.25rem; font-size: 0.9rem; color: #666;"><a href="ai-portfolio.html" style="color: #666; text-decoration: none;">AI Portfolio</a> · <a href="game-dev.html" style="color: #666; text-decoration: none;">Game Dev</a></p>
             </section>
 
             <section class="section">
                 <div class="section-title">AI-Generated Animated Movie Shorts</div>
                 <div class="section-desc">Crafting compelling narratives through AI-powered animation, bringing stories to life with cutting-edge generative technology.</div>
                 <div class="videos">
-                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/SKD7Bxq41a8?loop=1&playlist=SKD7Bxq41a8" title="George Washington" allowfullscreen></iframe>
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allowfullscreen></iframe>
                 </div>
             </section>
@@ -290,8 +305,6 @@
                 <div class="videos">
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/4eatWipS-0k?loop=1&playlist=4eatWipS-0k" title="Niki Product Showcase" allowfullscreen></iframe>
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/y03qlguaX1c?loop=1&playlist=y03qlguaX1c" title="Product Ad Example" allowfullscreen></iframe>
-                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/xAGDRRxfhKA?loop=1&playlist=xAGDRRxfhKA" title="Market Campaign" allowfullscreen></iframe>
-                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/YkisLmYsBiY?loop=1&playlist=YkisLmYsBiY" title="Generated Ad Output" allowfullscreen></iframe>
                 </div>
             </section>
 
@@ -300,7 +313,6 @@
                 <div class="section-desc">Reimagining spaces through AI-powered architectural rendering and visualization.</div>
                 <div class="videos">
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/PSnfUz9hrjQ?loop=1&playlist=PSnfUz9hrjQ" title="Final Architectural Demo" allowfullscreen></iframe>
-                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/yGvD7qlnTxw?loop=1&playlist=yGvD7qlnTxw" title="Architectural Demo Video" allowfullscreen></iframe>
                 </div>
             </section>
 
@@ -312,18 +324,47 @@
                     <img loading="lazy" src="assets/generative-ai/Image02.jpg" alt="Character Scene 2">
                     <img loading="lazy" src="assets/generative-ai/Image03.jpg" alt="Character Scene 3">
                     <img loading="lazy" src="assets/generative-ai/Image04.jpg" alt="Character Scene 4">
-                    <img loading="lazy" src="assets/generative-ai/Image05.jpg" alt="Character Scene 5">
-                    <img loading="lazy" src="assets/generative-ai/Image06.jpg" alt="Character Scene 6">
+                </div>
+                <p style="margin-top: 1rem;"><a href="ai-portfolio.html" style="color: #00d4ff; text-decoration: none;">See full AI Portfolio</a></p>
+            </section>
+
+            <section class="section">
+                <div class="section-title">Drimoland</div>
+                <div class="section-desc">A game project currently in development. The three videos on the Game Dev page show three different environments with NPC and controller—work-in-progress, not the final product.</div>
+                <p class="features" style="margin-bottom: 1rem;">Built with Unreal Engine.</p>
+                <div class="disclaimer">
+                    <strong>Work in progress</strong>
+                    This is under active development. What you see is a showcase of current progress, not the final game.
+                </div>
+                <div class="videos">
+                    <div class="video-item">
+                        <div class="video-caption">Environment 1 — NPC and controller</div>
+                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/LJbD8vayFJE" title="Drimoland – Environment 1 (NPC and controller)" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem;"><a href="game-dev.html" style="color: #00d4ff; text-decoration: none;">See all environments on Game Dev</a></p>
+            </section>
+
+            <section class="section">
+                <div class="section-title">Order of Dannan</div>
+                <div class="section-desc">Step into the world of Order of Dannan, a fantasy RPG built in Unreal Engine. Explore immersive environments, battle powerful enemies, and uncover the secrets of an ancient order.</div>
+                <ul class="features">
+                    <li>Rich fantasy world</li>
+                    <li>Action-packed combat</li>
+                    <li>Built with Unreal Engine</li>
+                </ul>
+                <div class="videos">
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/Ab_Gi41qFdw" title="Order of Dannan - Fantasy RPG" allowfullscreen></iframe>
                 </div>
             </section>
 
             <section class="section">
-                <div class="section-title">AI-Powered Sprite Sheet Generator</div>
-                <div class="section-desc">Automated game asset creation with consistent style and animation-ready sprite sheets.</div>
-                <div class="gallery">
-                    <img loading="lazy" src="assets/generative-ai/SpriteSheet BlueBird.png" alt="Sprite Sheet BlueBird">
-                    <img loading="lazy" src="assets/generative-ai/SpriteSheet Cute Anime.png" alt="Sprite Sheet Cute Anime">
+                <div class="section-title">Technical Artist</div>
+                <div class="section-desc">Technical art and pipeline work for games.</div>
+                <div class="videos">
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/S--HI8G9OLA" title="Technical Artist" allowfullscreen></iframe>
                 </div>
+                <p style="margin-top: 1rem;"><a href="game-dev.html" style="color: #00d4ff; text-decoration: none;">See full Game Dev page</a></p>
             </section>
         </div>
 

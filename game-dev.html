@@ -26,6 +26,18 @@
             pointer-events: none;
             display: block;
         }
+        .watermark-logo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(480px, 65vw);
+            height: auto;
+            opacity: 0.28;
+            z-index: 0;
+            pointer-events: none;
+            display: block;
+        }
         body, .container, .hero, .section, footer { position: relative; z-index: 1; }
         body {
             margin: 0;
@@ -105,7 +117,7 @@
         <path id="gdT2" d="M80 730 Q400 570 700 550 Q1000 490 1300 370" stroke="url(#gdThread1)" stroke-width="1" fill="none" opacity="0.6" />
         <circle r="2.5" fill="url(#gdNeon1)" opacity="1" filter="url(#gdGlow)"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#gdT2" /></animateMotion></circle>
     </svg>
-
+    <img class="watermark-logo" src="assets/generative-ai/AB Ark.png" alt="" role="presentation">
     <div class="container" id="main">
         <section class="hero">
             <div class="hero-title">Game Development</div>

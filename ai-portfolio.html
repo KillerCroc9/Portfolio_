@@ -35,6 +35,18 @@
                             pointer-events: none;
                             display: block;
                         }
+                        .watermark-logo {
+                            position: fixed;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: min(480px, 65vw);
+                            height: auto;
+                            opacity: 0.28;
+                            z-index: 0;
+                            pointer-events: none;
+                            display: block;
+                        }
                         body, .container, .hero, .section, footer {
                             position: relative;
                             z-index: 1;
@@ -272,6 +284,7 @@
                         <!-- (Add more threads and circles as needed for full effect) -->
                     </g>
                 </svg>
+        <img class="watermark-logo" src="assets/generative-ai/AB Ark.png" alt="" role="presentation">
         <div class="container" id="main">
             <section class="hero">
                 <div class="hero-title">KillerCroc9</div>

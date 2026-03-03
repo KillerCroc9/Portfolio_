@@ -141,6 +141,17 @@
             color: #b0b0b0;
             margin-bottom: 2rem;
         }
+        .disclaimer {
+            background: rgba(251, 146, 60, 0.12);
+            border: 1px solid rgba(251, 146, 60, 0.4);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #fbb87a;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        .disclaimer strong { display: block; margin-bottom: 0.25rem; color: #fff; }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -165,6 +176,19 @@
             border-radius: 0.75rem;
             border: 1px solid #222;
             background: #181818;
+        }
+        .shorts-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .shorts-row .video-item { margin-bottom: 0; }
+        .shorts-row .video-embed { aspect-ratio: 9/16; }
+        .longform-wrap { margin-top: 0; }
+        .longform-wrap .video-embed { aspect-ratio: 16/9; max-width: 100%; }
+        @media (max-width: 700px) {
+            .shorts-row { grid-template-columns: 1fr; }
         }
         .skip-link { position: absolute; left: -9999px; z-index: 9999; padding: 0.75rem 1rem; background: #111; color: #fff; text-decoration: none; border: 2px solid #fff; border-radius: 0.5rem; font-size: 0.9rem; }
         .skip-link:focus { left: 1rem; top: 1rem; }
@@ -325,20 +349,23 @@
                     <strong>Work in progress</strong>
                     Active experiments. Roadmap: improve sound workflows, music workflows, and video quality gates to refine automation for marketing.
                 </div>
-                <div class="videos">
+                <div class="shorts-row">
                     <div class="video-item">
-                        <div class="video-caption">UGC Short</div>
-                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/ZzZGdWB5RXI?loop=1&playlist=ZzZGdWB5RXI" title="UGC Short" allowfullscreen></iframe>
+                        <div class="video-caption">UGC</div>
+                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/ZzZGdWB5RXI?loop=1&playlist=ZzZGdWB5RXI" title="UGC" allowfullscreen></iframe>
                     </div>
                     <div class="video-item">
-                        <div class="video-caption">Call center ad shorts</div>
-                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/VMDr3cZmC8Q?loop=1&playlist=VMDr3cZmC8Q" title="Call center ad short 1" allowfullscreen></iframe>
-                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/L-_p_mFkY8I?loop=1&playlist=L-_p_mFkY8I" title="Call center ad short 2" allowfullscreen></iframe>
+                        <div class="video-caption">Call Center Ad</div>
+                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/VMDr3cZmC8Q?loop=1&playlist=VMDr3cZmC8Q" title="Call Center Ad 1" allowfullscreen></iframe>
                     </div>
                     <div class="video-item">
-                        <div class="video-caption">Long-form</div>
-                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/UVLzvVlvc3A?loop=1&playlist=UVLzvVlvc3A" title="Automated long-form" allowfullscreen></iframe>
+                        <div class="video-caption">Call Center Ad</div>
+                        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/L-_p_mFkY8I?loop=1&playlist=L-_p_mFkY8I" title="Call Center Ad 2" allowfullscreen></iframe>
                     </div>
+                </div>
+                <div class="longform-wrap">
+                    <div class="video-caption">Market Ad / B2B Lead</div>
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/UVLzvVlvc3A?loop=1&playlist=UVLzvVlvc3A" title="Market Ad / B2B Lead" allowfullscreen></iframe>
                 </div>
             </section>
 

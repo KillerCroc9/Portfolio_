@@ -35,17 +35,19 @@
                             pointer-events: none;
                             display: block;
                         }
+                        .watermark-logo-wrap {
+                            display: flex;
+                            justify-content: center;
+                            width: 100%;
+                            margin-bottom: 0.5rem;
+                        }
                         .watermark-logo {
-                            position: fixed;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
+                            display: block;
                             width: min(480px, 65vw);
                             height: auto;
-                            opacity: 0.28;
-                            z-index: 0;
+                            opacity: 1;
                             pointer-events: none;
-                            display: block;
+                            transform: translateX(-5%);
                         }
                         body, .container, .hero, .section, footer {
                             position: relative;
@@ -300,7 +302,6 @@
                         <!-- (Add more threads and circles as needed for full effect) -->
                     </g>
                 </svg>
-        <img class="watermark-logo" src="assets/generative-ai/AB Ark.png" alt="" role="presentation">
         <div class="container" id="main">
             <section class="hero">
                 <div class="hero-title">KillerCroc9</div>
@@ -312,6 +313,9 @@
                 <p style="margin-top: 1.25rem; font-size: 0.9rem; color: #666;"><a href="ai-portfolio.html" style="color: #666; text-decoration: none;">AI Portfolio</a> · <a href="game-dev.html" style="color: #666; text-decoration: none;">Game Dev</a></p>
             </section>
 
+            <div class="watermark-logo-wrap">
+                <img class="watermark-logo" src="assets/generative-ai/AB Ark.png" alt="" role="presentation">
+            </div>
             <section class="section">
                 <div class="section-title">AI-Generated Animated Movie Shorts</div>
                 <div class="section-desc">Crafting compelling narratives through AI-powered animation, bringing stories to life with cutting-edge generative technology.</div>

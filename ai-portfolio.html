@@ -10,6 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="og-image.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-13191484659"></script>
     <script>
@@ -300,14 +301,31 @@
             <section class="hero">
                 <div class="hero-title">Moonfly Interactive</div>
                 <div class="hero-desc">Exploring the frontiers of AI-generated content. From animated narratives to architectural visions, pushing the boundaries of what machines can create.</div>
-                <div class="hero-buttons">
-                    <a href="#" class="hero-btn" onclick="document.querySelector('.section').scrollIntoView({behavior: 'smooth'}); return false;">View Work</a>
-                    <a href="game-dev.html" class="hero-btn">Game Dev</a>
-                </div>
+                <nav class="hero-subnav" aria-label="Portfolios and sections on this page">
+                    <div class="hero-subnav-group">
+                        <div class="hero-subnav-kicker">Portfolios</div>
+                        <div class="hero-subnav-links">
+                            <a href="index.html">Home</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="ai-portfolio.html" aria-current="page">AI</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="game-dev.html">Games</a>
+                        </div>
+                    </div>
+                    <div class="hero-subnav-group">
+                        <div class="hero-subnav-kicker">This page</div>
+                        <div class="hero-subnav-links">
+                            <a href="#ai-movies">Animated movies</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#ai-ads">Ads</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#ai-ugc">UGC</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#ai-architecture">Architecture</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#ai-characters">Characters</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#ai-sprites">Sprites</a>
+                        </div>
+                    </div>
+                </nav>
             </section>
 
-            <section class="section">
-                <div class="section-title">AI-Generated Animated Movie Shorts</div>
+            <section class="section" id="ai-movies">
+                <div class="section-title">AI-Generated Animated Movies</div>
                 <div class="section-desc">Crafting compelling narratives through AI-powered animation, bringing stories to life with cutting-edge generative technology.</div>
                 <div class="videos">
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/SKD7Bxq41a8?loop=1&playlist=SKD7Bxq41a8" title="George Washington" allowfullscreen></iframe>
@@ -315,7 +333,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="ai-ads">
                 <div class="section-title">AI-Generated Ad Creation</div>
                 <div class="section-desc">Transforming brand storytelling with AI-crafted advertisements that captivate and convert.</div>
                 <div class="videos">
@@ -326,9 +344,9 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="ai-ugc">
                 <div class="section-title">Automated UGC & Marketing Experiments</div>
-                <div class="section-desc">Experimental, end-to-end automated pipelines for UGC-style shorts and ads—pushing toward scalable marketing content with minimal manual steps.</div>
+                <div class="section-desc">Experimental, end-to-end automated pipelines for UGC-style videos and ads—pushing toward scalable marketing content with minimal manual steps.</div>
                 <div class="disclaimer">
                     <strong>Work in progress</strong>
                     Active experiments. Roadmap: improve sound workflows, music workflows, and video quality gates to refine automation for marketing.
@@ -347,7 +365,7 @@
                         <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/L-_p_mFkY8I?loop=1&playlist=L-_p_mFkY8I" title="Call Center Ad 2" allowfullscreen></iframe>
                     </div>
                 </div>
-                <div class="longform-wrap">
+                <div class="longform-wrap" id="ugc-b2b">
                     <div class="video-caption">Market Ad / B2B Lead</div>
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/UVLzvVlvc3A?loop=1&playlist=UVLzvVlvc3A" title="Market Ad / B2B Lead" allowfullscreen></iframe>
                 </div>
@@ -355,7 +373,7 @@
 
             <!-- Consistent Character section moved below Architectural Visualization -->
 
-            <section class="section">
+            <section class="section" id="ai-architecture">
                 <div class="section-title">Architectural Visualization Demo</div>
                 <div class="section-desc">Reimagining spaces through AI-powered architectural rendering and visualization.</div>
                 <div class="videos">
@@ -364,7 +382,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="ai-characters">
                 <div class="section-title">Consistent Character Across Multiple Scenes</div>
                 <div class="section-desc">Demonstrating AI's ability to maintain character identity and style consistency across varied contexts and environments.</div>
                 <div class="gallery">
@@ -377,7 +395,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="ai-sprites">
                 <div class="section-title">AI-Powered Sprite Sheet Generator</div>
                 <div class="section-desc">Automated game asset creation with consistent style and animation-ready sprite sheets.</div>
                 <div class="gallery">
@@ -395,5 +413,6 @@
                 <a href="game-dev.html" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">Game Dev</a>
             </div>
         </footer>
+    <script src="assets/hash-scroll.js"></script>
     </body>
 </html>

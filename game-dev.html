@@ -10,6 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="og-image.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-13191484659"></script>
     <script>
@@ -111,13 +112,31 @@
             <div class="hero-role" style="color: #f97316; font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem; letter-spacing: 0.5px;">Technical Artist & Game Developer</div>
             <div class="hero-desc">Game development and technical art—current projects and past work.</div>
             <p class="tech-stack">C++ · Unreal Engine · Unity · Blender · Maya · VR (Meta Quest 3) · technical art pipelines</p>
-            <div class="hero-buttons">
-                <a href="#" class="hero-btn" onclick="document.querySelector('.section').scrollIntoView({behavior: 'smooth'}); return false;">View Work</a>
-                <a href="ai-portfolio.html" class="hero-btn">AI Portfolio</a>
-            </div>
+            <nav class="hero-subnav" aria-label="Portfolios and sections on this page">
+                <div class="hero-subnav-group">
+                    <div class="hero-subnav-kicker">Portfolios</div>
+                    <div class="hero-subnav-links">
+                        <a href="index.html">Home</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="ai-portfolio.html">AI</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="game-dev.html" aria-current="page">Games</a>
+                    </div>
+                </div>
+                <div class="hero-subnav-group">
+                    <div class="hero-subnav-kicker">This page</div>
+                    <div class="hero-subnav-links">
+                        <a href="#vr-showcase">Room-scale VR</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="#drimoland">Drimoland</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="#order-of-dannan">Order of Dannan</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="#technical-artist">Tech art</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="#conversational-dragons">Conversational Dragons</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="#vr-showroom">VR Showroom</a><span class="sep" aria-hidden="true">·</span>
+                        <a href="#moshpit">Moshpit</a>
+                    </div>
+                </div>
+            </nav>
         </section>
 
-        <section class="section">
+        <section class="section" id="vr-showcase">
             <div class="section-title">VR Showcase</div>
             <div class="section-desc">Meta Quest (PC-linked) room-scale walk-around experience. Work in progress: improving spatial anchor accuracy in large spaces where alignment can drift a few degrees.</div>
             <div class="disclaimer">
@@ -132,7 +151,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="drimoland">
             <div class="section-title">Drimoland</div>
             <div class="section-desc">A game project currently in development. The three videos below show three different environments with NPC and controller—work-in-progress, not the final product.</div>
             <p class="features" style="margin-bottom: 1rem;">Built with Unreal Engine.</p>
@@ -141,22 +160,22 @@
                 This is under active development. What you see is a showcase of current progress, not the final game.
             </div>
             <div class="videos">
-                <div class="video-item">
+                <div class="video-item" id="drimoland-env-1">
                     <div class="video-caption">Environment 1 — NPC and Controller</div>
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/LJbD8vayFJE?loop=1&playlist=LJbD8vayFJE" title="Drimoland – Environment 1 (NPC and Controller)" allowfullscreen></iframe>
                 </div>
-                <div class="video-item">
+                <div class="video-item" id="drimoland-env-2">
                     <div class="video-caption">Environment 2 — NPC and Controller</div>
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/7wmbiIaELeM?loop=1&playlist=7wmbiIaELeM" title="Drimoland – Environment 2 (NPC and Controller)" allowfullscreen></iframe>
                 </div>
-                <div class="video-item">
+                <div class="video-item" id="drimoland-env-3">
                     <div class="video-caption">Environment 3 — NPC and Controller</div>
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/LRR2LpbOli8?loop=1&playlist=LRR2LpbOli8" title="Drimoland – Environment 3 (NPC and Controller)" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="order-of-dannan">
             <div class="section-title">Order of Dannan</div>
             <div class="section-desc">Step into the world of Order of Dannan, a fantasy RPG built in Unreal Engine. Explore immersive environments, battle powerful enemies, and uncover the secrets of an ancient order.</div>
             <ul class="features">
@@ -169,7 +188,7 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="technical-artist">
             <div class="section-title">Technical Artist</div>
             <div class="section-desc">Technical art and pipeline work for games.</div>
             <div class="videos">
@@ -177,28 +196,29 @@
             </div>
         </section>
 
-        <section class="section">
-            <div class="section-title">Meet Dragons</div>
-            <div class="section-desc">AI-powered talking dragons for real-time voice interaction in public spaces. Built with Unreal Engine, OpenAI Whisper for local speech-to-text, ElevenLabs for voice synthesis, and GPT for contextual dialogue—demonstrating on-device deployment for exhibits and parks.</div>
+        <section class="section" id="conversational-dragons">
+            <div class="section-title">Conversational Dragons</div>
+            <div class="section-desc">Life-sized dragons you can <strong style="color: #fff; font-weight: 600;">walk up to and talk with</strong>—they listen and answer in real time. Built for exhibits and public spaces: Unreal Engine, on-device Whisper for speech-to-text, ElevenLabs voice output, and GPT for dialogue—so visitors get a genuine voice-driven, interactive encounter, not a canned loop.</div>
             <ul class="features">
                 <li>Local Whisper for voice recognition (offline, low-latency)</li>
                 <li>ElevenLabs for natural voice output</li>
                 <li>GPT for personalized, context-aware dialogue</li>
             </ul>
             <div class="videos">
-                <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/iV_RGGJKRSA?loop=1&playlist=iV_RGGJKRSA" title="Meet Dragons" allowfullscreen></iframe>
+                <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/iV_RGGJKRSA?loop=1&playlist=iV_RGGJKRSA" title="Conversational Dragons" allowfullscreen></iframe>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="vr-showroom">
             <div class="section-title">VR Showroom Demo</div>
-            <div class="section-desc">A VR experience where users can interact with an AI-powered avatar to explore different cars, hear detailed information about them, and seamlessly switch between vehicles inside an immersive virtual showroom. The experience was showcased at LEAP and GITEX. This video is a marketing render created to attract visitors to try the VR experience, not footage from the live VR application itself.</div>
+            <p style="color: #f97316; font-size: 0.92rem; font-weight: 600; margin: -0.2rem 0 0.85rem; letter-spacing: 0.04em;">Showcased at LEAP &amp; GITEX</p>
+            <div class="section-desc">A VR experience where users can interact with an AI-powered avatar to explore different cars, hear detailed information about them, and seamlessly switch between vehicles inside an immersive virtual showroom. We were pleased to show this work at LEAP and GITEX. This video is a marketing render created to attract visitors to try the VR experience, not footage from the live VR application itself.</div>
             <div class="videos">
                 <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/S1C_r9oMuMI?loop=1&playlist=S1C_r9oMuMI" title="VR Showroom Demo" allowfullscreen></iframe>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="moshpit">
             <div class="section-title">Moshpit Unreal C++ Backend</div>
             <div class="section-desc">Moshpit is an AI-powered platform for immersive live shows and gaming—attend concerts with your favorite artists, build your own shows, and explore dynamic environments. I worked on the Unreal C++ backend: rendering pipelines in packaged builds, MRQ with timelines, and video-in-texture workflows.</div>
             <ul class="features">
@@ -220,5 +240,6 @@
             <span style="color: #b0b0b0; margin: 0 0.75rem;">Game Dev</span>
         </div>
     </footer>
+<script src="assets/hash-scroll.js"></script>
 </body>
 </html>

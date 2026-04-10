@@ -10,6 +10,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="og-image.png">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/site.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-13191484659"></script>
     <script>
@@ -292,21 +293,39 @@
             <section class="hero">
                 <div class="hero-title">Moonfly Interactive</div>
                 <div class="hero-desc">Exploring the frontiers of AI-generated content—animated narratives, ads, architectural visualization, character consistency, and more. Also game development.</div>
-                <div class="hero-buttons">
-                    <a href="ai-portfolio.html" class="hero-btn">AI Portfolio</a>
-                    <a href="game-dev.html" class="hero-btn">Game Dev</a>
-                </div>
+                <nav class="hero-subnav" aria-label="Portfolios and sections on this page">
+                    <div class="hero-subnav-group">
+                        <div class="hero-subnav-kicker">Portfolios</div>
+                        <div class="hero-subnav-links">
+                            <a href="ai-portfolio.html">AI</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="game-dev.html">Games</a>
+                        </div>
+                    </div>
+                    <div class="hero-subnav-group">
+                        <div class="hero-subnav-kicker">This page</div>
+                        <div class="hero-subnav-links">
+                            <a href="#ai-movies">Animated movies</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#ai-ads">Ads</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#ai-architecture">Architecture</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#vr-showcase">Room-scale VR</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#vr-showroom">VR Showroom</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#drimoland">Drimoland</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#order-of-dannan">Order of Dannan</a><span class="sep" aria-hidden="true">·</span>
+                            <a href="#technical-artist">Tech art</a>
+                        </div>
+                    </div>
+                </nav>
             </section>
 
-            <section class="section">
-                <div class="section-title">AI-Generated Animated Movie Shorts</div>
+            <section class="section" id="ai-movies">
+                <div class="section-title">AI-Generated Animated Movies</div>
                 <div class="section-desc">Crafting compelling narratives through AI-powered animation, bringing stories to life with cutting-edge generative technology.</div>
                 <div class="videos">
                     <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/643ba2nN2Jk?loop=1&playlist=643ba2nN2Jk" title="The Promise Unkept" allowfullscreen></iframe>
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="ai-ads">
                 <div class="section-title">AI-Generated Ad Creation</div>
                 <div class="section-desc">Transforming brand storytelling with AI-crafted advertisements that captivate and convert.</div>
                 <div class="videos">
@@ -315,7 +334,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="ai-architecture">
                 <div class="section-title">Architectural Visualization Demo</div>
                 <div class="section-desc">Reimagining spaces through AI-powered architectural rendering and visualization.</div>
                 <div class="videos">
@@ -323,19 +342,7 @@
                 </div>
             </section>
 
-            <section class="section">
-                <div class="section-title">Consistent Character Across Multiple Scenes</div>
-                <div class="section-desc">Demonstrating AI's ability to maintain character identity and style consistency across varied contexts and environments.</div>
-                <div class="gallery">
-                    <img loading="lazy" src="assets/generative-ai/Image01.jpg" alt="Character Scene 1">
-                    <img loading="lazy" src="assets/generative-ai/Image02.jpg" alt="Character Scene 2">
-                    <img loading="lazy" src="assets/generative-ai/Image03.jpg" alt="Character Scene 3">
-                    <img loading="lazy" src="assets/generative-ai/Image04.jpg" alt="Character Scene 4">
-                </div>
-                <p style="margin-top: 1rem;"><a href="ai-portfolio.html" style="color: #00d4ff; text-decoration: none;">See full AI Portfolio</a></p>
-            </section>
-
-            <section class="section">
+            <section class="section" id="vr-showcase">
                 <div class="section-title">VR Showcase</div>
                 <div class="section-desc">Meta Quest (PC-linked) room-scale walk-around experience. Work in progress: improving spatial anchor accuracy in large spaces where alignment can drift a few degrees.</div>
                 <div class="disclaimer">
@@ -351,7 +358,17 @@
                 <p style="margin-top: 1rem;"><a href="game-dev.html" style="color: #00d4ff; text-decoration: none;">See full Game Dev page</a></p>
             </section>
 
-            <section class="section">
+            <section class="section" id="vr-showroom">
+                <div class="section-title">VR Showroom</div>
+                <p style="color: #f97316; font-size: 0.92rem; font-weight: 600; margin: -0.15rem 0 0.75rem; letter-spacing: 0.04em;">Showcased at LEAP &amp; GITEX</p>
+                <div class="section-desc">Automotive VR: a full showroom experience—explore cars with an AI-powered host and move between vehicles in VR. <strong style="color: #e8e8e8; font-weight: 600;">Presented at LEAP and GITEX</strong> so visitors could try it on the show floor.</div>
+                <div class="videos">
+                    <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/S1C_r9oMuMI?loop=1&playlist=S1C_r9oMuMI" title="VR Showroom Demo" allowfullscreen></iframe>
+                </div>
+                <p style="margin-top: 1rem;"><a href="game-dev.html#vr-showroom" style="color: #00d4ff; text-decoration: none;">See on Games portfolio</a></p>
+            </section>
+
+            <section class="section" id="drimoland">
                 <div class="section-title">Drimoland</div>
                 <div class="section-desc">A game project currently in development. The three videos on the Game Dev page show three different environments with NPC and controller—work-in-progress, not the final product.</div>
                 <p class="features" style="margin-bottom: 1rem;">Built with Unreal Engine.</p>
@@ -368,7 +385,7 @@
                 <p style="margin-top: 1rem;"><a href="game-dev.html" style="color: #00d4ff; text-decoration: none;">See all environments on Game Dev</a></p>
             </section>
 
-            <section class="section">
+            <section class="section" id="order-of-dannan">
                 <div class="section-title">Order of Dannan</div>
                 <div class="section-desc">Step into the world of Order of Dannan, a fantasy RPG built in Unreal Engine. Explore immersive environments, battle powerful enemies, and uncover the secrets of an ancient order.</div>
                 <ul class="features">
@@ -381,7 +398,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="technical-artist">
                 <div class="section-title">Technical Artist</div>
                 <div class="section-desc">Technical art and pipeline work for games.</div>
                 <div class="videos">
@@ -399,5 +416,6 @@
                 <a href="game-dev.html" style="color: #00d4ff; margin: 0 1rem; text-decoration: none;">Game Dev</a>
             </div>
         </footer>
+    <script src="assets/hash-scroll.js"></script>
     </body>
 </html>

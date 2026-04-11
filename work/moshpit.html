@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moshpit — Moonfly Interactive</title>
-    <meta name="description" content="Moshpit Unreal C++ backend — rendering, MRQ, video-in-texture — Moonfly Interactive.">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Moshpit — Rendering Pipelines</title>
+    <meta name="description" content="My work as a backend C++ developer at Moshpit: rendering pipelines, FFmpeg composite venue video, AI NPC experiment, drone camera system.">
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../assets/site.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-13191484659"></script>
@@ -20,19 +21,44 @@
     </style>
 </head>
 <body>
-    <div class="container work-page" id="main">
-        <p class="work-back"><a href="../index.html">← Home</a></p>
-        <h1 class="page-title">Moshpit Unreal C++ Backend</h1>
-        <p class="page-lead">Moshpit is an AI-powered platform for immersive live shows and gaming—attend concerts with your favorite artists, build your own shows, and explore dynamic environments. I worked on the Unreal C++ backend: rendering pipelines in packaged builds, MRQ with timelines, and video-in-texture workflows.</p>
-        <ul class="features">
-            <li>C++ rendering pipelines in packaged build</li>
-            <li>MRQ (Movie Render Queue) with timelines in Unreal packaged project</li>
-            <li>FFmpeg to create a single video with 16 playbacks, used in texture to run 16 footages in scenes</li>
-        </ul>
-        <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/4lFLzKfosGg?loop=1&playlist=4lFLzKfosGg" title="Moshpit Unreal C++ Backend" allowfullscreen></iframe>
+    <div class="container work-page pitch-page" id="main">
+        <h1 class="page-title">Moshpit: Rendering Pipelines</h1>
+        <p class="page-lead" style="margin-bottom: 2rem;">Moshpit is an AI-powered virtual concert platform. Artists curate and build their own shows on it — Moshpit gives them the tools, not the concerts. I worked there as a backend C++ developer, mostly on the show timeline system that made artist-authored concerts possible, an FFmpeg composite video pipeline for multi-screen venues, an AI NPC experiment, and a drone camera system for artists in the venue.</p>
+
+        <div class="pitch-block">
+            <h2>Show timeline system</h2>
+            <p>The core C++ work was a multi-timeline show system for artists authoring their own concerts. An artist could say "I need these lights off at this frame, music starts here, spotlight hits here" and the system had to make that happen precisely. There were many simultaneous timelines running — time of day, individual spotlights, music, dance — each storing the artist's data and playing back accurately at runtime.</p>
+            <p>We also had to give artists the tooling to record and edit that data without getting in their way. It was a large system and frame accuracy mattered throughout.</p>
+        </div>
+
+        <div class="pitch-block">
+            <h2>Venue video (FFmpeg)</h2>
+            <p>We needed around ten separate video clips playing in the world at the same time, and running ten independent video players was not the right approach — too much bandwidth, too many decoders. I used FFmpeg to pre-composite all the clips into one high-resolution master file, then drove a single playback in Unreal and mapped each surface to the right region of that texture.</p>
+            <p>In the engine we sampled regions so each surface showed its own clip from the same file. Getting synchronized picture across all of them was the main challenge; audio was not coming from those strips.</p>
+        </div>
+
+        <div class="pitch-block">
+            <h2>AI NPC experiment</h2>
+            <p>We ran a small experiment with AI-driven NPCs in concert spaces, wiring up LLMs and some plugins to see if they could guide people around the venues. It was exploratory, not production work.</p>
+        </div>
+
+        <div class="pitch-block">
+            <h2>Drone</h2>
+            <p>I built a flyable drone system controlled with a standard controller. Artists could use it to capture custom camera angles for their songs, rather than being limited to the pre-baked cameras we had set up for each menu. It gave them a way to get their own footage for renders and performances.</p>
+        </div>
+
+        <div class="pitch-block">
+            <h2>Reel</h2>
+            <iframe class="video-embed" loading="lazy" src="https://www.youtube.com/embed/4lFLzKfosGg?loop=1&playlist=4lFLzKfosGg" title="Moshpit backend overview" allowfullscreen></iframe>
+        </div>
+
+        <div class="pitch-actions">
+            <a href="../game-dev.html">Games portfolio</a>
+            <a href="../index.html">Home</a>
+        </div>
     </div>
     <footer style="margin-top: 2rem; padding: 2rem 1rem; text-align: center; color: #b0b0b0; font-size: 0.9rem; border-top: 1px solid #222;">
-        <div>&copy; 2026 Moonfly Interactive</div>
+        <div>Portfolio — Moshpit project</div>
     </footer>
 </body>
 </html>

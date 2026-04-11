@@ -183,3 +183,109 @@ section[id],
         grid-template-columns: 1fr;
     }
 }
+
+/* Secret / pitch pages — readable sections, not crowded */
+.pitch-page {
+    max-width: 38rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pitch-kicker {
+    color: #888;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 0.35rem;
+}
+.pitch-block {
+    margin-bottom: 2.25rem;
+}
+.pitch-block h2 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f97316;
+    margin: 0 0 0.65rem;
+    letter-spacing: 0.02em;
+}
+.pitch-block p {
+    color: #b8b8b8;
+    line-height: 1.65;
+    margin: 0 0 0.85rem;
+    font-size: 0.98rem;
+}
+.pitch-block p:last-child {
+    margin-bottom: 0;
+}
+.pitch-block ul {
+    margin: 0 0 0.5rem;
+    padding-left: 1.2rem;
+    color: #b8b8b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+.pitch-block li {
+    margin-bottom: 0.4rem;
+}
+.pitch-muted {
+    color: #888;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+.pitch-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    align-items: center;
+    margin-top: 2.5rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid #222;
+}
+.pitch-actions a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.pitch-actions a:hover {
+    text-decoration: underline;
+}
+
+/* Pitch pages — gameplay reference embeds (supporting, not hero) */
+.work-page .pitch-ref-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #222;
+    /* Full width of .container; embed grid stays supporting via 2-col layout, not a narrow column */
+}
+.work-page .pitch-ref-section .page-title {
+    font-weight: 600;
+}
+.work-page .pitch-ref-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+.work-page .pitch-ref-grid .video-embed {
+    max-width: 100%;
+}
+.work-page .pitch-disclaimer-text {
+    text-align: left;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+/* Inline emphasis inside pitch disclaimer (base .disclaimer strong is block) */
+.work-page .pitch-disclaimer-text strong {
+    display: inline;
+    margin-bottom: 0;
+    color: #fff;
+}
+.work-page .pitch-disclaimer-kicker {
+    display: block;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.4rem;
+}
+@media (max-width: 700px) {
+    .work-page .pitch-ref-grid {
+        grid-template-columns: 1fr;
+    }
+}

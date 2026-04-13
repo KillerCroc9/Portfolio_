@@ -141,6 +141,13 @@ section[id],
     margin-bottom: 0.25rem;
     color: #fff;
 }
+.work-page .disclaimer p {
+    margin: 0 0 0.65rem;
+    line-height: 1.55;
+}
+.work-page .disclaimer p:last-child {
+    margin-bottom: 0;
+}
 .work-page .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));

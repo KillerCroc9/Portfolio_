@@ -61,6 +61,8 @@
             text-align: center;
         }
         .disclaimer strong { display: block; margin-bottom: 0.25rem; color: #fff; }
+        .disclaimer p { margin: 0 0 0.65rem; line-height: 1.55; }
+        .disclaimer p:last-child { margin-bottom: 0; }
         .videos { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
         .video-embed {
             aspect-ratio: 16/9;
@@ -199,8 +201,11 @@
         <section class="section" id="conversational-dragons">
             <div class="section-title">Conversational Dragons</div>
             <div class="section-desc">Life-sized dragons you can <strong style="color: #fff; font-weight: 600;">walk up to and talk with</strong>—they listen and answer in real time. Built for exhibits and public spaces: Unreal Engine, on-device Whisper for speech-to-text, ElevenLabs voice output, and GPT for dialogue—so visitors get a genuine voice-driven, interactive encounter, not a canned loop.</div>
-            <p style="color: #f97316; font-size: 0.92rem; font-weight: 600; margin: 0.65rem 0 0.4rem; letter-spacing: 0.04em; line-height: 1.45;">Notice: we will be adding a much improved implementation where you can talk to <strong style="color: #fdba74; font-weight: 700;">multiple dragons in one scene</strong>, with <strong style="color: #fdba74; font-weight: 700;">suggested actions</strong> deployed on <strong style="color: #fdba74; font-weight: 700;">holographic TV boxes</strong>.</p>
-            <p style="color: #a8a29e; font-size: 0.88rem; font-weight: 500; margin: 0 0 0.85rem; line-height: 1.5; letter-spacing: 0.02em;">The current build remains in active development; a <strong style="color: #d6d3d1; font-weight: 600;">MetaHuman</strong>-based version will migrate into <strong style="color: #d6d3d1; font-weight: 600;">Drimoland</strong> once we have resolved a small set of integration caveats.</p>
+            <div class="disclaimer">
+                <strong>Work in progress</strong>
+                <p>We are building a much improved experience where you can talk to multiple dragons in one scene and ask them to act—eat, sleep, and similar behaviors—presented on holographic TV boxes.</p>
+                <p>A MetaHuman-based build will migrate into Drimoland after we clear a small set of integration caveats.</p>
+            </div>
             <ul class="features">
                 <li>Local Whisper for voice recognition (offline, low-latency)</li>
                 <li>ElevenLabs for natural voice output</li>
